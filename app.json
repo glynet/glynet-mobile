@@ -1,0 +1,40 @@
+{
+    "expo": {
+        "name": "Glynet",
+        "slug": "Glynet",
+        "version": "1.1.2",
+        "orientation": "portrait",
+        "icon": "./assets/icon.png",
+        "userInterfaceStyle": "light",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
+            "**/*"
+        ],
+        "ios": {
+            "supportsTablet": false,
+            "bundleIdentifier": "com.glynet"
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/icon.png",
+                "backgroundColor": "#28bcde"
+            },
+            "package": "com.glynet"
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        },
+        "extra": {
+            "eas": {
+                "projectId": "83dd14d9-520d-4d24-ab4a-7b98fe816203"
+            }
+        }
+    }
+}
