@@ -362,6 +362,135 @@ function SecurityOutlineIcon(props: any) {
     )
 }
 
+function MailIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm-.67 2L12 10.75 5.67 6zM19 18H5a1 1 0 01-1-1V7.25l7.4 5.55a1 1 0 00.6.2 1 1 0 00.6-.2L20 7.25V17a1 1 0 01-1 1z"
+                    data-name="email"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function TrashIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="trash-2">
+                    <Path d="M21 6h-5V4.33A2.42 2.42 0 0013.5 2h-3A2.42 2.42 0 008 4.33V6H3a1 1 0 000 2h1v11a3 3 0 003 3h10a3 3 0 003-3V8h1a1 1 0 000-2zM10 4.33c0-.16.21-.33.5-.33h3c.29 0 .5.17.5.33V6h-4zM18 19a1 1 0 01-1 1H7a1 1 0 01-1-1V8h12z" />
+                    <Path d="M9 17a1 1 0 001-1v-4a1 1 0 00-2 0v4a1 1 0 001 1zM15 17a1 1 0 001-1v-4a1 1 0 00-2 0v4a1 1 0 001 1z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function MoonIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M12.3 22h-.1a10.31 10.31 0 01-7.34-3.15 10.46 10.46 0 01-.26-14 10.13 10.13 0 014-2.74 1 1 0 011.06.22 1 1 0 01.24 1 8.4 8.4 0 001.94 8.81 8.47 8.47 0 008.83 1.94 1 1 0 011.27 1.29A10.16 10.16 0 0119.6 19a10.28 10.28 0 01-7.3 3zM7.46 4.92a7.93 7.93 0 00-1.37 1.22 8.44 8.44 0 00.2 11.32A8.29 8.29 0 0012.22 20h.08a8.34 8.34 0 006.78-3.49A10.37 10.37 0 017.46 4.92z"
+                    data-name="moon"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function SunIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="sun">
+                    <Path d="M12 6a1 1 0 001-1V3a1 1 0 00-2 0v2a1 1 0 001 1zM21 11h-2a1 1 0 000 2h2a1 1 0 000-2zM6 12a1 1 0 00-1-1H3a1 1 0 000 2h2a1 1 0 001-1zM6.22 5a1 1 0 00-1.39 1.47l1.44 1.39a1 1 0 00.73.28 1 1 0 00.72-.31 1 1 0 000-1.41zM17 8.14a1 1 0 00.69-.28l1.44-1.39A1 1 0 0017.78 5l-1.44 1.42a1 1 0 000 1.41 1 1 0 00.66.31zM12 18a1 1 0 00-1 1v2a1 1 0 002 0v-2a1 1 0 00-1-1zM17.73 16.14a1 1 0 00-1.39 1.44L17.78 19a1 1 0 00.69.28 1 1 0 00.72-.3 1 1 0 000-1.42zM6.27 16.14l-1.44 1.39a1 1 0 000 1.42 1 1 0 00.72.3 1 1 0 00.67-.25l1.44-1.39a1 1 0 00-1.39-1.44zM12 8a4 4 0 104 4 4 4 0 00-4-4zm0 6a2 2 0 112-2 2 2 0 01-2 2z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function FlashOutlineIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M11.11 23a1 1 0 01-.34-.06 1 1 0 01-.65-1.05l.77-7.09H5a1 1 0 01-.83-1.56l7.89-11.8a1 1 0 011.17-.38 1 1 0 01.65 1l-.77 7.14H19a1 1 0 01.83 1.56l-7.89 11.8a1 1 0 01-.83.44zM6.87 12.8H12a1 1 0 01.74.33 1 1 0 01.25.78l-.45 4.15 4.59-6.86H12a1 1 0 01-1-1.11l.45-4.15z"
+                    data-name="flash"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function FlashFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M11.11 23a1 1 0 01-.34-.06 1 1 0 01-.65-1.05l.77-7.09H5a1 1 0 01-.83-1.56l7.89-11.8a1 1 0 011.17-.38 1 1 0 01.65 1l-.77 7.14H19a1 1 0 01.83 1.56l-7.89 11.8a1 1 0 01-.83.44z"
+                    data-name="flash"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function ArrowRightIosIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M10 19a1 1 0 01-.64-.23 1 1 0 01-.13-1.41L13.71 12 9.39 6.63a1 1 0 01.15-1.41 1 1 0 011.46.15l4.83 6a1 1 0 010 1.27l-5 6A1 1 0 0110 19z"
+                    data-name="arrow-ios-forward"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function EyeOutlineIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="eye">
+                    <Path d="M21.87 11.5c-.64-1.11-4.16-6.68-10.14-6.5-5.53.14-8.73 5-9.6 6.5a1 1 0 000 1c.63 1.09 4 6.5 9.89 6.5h.25c5.53-.14 8.74-5 9.6-6.5a1 1 0 000-1zM12.22 17c-4.31.1-7.12-3.59-8-5 1-1.61 3.61-4.9 7.61-5 4.29-.11 7.11 3.59 8 5-1.03 1.61-3.61 4.9-7.61 5z" />
+                    <Path d="M12 8.5a3.5 3.5 0 103.5 3.5A3.5 3.5 0 0012 8.5zm0 5a1.5 1.5 0 111.5-1.5 1.5 1.5 0 01-1.5 1.5z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function CheckmarkIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1 1 0 111.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33z"
+                    data-name="checkmark"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function CrossIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M13.41 12l4.3-4.29a1 1 0 10-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 00-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 000 1.42 1 1 0 001.42 0l4.29-4.3 4.29 4.3a1 1 0 001.42 0 1 1 0 000-1.42z"
+                    data-name="close"
+                />
+            </G>
+        </Svg>
+    )
+}
+
 export {
     PaperPlaneIcon,
     CameraIcon,
@@ -383,19 +512,32 @@ export {
     BookmarkOutlineIcon,
     BookmarkFilledIcon,
 
-    VerticalIcon,
+    FlashOutlineIcon,
+    FlashFilledIcon,
+
     PlusOutlineIcon,
     BellOutlineIcon,
+
+    GridOutlineIcon,
+    GridFilledIcon,
+
+    VerticalIcon,
     LocationPinIcon,
     WebIcon,
     ArrowLeftIcon,
     UserAddIcon,
     UserDoneIcon,
-    GridOutlineIcon,
-    GridFilledIcon,
     LogoutIcon,
     AlbumIcon,
     PencilIcon,
     AlbumOutlineIcon,
-    SecurityOutlineIcon
+    SecurityOutlineIcon,
+    MailIcon,
+    TrashIcon,
+    MoonIcon,
+    SunIcon,
+    ArrowRightIosIcon,
+    EyeOutlineIcon,
+    CheckmarkIcon,
+    CrossIcon
 };

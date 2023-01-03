@@ -1,8 +1,8 @@
 import AppStyles from "../../App.style";
 import {Text, TextInput, TouchableOpacity, View} from "react-native";
-import {ArrowLeftIcon, BellOutlineIcon, CameraIcon, PaperPlaneIcon, SearchOutlineIcon} from "../../utils/icons";
+import {ArrowLeftIcon, BellOutlineIcon, CameraIcon, SearchOutlineIcon} from "../../utils/icons";
 import * as React from "react";
-import { useRoute, StackActions } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 
 export default function Header({ title, navigation }: any) {
     const route = useRoute();
@@ -26,18 +26,27 @@ export default function Header({ title, navigation }: any) {
             case "Search":
                 return (
                     <View style={[AppStyles.header, AppStyles.header_search]}>
-                        <TouchableOpacity onPress={() => navigation.goBack()} activeOpacity={0.8}
-                                          style={AppStyles.headerButton}>
+                        <TouchableOpacity
+                            onPress={() => navigation.goBack()}
+                            activeOpacity={0.8}
+                            style={AppStyles.headerButton}
+                        >
                             <ArrowLeftIcon style={AppStyles.headerButton.icon}/>
                         </TouchableOpacity>
-                        <View style={AppStyles.headerSearch}>
-                            <TextInput value="metehan sa" style={{width: "90%"}} placeholder={"Glynet'te ara"}
-                                       placeholderTextColor={"#556574"}/>
-                            <SearchOutlineIcon style={{
-                                height: 20,
-                                width: 20,
-                                fill: "#556574"
-                            }}/>
+                        <View style={{ position: "relative", flexDirection: "row" }}>
+                            <TextInput
+                                value="metehan sa"
+                                style={AppStyles.header_search_input}
+                                placeholder={"Glynet'te ara"}
+                                placeholderTextColor={"#556574"}
+                            />
+                            <View style={AppStyles.header_search_icon_container}>
+                                <SearchOutlineIcon style={{
+                                    height: 20,
+                                    width: 20,
+                                    fill: "#556574"
+                                }} />
+                            </View>
                         </View>
                     </View>
                 );
@@ -47,8 +56,11 @@ export default function Header({ title, navigation }: any) {
                         <TouchableOpacity activeOpacity={0.8} style={AppStyles.headerButton}>
                             <CameraIcon style={AppStyles.headerButton.icon}/>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8} style={AppStyles.headerText}>
-                            <Text style={AppStyles.headerText.text}>glynet</Text>
+                        <TouchableOpacity
+                            activeOpacity={0.8}
+                            style={AppStyles.headerText}
+                        >
+                            <Text style={[AppStyles.headerText.text, { fontSize: 25}]}>glynet</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             activeOpacity={0.8}

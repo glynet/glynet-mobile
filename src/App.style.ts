@@ -1,24 +1,22 @@
 import {Dimensions, StyleSheet} from "react-native";
+import getTheme from "./themes/themes";
 
-const appBackgroundColor = "#F7F7F7";
-const contentBackgroundColor = "#E7E8EE";
-const headerItemColor = "#1E2129";
+const theme = getTheme();
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: appBackgroundColor,
+        backgroundColor: theme.APP_BACKGROUND,
     },
     body: {
-        backgroundColor: appBackgroundColor,
         height: "100%",
         width: "100%",
     },
     header: {
-        backgroundColor: appBackgroundColor,
+        backgroundColor: theme.APP_BACKGROUND,
         width: "100%",
-        borderBottomWidth: 0.5,
-        borderBottomColor: "rgba(164,164,164,0.7)",
+        // borderBottomWidth: theme.BORDER_WIDTH,
+        borderBottomColor: theme.BORDER_COLOR,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
@@ -28,61 +26,76 @@ const styles = StyleSheet.create({
         height: 65,
         paddingRight: 12,
     },
-    headerSearch: {
-        backgroundColor: "#e4e4e4",
+    header_search_input: {
         padding: 12,
-        borderRadius: 13,
+        borderRadius: 10,
         fontSize: 14,
         width: Dimensions.get("window").width - 70,
         marginLeft: -5,
         flexDirection: "row",
         justifyContent: "space-between",
+
+        height: 48,
+
+        borderWidth: 1,
+        backgroundColor: "rgba(249,249,249,0.62)",
+        borderColor: "#bbc1c5"
+    },
+    header_search_icon_container: {
+        position: "absolute",
+        top: 13.5,
+        right: 12,
     },
     headerButton: {
-        height: 65,
-        width: 65,
+        height: 60,
+        width: 60,
         alignItems: "center",
         justifyContent: "center",
         icon: {
-            fill: headerItemColor,
-            height: 28,
-            width: 28,
+            fill: theme.HEADER_ITEM_COLOR,
+            height: 26,
+            width: 26,
         }
+    },
+    headerAvatar: {
+        height: 36,
+        width: 36,
+        marginRight: 12,
+        borderRadius: 20,
     },
     headerText: {
         alignItems: "center",
         justifyContent: "center",
-        height: 65,
+        height: 60,
         text: {
             marginTop: -2,
-            fontSize: 25,
-            color: headerItemColor,
+            fontSize: 22,
+            color: theme.HEADER_ITEM_COLOR,
             fontFamily: "GilroyBold",
         }
     },
     content: {
-        backgroundColor: contentBackgroundColor,
-        marginBottom: 65,
+        marginBottom: Dimensions.get("window").width / 6.5,
     },
     bottomBar: {
-        backgroundColor: appBackgroundColor,
+        backgroundColor: theme.APP_BACKGROUND,
         width: "100%",
         position: "absolute",
         bottom: 0,
-        borderTopWidth: 0.5,
-        borderTopColor: "rgba(164,164,164,0.7)",
+        // borderTopWidth: theme.BORDER_WIDTH,
+        borderTopColor: theme.BORDER_COLOR,
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-evenly",
     },
     buttonContainer: {
-        height: 65,
-        width: 65,
+        height: Dimensions.get("window").width / 6.5,
+        width: Dimensions.get("window").width / 6.5,
         justifyContent: "center",
         icon: {
             height: 28,
-            opacity: 0.8,
-            fill: headerItemColor
+            opacity: 1,
+            fill: theme.HEADER_ITEM_COLOR
         }
     }
 });

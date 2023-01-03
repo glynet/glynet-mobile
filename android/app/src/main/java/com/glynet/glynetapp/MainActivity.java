@@ -1,4 +1,4 @@
-package com.glynet;
+package com.glynet.glynetapp;
 
 import android.os.Build;
 import android.os.Bundle;

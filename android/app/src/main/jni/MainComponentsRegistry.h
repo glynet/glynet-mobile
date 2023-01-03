@@ -13,7 +13,7 @@ class MainComponentsRegistry
  public:
   // Adapt it to the package you used for your Java class.
   constexpr static auto kJavaDescriptor =
-      "Lcom/glynet/newarchitecture/components/MainComponentsRegistry;";
+      "Lcom/glynet/glynetapp/newarchitecture/components/MainComponentsRegistry;";
 
   static void registerNatives();
 

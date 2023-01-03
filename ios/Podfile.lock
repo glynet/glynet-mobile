@@ -3,6 +3,8 @@ PODS:
   - DoubleConversion (1.1.6)
   - EXApplication (5.0.1):
     - ExpoModulesCore
+  - EXBlur (12.0.1):
+    - ExpoModulesCore
   - EXCamera (13.1.0):
     - ExpoModulesCore
   - EXConstants (14.0.2):
@@ -14,6 +16,8 @@ PODS:
   - Expo (47.0.9):
     - ExpoModulesCore
   - ExpoKeepAwake (11.0.1):
+    - ExpoModulesCore
+  - ExpoLinearGradient (12.0.1):
     - ExpoModulesCore
   - ExpoModulesCore (1.0.4):
     - React-Core
@@ -240,6 +244,8 @@ PODS:
   - React-jsinspector (0.70.5)
   - React-logger (0.70.5):
     - glog
+  - react-native-blur (4.3.0):
+    - React-Core
   - react-native-image-picker (4.10.3):
     - React-Core
   - react-native-safe-area-context (4.4.1):
@@ -316,6 +322,33 @@ PODS:
     - React-perflogger (= 0.70.5)
   - RNGestureHandler (2.8.0):
     - React-Core
+  - RNReanimated (2.12.0):
+    - DoubleConversion
+    - FBLazyVector
+    - FBReactNativeSpec
+    - glog
+    - RCT-Folly
+    - RCTRequired
+    - RCTTypeSafety
+    - React-callinvoker
+    - React-Core
+    - React-Core/DevSupport
+    - React-Core/RCTWebSocket
+    - React-CoreModules
+    - React-cxxreact
+    - React-jsi
+    - React-jsiexecutor
+    - React-jsinspector
+    - React-RCTActionSheet
+    - React-RCTAnimation
+    - React-RCTBlob
+    - React-RCTImage
+    - React-RCTLinking
+    - React-RCTNetwork
+    - React-RCTSettings
+    - React-RCTText
+    - ReactCommon/turbomodule/core
+    - Yoga
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
@@ -327,12 +360,14 @@ DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXApplication (from `../node_modules/expo-application/ios`)
+  - EXBlur (from `../node_modules/expo-blur/ios`)
   - EXCamera (from `../node_modules/expo-camera/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
   - Expo (from `../node_modules/expo`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - ExpoLinearGradient (from `../node_modules/expo-linear-gradient/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
   - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -353,6 +388,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -368,6 +404,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
@@ -383,6 +420,8 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   EXApplication:
     :path: "../node_modules/expo-application/ios"
+  EXBlur:
+    :path: "../node_modules/expo-blur/ios"
   EXCamera:
     :path: "../node_modules/expo-camera/ios"
   EXConstants:
@@ -395,6 +434,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo"
   ExpoKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
+  ExpoLinearGradient:
+    :path: "../node_modules/expo-linear-gradient/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core"
   EXSplashScreen:
@@ -433,6 +474,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-blur:
+    :path: "../node_modules/@react-native-community/blur"
   react-native-image-picker:
     :path: "../node_modules/react-native-image-picker"
   react-native-safe-area-context:
@@ -463,6 +506,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNSVG:
@@ -474,12 +519,14 @@ SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   EXApplication: 034b1c40a8e9fe1bff76a1e511ee90dff64ad834
+  EXBlur: d87af64a1b4ae264059983bf54baca72be2cbc7d
   EXCamera: eaf52a96480d4ae1505a9b5e139c244581b5f8ca
   EXConstants: 3c86653c422dd77e40d10cbbabb3025003977415
   EXFileSystem: 60602b6eefa6873f97172c684b7537c9760b50d6
   EXFont: 319606bfe48c33b5b5063fb0994afdc496befe80
   Expo: 5523a4835730104a301caeac1e68dad095a9dfff
   ExpoKeepAwake: 69b59d0a8d2b24de9f82759c39b3821fec030318
+  ExpoLinearGradient: b40c2133ad57ae105b1b12a319e314463c817f6b
   ExpoModulesCore: 8211c89bcc3ba86e2d02c54b1d31f1fa81acb6de
   EXSplashScreen: 3e989924f61a8dd07ee4ea584c6ba14be9b51949
   FBLazyVector: affa4ba1bfdaac110a789192f4d452b053a86624
@@ -500,6 +547,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 31564fa6912459921568e8b0e49024285a4d584b
   React-jsinspector: badd81696361249893a80477983e697aab3c1a34
   React-logger: fdda34dd285bdb0232e059b19d9606fa0ec3bb9c
+  react-native-blur: 50c9feabacbc5f49b61337ebc32192c6be7ec3c3
   react-native-image-picker: 60f4246eb5bb7187fc15638a8c1f13abd3820695
   react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
   React-perflogger: e68d3795cf5d247a0379735cbac7309adf2fb931
@@ -515,6 +563,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 7401c4a40f8728fd89df4a56104541b760876117
   ReactCommon: c9246996e73bf75a2c6c3ff15f1e16707cdc2da9
   RNGestureHandler: 62232ba8f562f7dea5ba1b3383494eb5bf97a4d3
+  RNReanimated: 2a91e85fcd343f8af3c58d3425b99fdd285590a5
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
   Yoga: eca980a5771bf114c41a754098cd85e6e0d90ed7

@@ -1,4 +1,4 @@
-package com.glynet.newarchitecture;
+package com.glynet.glynetapp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.glynet.BuildConfig;
-import com.glynet.newarchitecture.components.MainComponentsRegistry;
-import com.glynet.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.glynet.glynetapp.BuildConfig;
+import com.glynet.glynetapp.newarchitecture.components.MainComponentsRegistry;
+import com.glynet.glynetapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

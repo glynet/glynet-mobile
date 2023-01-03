@@ -2,13 +2,11 @@ import React from "react";
 import {View, StyleSheet} from "react-native";
 import Post from "./Post/Post";
 
-export default function Posts() {
+export default function Posts({ navigation }: any) {
     return (
-        <View style={{
-            paddingTop: 12,
-        }}>
+        <View style={styles.posts}>
             {Array(20).fill("0").map((value, index) => {
-                return <Post key={index} />
+                return <Post key={index} navigation={navigation} />
             })}
         </View>
     );
@@ -17,5 +15,9 @@ export default function Posts() {
 const styles = StyleSheet.create({
     posts: {
 
+    },
+    post_filters: {
+        padding: 12,
+        backgroundColor: "red"
     }
 });

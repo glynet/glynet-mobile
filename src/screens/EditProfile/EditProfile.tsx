@@ -1,20 +1,17 @@
 import React, {useState} from "react";
-import {Image, StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput} from "react-native";
+import {Image, Text, TouchableOpacity, View, Dimensions, TextInput, ImageBackground} from "react-native";
 import {
-    BellOutlineIcon, CameraIcon,
-    LocationPinIcon, PencilIcon,
-    UserAddIcon,
-    UserDoneIcon,
+    BellOutlineIcon,
+    CameraIcon,
+    LocationPinIcon,
+    PencilIcon,
     VerticalIcon,
     WebIcon
 } from "../../utils/icons";
-import Posts from "../../components/Posts/Posts";
 import ScreenContainer from "../../utils/screen";
-import {useRoute} from "@react-navigation/native";
+import styles from "./EditProfile.style";
 
 export default function EditProfile({ navigation }: any) {
-    const route = useRoute();
-
     const [isFollowing, setFollow] = useState<boolean>(false);
 
     const [name, setName] = useState<string>("Metehan Alp Saral");
@@ -27,12 +24,17 @@ export default function EditProfile({ navigation }: any) {
     return (
         <ScreenContainer headerTitle={"Profili Düzenleyici"} hideTabs={true} navigation={navigation}>
             <View style={styles.profile_container}>
-                <Image
+                <ImageBackground
                     style={styles.profile_banner}
-                        source={{
-                            uri: "https://source.unsplash.com/random?view"
+                    imageStyle={styles.profile_banner}
+                    source={{
+                        uri: "https://source.unsplash.com/random?view"
                     }}
-                />
+                >
+                    <View style={styles.profile_banner_edit}>
+                        <CameraIcon style={styles.profile_banner_edit.icon} />
+                    </View>
+                </ImageBackground>
 
                 <View style={styles.profile_content}>
                     <TouchableOpacity style={styles.profile_avatar_container} activeOpacity={0.8}>
@@ -92,7 +94,7 @@ export default function EditProfile({ navigation }: any) {
             </View>
 
             <View style={styles.profile_inputs_container}>
-                <View style={styles.profile_input_container}>
+                <View style={{...styles.profile_input_container, borderTopWidth: 0}}>
                     <Text style={styles.profile_input_title}>İsim</Text>
                     <TextInput
                         value={name}
@@ -150,7 +152,6 @@ export default function EditProfile({ navigation }: any) {
                         style={[
                             styles.profile_button,
                             styles.profile_button_with_text,
-                            styles.profile_button_colored,
                             { width: "100%" }
                         ]}
                         activeOpacity={0.8}
@@ -165,157 +166,3 @@ export default function EditProfile({ navigation }: any) {
         </ScreenContainer>
     );
 }
-
-const themeColor = "#3a27d9";
-
-const avatarSize = 90;
-
-const styles = StyleSheet.create({
-    profile_inputs_container: {
-        backgroundColor: "#ffffff",
-        borderRadius: 15,
-        width: "100%",
-        marginVertical: 12,
-        borderBottomColor: "rgba(164,164,164,0.7)",
-    },
-    profile_input_container: {
-        padding: 12,
-        borderBottomWidth: 1,
-        borderColor: "#ececec"
-    },
-    profile_input_title: {
-        fontFamily: "GilroyBold",
-        fontSize: 13,
-        color: "#252934"
-    },
-    profile_input: {
-        borderWidth: 1,
-        borderColor: "rgba(209,206,206,0.7)",
-        backgroundColor: "rgba(238,241,241,0.7)",
-        padding: 12,
-        fontSize: 14,
-        borderRadius: 12,
-        marginTop: 7,
-    },
-
-    profile_container: {
-        backgroundColor: "#ffffff",
-        borderTopLeftRadius: 0,
-        borderTopRightRadius: 0,
-        borderRadius: 15,
-        width: "100%",
-        borderBottomColor: "rgba(164,164,164,0.7)",
-    },
-    profile_banner: {
-        height: 170,
-        width: "100%",
-    },
-    profile_content: {
-        marginTop: -72.5,
-        alignItems: "center",
-    },
-    profile_avatar_container: {
-        height: avatarSize + 12,
-        width: avatarSize + 12,
-        borderRadius: 100,
-        alignItems: "center",
-        justifyContent: "center",
-        position: "relative",
-    },
-    profile_avatar: {
-        height: avatarSize,
-        width: avatarSize,
-        borderRadius: 100,
-    },
-    profile_avatar_edit: {
-        position: "absolute",
-        top: 6,
-        left: 6,
-        height: avatarSize,
-        width: avatarSize,
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 100,
-        backgroundColor: "rgba(1,1,1,0.24)",
-        icon: {
-            height: 28,
-            width: 28,
-            fill: "rgba(255,255,255,0.82)"
-        }
-    },
-    profile_details: {
-        marginTop: 10,
-        alignItems: "center",
-        name: {
-            fontFamily: "GilroyBold",
-            fontSize: 18,
-            color: "#1e2425"
-        },
-        username: {
-            marginTop: 5,
-            fontFamily: "GilroyMedium",
-            fontSize: 13,
-            color: "#4d5053"
-        }
-    },
-    profile_buttons: {
-        flexDirection: "row",
-        marginTop: 15 - 12,
-        padding: 12,
-        alignItems: "center",
-        justifyContent: "center",
-        width: Dimensions.get("window").width,
-    },
-    empty_column: {
-        width: 7
-    },
-    profile_button: {
-        backgroundColor: "#efeff4",
-        padding: 8,
-        borderRadius: 9,
-        alignSelf: "stretch",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        icon: {
-            fill: "#414055",
-            height: 22,
-            width: 22
-        },
-    },
-    profile_button_colored: {
-        padding: 12,
-    },
-    profile_button_with_text: {
-        paddingHorizontal: 12,
-        text: {
-            marginLeft: 4,
-            color: "#414055",
-            fontFamily: "GilroyBold",
-            fontSize: 14,
-        }
-    },
-    profile_extras: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 12,
-        paddingBottom: 0
-    },
-    profile_extra: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginLeft: 7,
-        icon: {
-            height: 15,
-            width: 15,
-            fill: "#8E949B"
-        },
-        text: {
-            fontFamily: "GilroyMedium",
-            fontSize: 12,
-            color: "#687076",
-            marginLeft: 2,
-        }
-    }
-});
