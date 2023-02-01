@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../themes/themes";
+import getTheme from "../../constants/colors";
 const theme = getTheme();
 
 const styles = StyleSheet.create({
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         height: 55,
         width: 55,
         borderRadius: 100,
-        backgroundColor: "purple"
+        backgroundColor: theme.THEME_COLOR
     },
     user_details: {
         marginLeft: 10,
@@ -37,6 +37,39 @@ const styles = StyleSheet.create({
         marginTop: 12,
         borderColor: theme.BORDER_COLOR,
         borderBottomWidth: 1,
+    },
+
+    menu_top: {
+        padding: 12,
+        paddingTop: 5,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    menu_title: {
+        fontSize: 28,
+        fontFamily: "GilroyBold",
+        color: theme.PRIMARY_COLOR,
+    },
+
+    menu_buttons: {
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    menu_button: {
+        height: 28,
+        width: 28,
+        borderRadius: 100,
+        backgroundColor: "rgba(185,190,193,0.3)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    menu_icon: {
+        height: 20,
+        width: 20,
+        fill: theme.PRIMARY_COLOR
     },
 
     category_container_left: {
@@ -81,6 +114,17 @@ const styles = StyleSheet.create({
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,
         }
+    },
+
+    footer: {
+        paddingBottom: 20
+    },
+    footer_text: {
+        fontFamily: "GilroyMedium",
+        fontSize: 13,
+        padding: 15,
+        textAlign: "center",
+        color: "#5d6d74"
     }
 });
 

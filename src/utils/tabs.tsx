@@ -1,8 +1,8 @@
-import Feed from "../screens/Feed/Feed";
-import Search from "../screens/Search/Search";
-import Profile from "../screens/Profile/Profile";
+import Feed from "../views/Feed/Feed";
+import Search from "../views/Search/Search";
+import Profile from "../views/Profile/Profile";
 import AppStyles from "../App.style";
-import {Dimensions, TouchableOpacity, View} from "react-native";
+import {TouchableOpacity, View} from "react-native";
 import {
     PlusOutlineIcon,
     GridFilledIcon,
@@ -12,15 +12,12 @@ import {
     SearchOutlineIcon,
     UserFilledIcon,
     UserOutlineIcon,
-    FlashOutlineIcon,
-    FlashFilledIcon
 } from "./icons";
-import React, {useCallback, useRef} from "react";
+import React, {useCallback, useMemo, useRef} from "react";
 import {useRoute} from "@react-navigation/native";
 import {BottomSheetModal} from "@gorhom/bottom-sheet";
 import BottomModal from "./modal";
 import Menu from "../components/Menu/Menu";
-import { BlurView } from "expo-blur";
 
 export default function Tabs({ navigation }: any) {
     const route = useRoute();
@@ -32,7 +29,7 @@ export default function Tabs({ navigation }: any) {
 
     return (
         <View style={AppStyles.bottomBar}>
-            <BottomModal modalRef={bottomSheetModalRef}>
+            <BottomModal modalRef={bottomSheetModalRef} snapPoints={useMemo(() => ["50%", "50%"], [])}>
                 <Menu navigation={navigation} modalRef={bottomSheetModalRef} />
             </BottomModal>
 
@@ -57,7 +54,7 @@ export default function Tabs({ navigation }: any) {
                 accessibilityRole="button"
                 activeOpacity={0.8}
                 style={AppStyles.buttonContainer}
-                onPress={handlePresentModalPress}
+                onPress={() => navigation.navigate("CreatePost")}
             >
                 <PlusOutlineIcon style={AppStyles.buttonContainer.icon} />
             </TouchableOpacity>

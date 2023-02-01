@@ -3,12 +3,12 @@
         "name": "Glynet Demo",
         "slug": "Glynet",
         "description": "New shape of social media",
-        "version": "1.4.0",
+        "version": "1.5.0",
         "privacy": "unlisted",
         "orientation": "portrait",
         "icon": "./assets/icon.png",
         "userInterfaceStyle": "light",
-        "platforms": ["ios", "android"],
+        "platforms": ["ios", "android", "web"],
         "splash": {
             "image": "./assets/splash.png",
             "resizeMode": "contain",
@@ -29,8 +29,22 @@
                 "foregroundImage": "./assets/android-icon.png",
                 "backgroundColor": "#28bcde"
             },
+            "permissions": ["CAMERA", "READ_CONTACTS", "VIBRATE", "FOREGROUND_SERVICE", "SCHEDULE_EXACT_ALARM", "RECEIVE_BOOT_COMPLETED"],
             "package": "com.glynet.glynetapp"
         },
+        "plugins": [
+            [
+                "expo-notifications",
+                {
+                    "icon": "./assets/notification-icon.png",
+                    "color": "#ffffff",
+                    "sounds": [
+                        "./assets/sounds/AkasyaDuragi.mp3",
+                        "./assets/sounds/NewMessage.mp3"
+                    ]
+                }
+            ]
+        ],
         "web": {
             "favicon": "./assets/favicon.png"
         },

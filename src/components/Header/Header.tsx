@@ -3,6 +3,7 @@ import {Text, TextInput, TouchableOpacity, View} from "react-native";
 import {ArrowLeftIcon, BellOutlineIcon, CameraIcon, SearchOutlineIcon} from "../../utils/icons";
 import * as React from "react";
 import { useRoute } from '@react-navigation/native';
+import {sendNotification} from "../../hooks/sendNotifications";
 
 export default function Header({ title, navigation }: any) {
     const route = useRoute();
@@ -65,7 +66,13 @@ export default function Header({ title, navigation }: any) {
                         <TouchableOpacity
                             activeOpacity={0.8}
                             style={AppStyles.headerButton}
-                            onPress={() => navigation.navigate("Notifications")}
+                            onPress={() => {
+                                navigation.navigate("Notifications");
+                                sendNotification({
+                                    title: "Yeni takip isteğin var",
+                                    body: "@ece seni takip etmek istiyor"
+                                }).then((r) => console.log("Header.tsx", r))
+                            }}
                         >
                             <BellOutlineIcon style={AppStyles.headerButton.icon}/>
                         </TouchableOpacity>

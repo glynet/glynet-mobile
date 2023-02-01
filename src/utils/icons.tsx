@@ -14,6 +14,19 @@ function PaperPlaneIcon(props: any) {
     )
 }
 
+function CameraFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="camera">
+                    <Circle cx={12} cy={14} r={1.5} />
+                    <Path d="M19 7h-3V5.5A2.5 2.5 0 0013.5 3h-3A2.5 2.5 0 008 5.5V7H5a3 3 0 00-3 3v8a3 3 0 003 3h14a3 3 0 003-3v-8a3 3 0 00-3-3zm-9-1.5a.5.5 0 01.5-.5h3a.5.5 0 01.5.5V7h-4zm2 12a3.5 3.5 0 113.5-3.5 3.5 3.5 0 01-3.5 3.5z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
 function CameraIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -22,6 +35,19 @@ function CameraIcon(props: any) {
                     <Path d="M19 7h-3V5.5A2.5 2.5 0 0013.5 3h-3A2.5 2.5 0 008 5.5V7H5a3 3 0 00-3 3v8a3 3 0 003 3h14a3 3 0 003-3v-8a3 3 0 00-3-3zm-9-1.5a.5.5 0 01.5-.5h3a.5.5 0 01.5.5V7h-4zM20 18a1 1 0 01-1 1H5a1 1 0 01-1-1v-8a1 1 0 011-1h14a1 1 0 011 1z" />
                     <Path d="M12 10.5a3.5 3.5 0 103.5 3.5 3.5 3.5 0 00-3.5-3.5zm0 5a1.5 1.5 0 111.5-1.5 1.5 1.5 0 01-1.5 1.5z" />
                 </G>
+            </G>
+        </Svg>
+    )
+}
+
+function VideoCameraFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M21 7.15a1.7 1.7 0 00-1.85.3l-2.15 2V8a3 3 0 00-3-3H5a3 3 0 00-3 3v8a3 3 0 003 3h9a3 3 0 003-3v-1.45l2.16 2a1.74 1.74 0 001.16.45 1.68 1.68 0 00.69-.15 1.6 1.6 0 001-1.48V8.63A1.6 1.6 0 0021 7.15z"
+                    data-name="video"
+                />
             </G>
         </Svg>
     )
@@ -491,6 +517,19 @@ function CrossIcon(props: any) {
     )
 }
 
+function VerifiedIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm4.3 7.61l-4.57 6a1 1 0 01-.79.39 1 1 0 01-.79-.38l-2.44-3.11a1 1 0 011.58-1.23l1.63 2.08 3.78-5a1 1 0 111.6 1.22z"
+                    data-name="checkmark-circle-2"
+                />
+            </G>
+        </Svg>
+    )
+}
+
 export {
     PaperPlaneIcon,
     CameraIcon,
@@ -539,5 +578,9 @@ export {
     ArrowRightIosIcon,
     EyeOutlineIcon,
     CheckmarkIcon,
-    CrossIcon
+    CrossIcon,
+
+    VideoCameraFilledIcon,
+    CameraFilledIcon,
+    VerifiedIcon
 };

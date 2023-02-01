@@ -1,5 +1,5 @@
 import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "./themes/themes";
+import getTheme from "./constants/colors";
 
 const theme = getTheme();
 
