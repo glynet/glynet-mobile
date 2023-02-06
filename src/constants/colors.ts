@@ -15,6 +15,7 @@ export default function getTheme() {
 
             PRIMARY_COLOR: "#c9c7c7",
             SECONDARY_COLOR: "#9b9999",
+            TERTIARY_COLOR: "#747272",
 
             POST_BUTTON_BACKGROUND: "#131515",
             POST_BUTTON_COLOR: "#7c7c80",
@@ -39,6 +40,7 @@ export default function getTheme() {
 
             PRIMARY_COLOR: "#1b2733",
             SECONDARY_COLOR: "#4e535a",
+            TERTIARY_COLOR: "#747272",
 
             POST_BUTTON_BACKGROUND: "rgba(233,233,235,0.62)",
             POST_BUTTON_COLOR: "#656b6f",

@@ -32,6 +32,7 @@ import * as Notifications from "expo-notifications";
 
 import { NativeViewGestureHandler } from "react-native-gesture-handler";
 import CreatePost from "./views/CreatePost/CreatePost";
+import Comments from "./views/Comments/Comments";
 
 const Stack = createStackNavigator();
 
@@ -75,6 +76,7 @@ export default function App() {
                                     <Stack.Screen name="CreatePost" component={CreatePost} />
                                     <Stack.Screen name="UserList" component={UserList} />
                                     <Stack.Screen name="DiscoverPeople" component={DiscoverPeople} />
+                                    <Stack.Screen name="Comments" component={Comments} />
 
                                     <Stack.Screen name="Settings" component={Settings} />
                                     <Stack.Screen name="PasswordSettings" component={PasswordSettings} />

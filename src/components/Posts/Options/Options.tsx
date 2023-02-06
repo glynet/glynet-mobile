@@ -1,12 +1,8 @@
 import React from "react";
 import {View, Text, Image, TouchableOpacity, ScrollView} from "react-native";
-import {
-    BookmarkOutlineIcon, CompassOutlineIcon, CrossIcon,
-    HeartOutlineIcon,
-    PencilIcon, TrashIcon,
-    UserOutlineIcon
-} from "../../../utils/icons";
+import {AttachmentIcon, CrossIcon, TrashIcon} from "../../../utils/icons";
 import styles from "../../Menu/Menu.style";
+import optionStyles from "./Options.style";
 
 export default function Options({ navigation, modalRef }: any) {
     return (
@@ -20,58 +16,14 @@ export default function Options({ navigation, modalRef }: any) {
                 </View>
             </View>
 
-            <View style={styles.menu_container}>
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("Settings");
-                    modalRef.current?.close();
-                }}>
-                    <View style={styles.category_container_left}>
-                        <View style={styles.category_container.icon_container}>
-                            <UserOutlineIcon style={styles.category_container.icon} />
-                        </View>
-                        <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bağlantıyı Kopyala</Text>
-                        </View>
-                    </View>
+            <View style={optionStyles.container}>
+                <TouchableOpacity activeOpacity={0.8} style={optionStyles.button}>
+                    <AttachmentIcon style={optionStyles.button_icon} />
+                    <Text style={optionStyles.button_text}>Bağlantıyı Kopyala</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
-                    modalRef.current?.close();
-                }}>
-                    <View style={styles.category_container_left}>
-                        <View style={styles.category_container.icon_container}>
-                            <PencilIcon style={styles.category_container.icon} />
-                        </View>
-                        <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bildir</Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("DiscoverPeople");
-                    modalRef.current?.close();
-                }}>
-                    <View style={styles.category_container_left}>
-                        <View style={styles.category_container.icon_container}>
-                            <CompassOutlineIcon style={styles.category_container.icon} />
-                        </View>
-                        <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>ID'yi Kopyala</Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("Likes");
-                    modalRef.current?.close();
-                }}>
-                    <View style={styles.category_container_left}>
-                        <View style={styles.category_container.icon_container}>
-                            <TrashIcon style={styles.category_container.icon} />
-                        </View>
-                        <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Gönderiyi Kaldır</Text>
-                        </View>
-                    </View>
+                <TouchableOpacity activeOpacity={0.8} style={optionStyles.button}>
+                    <TrashIcon style={optionStyles.button_icon} />
+                    <Text style={optionStyles.button_text}>Kaldır</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>

@@ -45,7 +45,7 @@ export default function Post({ navigation }: any) {
 
     return (
         <View style={styles.post}>
-            <BottomModal modalRef={bottomSheetModalRef} snapPoints={useMemo(() => ["35%", "35%"], [])}>
+            <BottomModal modalRef={bottomSheetModalRef} snapPoints={useMemo(() => ["25%", "25%"], [])}>
                 <Options navigation={navigation} modalRef={bottomSheetModalRef} />
             </BottomModal>
 
@@ -120,16 +120,13 @@ export default function Post({ navigation }: any) {
                         {isLiked && <HeartFilledIcon style={[styles.post_button.icon, styles.post_button_red.icon]} />}
                         {!isLiked && <HeartOutlineIcon style={styles.post_button.icon} />}
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={{
-                        ...styles.post_button_part,
-                        alignItems: "flex-start",
-                    }} onPress={() => navigation.navigate("UserList", { title: "Beğenenler" })}>
-                        <Text style={[styles.post_button.text, isLiked ? styles.post_button_red.text : null]}>12</Text>
+                    <TouchableOpacity activeOpacity={0.8} style={{...styles.post_button_part, alignItems: "flex-start"}} onPress={() => navigation.navigate("UserList", { title: "Beğenenler" })}>
+                        <Text style={[styles.post_button.text, isLiked ? styles.post_button_red.text : null]}>{Math.floor(Math.random() * 100)}</Text>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }}>
+                <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }} onPress={() => navigation.navigate("Comments")}>
                     <CommentIcon style={styles.post_button.icon} />
-                    <Text style={styles.post_button.text}>24</Text>
+                    <Text style={styles.post_button.text}>{Math.floor(Math.random() * 100)}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }} onPress={() => setMarked(!isMarked)}>
                     {isMarked && <BookmarkFilledIcon style={[styles.post_button.icon]} />}

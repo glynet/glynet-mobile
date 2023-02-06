@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     menu_title: {
-        fontSize: 28,
+        fontSize: 27,
         fontFamily: "GilroyBold",
         color: theme.PRIMARY_COLOR,
     },
