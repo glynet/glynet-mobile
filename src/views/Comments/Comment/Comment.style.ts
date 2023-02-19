@@ -30,9 +30,21 @@ const styles = StyleSheet.create({
     },
     comment_text: {
         fontSize: 14,
-        marginTop: 3,
+        marginTop: 2,
         color: theme.SECONDARY_COLOR,
         fontFamily: "GilroyMedium",
+    },
+    comment_attachment_container: {
+        paddingTop: 10,
+        paddingBottom: 3,
+    },
+    comment_attachment_content: {
+        height: 130,
+        width: undefined,
+        resizeMode: "contain",
+        borderRadius: 10,
+        aspectRatio: 1,
+        flex: 1,
     },
     comment_date: {
         fontSize: 12,

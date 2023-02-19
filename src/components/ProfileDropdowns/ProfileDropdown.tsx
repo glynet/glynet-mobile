@@ -1,9 +1,9 @@
 import React from "react";
-import {View, Text, TouchableOpacity, ScrollView} from "react-native";
-import {AttachmentIcon, BookmarkOutlineIcon, CrossIcon, FlagIcon, TrashIcon} from "../../../utils/icons";
-import styles from "../../Menu/Menu.style";
+import {View, Text, TouchableOpacity, ScrollView, Share} from "react-native";
+import {CrossIcon, CrossIconRounded, FlagIcon, InfoIcon, MuteIcon, PaperPlaneIcon} from "../../utils/icons";
+import styles from "../Menu/Menu.style";
 
-export default function Options({ navigation, modalRef }: any) {
+export default function ProfileDropdown({ navigation, modalRef }: any) {
     return (
         <ScrollView>
             <View style={styles.menu_top}>
@@ -17,36 +17,61 @@ export default function Options({ navigation, modalRef }: any) {
 
             <View style={{...styles.menu_container, marginTop: 0 }}>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
-                    modalRef.current?.close();
+                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={async () => {
+                    await Share.share({
+                        message: "https://www.glynet.com/@alpsar4l",
+                    })
                 }}>
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
-                            <BookmarkOutlineIcon style={styles.category_container.icon} />
+                            <PaperPlaneIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Kaydet</Text>
+                            <Text style={styles.category_container.title}>Profili Paylaş</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
                     modalRef.current?.close();
                 }}>
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
-                            <AttachmentIcon style={styles.category_container.icon} />
+                            <CrossIconRounded style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bağlantıyı Kopyala</Text>
+                            <Text style={styles.category_container.title}>Engelle</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
+                    modalRef.current?.close();
+                }}>
+                    <View style={styles.category_container_left}>
+                        <View style={styles.category_container.icon_container}>
+                            <MuteIcon style={styles.category_container.icon} />
+                        </View>
+                        <View style={styles.category_container.details}>
+                            <Text style={styles.category_container.title}>Sessize Al</Text>
+                        </View>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
+                    modalRef.current?.close();
+                }}>
+                    <View style={styles.category_container_left}>
+                        <View style={styles.category_container.icon_container}>
+                            <InfoIcon style={styles.category_container.icon} />
+                        </View>
+                        <View style={styles.category_container.details}>
+                            <Text style={styles.category_container.title}>Bu Profil Hakkında</Text>
+                        </View>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
                     modalRef.current?.close();
                 }}>
                     <View style={styles.category_container_left}>
@@ -55,20 +80,6 @@ export default function Options({ navigation, modalRef }: any) {
                         </View>
                         <View style={styles.category_container.details}>
                             <Text style={styles.category_container.title}>Bildir</Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
-                    modalRef.current?.close();
-                }}>
-                    <View style={styles.category_container_left}>
-                        <View style={styles.category_container.icon_container}>
-                            <TrashIcon style={styles.category_container.icon} />
-                        </View>
-                        <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Kaldır</Text>
                         </View>
                     </View>
                 </TouchableOpacity>

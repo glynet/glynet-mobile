@@ -1,9 +1,9 @@
 import React from "react";
 import {View, Text, TouchableOpacity, ScrollView} from "react-native";
-import {AttachmentIcon, BookmarkOutlineIcon, CrossIcon, FlagIcon, TrashIcon} from "../../../utils/icons";
-import styles from "../../Menu/Menu.style";
+import {AttachmentIcon, BookmarkOutlineIcon, CrossIcon, FlagIcon, TextIcon, TrashIcon} from "../../../utils/icons";
+import styles from "../../../components/Menu/Menu.style";
 
-export default function Options({ navigation, modalRef }: any) {
+export default function Dropdown({ navigation, modalRef }: any) {
     return (
         <ScrollView>
             <View style={styles.menu_top}>
@@ -23,24 +23,10 @@ export default function Options({ navigation, modalRef }: any) {
                 }}>
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
-                            <BookmarkOutlineIcon style={styles.category_container.icon} />
+                            <TextIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Kaydet</Text>
-                        </View>
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
-                    modalRef.current?.close();
-                }}>
-                    <View style={styles.category_container_left}>
-                        <View style={styles.category_container.icon_container}>
-                            <AttachmentIcon style={styles.category_container.icon} />
-                        </View>
-                        <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bağlantıyı Kopyala</Text>
+                            <Text style={styles.category_container.title}>Metni Kopyala</Text>
                         </View>
                     </View>
                 </TouchableOpacity>

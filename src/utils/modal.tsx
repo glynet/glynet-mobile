@@ -23,7 +23,7 @@ export default function BottomModal(props: any) {
                 shadowOpacity: 0.50,
                 shadowRadius: 10.27,
                 elevation: 10,
-                borderTopWidth: Platform.OS === "android" ? 1 : 0,
+                borderTopWidth: 0, // Platform.OS === "android" ? 1 : 0,
                 borderTopColor: "rgba(130,130,130,0.27)",
                 borderRadius: 12,
             }}

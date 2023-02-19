@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.BOX_BACKGROUND,
         borderRadius: 12,
         flex: 1,
+        height: Dimensions.get("window").height - 80
     },
     top: {
         padding: 12,
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
         textAlign: "left",
         color: theme.PRIMARY_COLOR,
         margin: 12,
-        marginTop: 0,
+        // marginTop: 0,
         fontSize: 19,
         maxHeight: 200,
     },
@@ -82,6 +83,9 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         borderTopWidth: theme.BORDER_WIDTH,
         borderColor: theme.BORDER_COLOR,
+        position: "absolute",
+        bottom: 0,
+        width: "100%",
     },
     send_container: {
         padding: 12,
@@ -125,6 +129,8 @@ const styles = StyleSheet.create({
         display: "flex",
         marginBottom: 12,
         paddingLeft: 12,
+        position: "absolute",
+        bottom: 55,
     },
     attachment: {
         marginRight: 12,

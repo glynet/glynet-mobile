@@ -45,7 +45,7 @@ export default function Post({ navigation }: any) {
 
     return (
         <View style={styles.post}>
-            <BottomModal modalRef={bottomSheetModalRef} snapPoints={useMemo(() => ["25%", "25%"], [])}>
+            <BottomModal modalRef={bottomSheetModalRef} snapPoints={useMemo(() => ["35%", "35%"], [])}>
                 <Options navigation={navigation} modalRef={bottomSheetModalRef} />
             </BottomModal>
 

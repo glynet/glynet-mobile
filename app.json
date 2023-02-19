@@ -1,57 +1,66 @@
 {
-    "expo": {
-        "name": "Glynet Demo",
-        "slug": "Glynet",
-        "description": "New shape of social media",
-        "version": "1.5.0",
-        "privacy": "unlisted",
-        "orientation": "portrait",
-        "icon": "./assets/icon.png",
-        "userInterfaceStyle": "light",
-        "platforms": ["ios", "android", "web"],
-        "splash": {
-            "image": "./assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": [
-            "**/*"
-        ],
-        "ios": {
-            "supportsTablet": false,
-            "bundleIdentifier": "com.glynet.glynetapp"
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/android-icon.png",
-                "backgroundColor": "#28bcde"
-            },
-            "permissions": ["CAMERA", "READ_CONTACTS", "VIBRATE", "FOREGROUND_SERVICE", "SCHEDULE_EXACT_ALARM", "RECEIVE_BOOT_COMPLETED"],
-            "package": "com.glynet.glynetapp"
-        },
-        "plugins": [
-            [
-                "expo-notifications",
-                {
-                    "icon": "./assets/notification-icon.png",
-                    "color": "#ffffff",
-                    "sounds": [
-                        "./assets/sounds/AkasyaDuragi.mp3",
-                        "./assets/sounds/NewMessage.mp3"
-                    ]
-                }
-            ]
-        ],
-        "web": {
-            "favicon": "./assets/favicon.png"
-        },
-        "extra": {
-            "eas": {
-                "projectId": "83dd14d9-520d-4d24-ab4a-7b98fe816203"
-            }
+  "expo": {
+    "name": "Glynet",
+    "slug": "Glynet",
+    "description": "New shape of social media",
+    "version": "1.5.0",
+    "privacy": "unlisted",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/83dd14d9-520d-4d24-ab4a-7b98fe816203"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.glynet.glynetapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon.png",
+        "backgroundColor": "#28bcde"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_CONTACTS",
+        "VIBRATE",
+        "FOREGROUND_SERVICE",
+        "SCHEDULE_EXACT_ALARM",
+        "RECEIVE_BOOT_COMPLETED"
+      ],
+      "package": "com.glynet.glynetapp"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#ffffff"
         }
-    }
+      ]
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "83dd14d9-520d-4d24-ab4a-7b98fe816203"
+      }
+    },
+    "runtimeVersion": "1.0.0"
+  }
 }

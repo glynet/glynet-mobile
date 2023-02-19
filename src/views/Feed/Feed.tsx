@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import Posts from "../../components/Posts/Posts";
 import Shots from "./Shots/Shots";
 import ScreenContainer from "../../utils/screen";

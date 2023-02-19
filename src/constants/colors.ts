@@ -45,7 +45,7 @@ export default function getTheme() {
             POST_BUTTON_BACKGROUND: "rgba(233,233,235,0.62)",
             POST_BUTTON_COLOR: "#656b6f",
 
-            BUTTON_BACKGROUND: "#F0F1F4",
+            BUTTON_BACKGROUND: "#f4f5f5",
             BUTTON_COLOR: "#414055",
 
             THEME_COLOR: "#2D00C6",

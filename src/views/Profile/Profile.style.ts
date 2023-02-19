@@ -23,8 +23,9 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 0,
     },
     profile_content: {
-        marginTop: -72.5,
-        alignItems: "center",
+        marginTop: -85,
+        alignItems: "flex-start",
+        padding: 14,
     },
     profile_avatar_container: {
         height: avatarSize + 14,
@@ -40,45 +41,82 @@ const styles = StyleSheet.create({
         height: avatarSize,
         width: avatarSize,
         borderRadius: 100,
+        backgroundColor: theme.THEME_COLOR,
+    },
+    profile_details_website: {
+        marginTop: 7,
+        fontFamily: "GilroyMedium",
+        fontSize: Dimensions.get("window").width / 29,
+        color: theme.THEME_COLOR,
     },
     profile_details: {
         marginTop: 10,
-        alignItems: "center",
         name: {
             fontFamily: "GilroyBold",
             fontSize: Dimensions.get("window").width / 21,
             color: theme.PRIMARY_COLOR
         },
         username: {
-            marginTop: 5,
+            marginTop: 3,
             fontFamily: "GilroyMedium",
-            fontSize: Dimensions.get("window").width / 30,
+            fontSize: Dimensions.get("window").width / 27,
+            color: theme.PRIMARY_COLOR
+        },
+        about: {
+            marginTop: 10,
+            fontFamily: "GilroyMedium",
+            fontSize: Dimensions.get("window").width / 29,
             color: theme.PRIMARY_COLOR
         }
     },
+    profile_metrics_container: {
+        flexDirection: "row",
+        alignItems: "center",
+        paddingTop: 5,
+        paddingBottom: 0,
+    },
+    profile_metric: {
+        fontSize: 14,
+        color: theme.SECONDARY_COLOR,
+        paddingVertical: 5,
+    },
+    profile_metric_value: {
+        fontFamily: "GilroyBold"
+    },
     profile_buttons: {
         flexDirection: "row",
-        marginTop: 15 - 12,
-        padding: 12,
+        marginTop: 15,
         alignItems: "center",
-        justifyContent: "center",
-        width: Dimensions.get("window").width,
+        width: Dimensions.get("window").width - 20,
+    },
+    profile_badges: {
+        position: "absolute",
+        right: 14,
+        top: 85 + (14 - 2),
+    },
+    profile_badge: {
+        fill: theme.PRIMARY_COLOR,
+        height: 19,
+        width: 19,
+        marginLeft: 4,
     },
     empty_column: {
         width: 7
     },
     profile_button: {
         backgroundColor: theme.BUTTON_BACKGROUND,
-        padding: 9,
+        padding: 8,
         borderRadius: 9,
         alignSelf: "stretch",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        borderWidth: 0.4,
+        borderColor: theme.BORDER_COLOR,
         icon: {
             fill: theme.BUTTON_COLOR,
-            height: 22,
-            width: 22
+            height: 19,
+            width: 19
         },
     },
     profile_button_with_text: {
@@ -91,25 +129,24 @@ const styles = StyleSheet.create({
         }
     },
     profile_extras: {
-        flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center",
-        padding: 12,
-        paddingBottom: 0
+        marginLeft: -7,
+        marginTop: 6,
     },
     profile_extra: {
         flexDirection: "row",
         alignItems: "center",
         marginLeft: 7,
+        marginTop: 3,
         icon: {
             height: Dimensions.get("window").width / 20,
             width: Dimensions.get("window").width / 20,
-            fill: theme.PRIMARY_COLOR
+            fill: theme.SECONDARY_COLOR
         },
         text: {
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 29,
-            color: theme.PRIMARY_COLOR,
+            color: theme.SECONDARY_COLOR,
             marginLeft: 2,
         }
     }

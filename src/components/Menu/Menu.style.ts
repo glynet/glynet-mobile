@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection: "row",
         borderWidth: 1,
-        margin: 12,
+        margin: 15,
         marginTop: 0,
         marginBottom: 3,
         borderColor: "rgba(227,223,223,0.93)",
@@ -34,14 +34,14 @@ const styles = StyleSheet.create({
         }
     },
     menu_container: {
-        marginTop: 12,
+        marginTop: 15,
+        marginBottom: 0,
         borderColor: theme.BORDER_COLOR,
-        borderBottomWidth: 1,
+        borderBottomWidth: 0,
     },
 
     menu_top: {
-        padding: 12,
-        paddingTop: 5,
+        padding: 15,
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",

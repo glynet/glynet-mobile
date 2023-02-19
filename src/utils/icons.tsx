@@ -27,6 +27,19 @@ function CameraFilledIcon(props: any) {
     )
 }
 
+function MentionIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M13 2a10 10 0 00-5 19.1 10.15 10.15 0 004 .9 10 10 0 006.08-2.06 1 1 0 00.19-1.4 1 1 0 00-1.41-.19A8 8 0 1112.77 4 8.17 8.17 0 0120 12.22v.68a1.71 1.71 0 01-1.78 1.7 1.82 1.82 0 01-1.62-1.88V8.4a1 1 0 00-1-1 1 1 0 00-1 .87 5 5 0 00-3.44-1.36A5.09 5.09 0 1015.31 15a3.6 3.6 0 005.55.61A3.67 3.67 0 0022 12.9v-.68A10.2 10.2 0 0013 2zm-1.82 13.09A3.09 3.09 0 1114.27 12a3.1 3.1 0 01-3.09 3.09z"
+                    data-name="at"
+                />
+            </G>
+        </Svg>
+    )
+}
+
 function CameraIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -263,6 +276,19 @@ function WebIcon(props: any) {
     )
 }
 
+function CheckmarkIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1 1 0 111.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33z"
+                    data-name="checkmark"
+                />
+            </G>
+        </Svg>
+    )
+}
+
 function ArrowLeftIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -362,6 +388,19 @@ function PencilIcon(props: any) {
     )
 }
 
+function TextIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M20 4H4a1 1 0 00-1 1v3a1 1 0 002 0V6h6v13H9a1 1 0 000 2h6a1 1 0 000-2h-2V6h6v2a1 1 0 002 0V5a1 1 0 00-1-1z"
+                    data-name="text"
+                />
+            </G>
+        </Svg>
+    )
+}
+
 function AlbumOutlineIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -401,6 +440,7 @@ function MailIcon(props: any) {
     )
 }
 
+
 function TrashIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -433,6 +473,71 @@ function SunIcon(props: any) {
             <G data-name="Layer 2">
                 <G data-name="sun">
                     <Path d="M12 6a1 1 0 001-1V3a1 1 0 00-2 0v2a1 1 0 001 1zM21 11h-2a1 1 0 000 2h2a1 1 0 000-2zM6 12a1 1 0 00-1-1H3a1 1 0 000 2h2a1 1 0 001-1zM6.22 5a1 1 0 00-1.39 1.47l1.44 1.39a1 1 0 00.73.28 1 1 0 00.72-.31 1 1 0 000-1.41zM17 8.14a1 1 0 00.69-.28l1.44-1.39A1 1 0 0017.78 5l-1.44 1.42a1 1 0 000 1.41 1 1 0 00.66.31zM12 18a1 1 0 00-1 1v2a1 1 0 002 0v-2a1 1 0 00-1-1zM17.73 16.14a1 1 0 00-1.39 1.44L17.78 19a1 1 0 00.69.28 1 1 0 00.72-.3 1 1 0 000-1.42zM6.27 16.14l-1.44 1.39a1 1 0 000 1.42 1 1 0 00.72.3 1 1 0 00.67-.25l1.44-1.39a1 1 0 00-1.39-1.44zM12 8a4 4 0 104 4 4 4 0 00-4-4zm0 6a2 2 0 112-2 2 2 0 01-2 2z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function FlagIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M19.27 4.68a1.79 1.79 0 00-1.6-.25 7.53 7.53 0 01-2.17.28 8.54 8.54 0 01-3.13-.78A10.15 10.15 0 008.5 3c-2.89 0-4 1-4.2 1.14a1 1 0 00-.3.72V20a1 1 0 002 0v-4.3a6.28 6.28 0 012.5-.41 8.54 8.54 0 013.13.78 10.15 10.15 0 003.87.93 7.66 7.66 0 003.5-.7 1.74 1.74 0 001-1.55V6.11a1.77 1.77 0 00-.73-1.43zM18 14.59a6.32 6.32 0 01-2.5.41 8.36 8.36 0 01-3.13-.79 10.34 10.34 0 00-3.87-.92 9.51 9.51 0 00-2.5.29V5.42A6.13 6.13 0 018.5 5a8.36 8.36 0 013.13.79 10.34 10.34 0 003.87.92 9.41 9.41 0 002.5-.3z"
+                    data-name="flag"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function MuteIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="volume-off">
+                    <Path d="M4.71 3.29a1 1 0 00-1.42 1.42l16 16a1 1 0 001.42 0 1 1 0 000-1.42zM16.91 14.08l1.44 1.44a6 6 0 00-.07-7.15 1 1 0 10-1.56 1.26 4 4 0 01.19 4.45z" />
+                    <Path d="M21 12a6.51 6.51 0 01-1.78 4.39l1.42 1.42A8.53 8.53 0 0023 12a8.75 8.75 0 00-3.36-6.77 1 1 0 10-1.28 1.54A6.8 6.8 0 0121 12zM13.5 18.1l-5.1-3.5a1 1 0 00-.57-.17H3.5V9.57h3.24l-2-2H2.5a1 1 0 00-1 1v6.86a1 1 0 001 1h5l6.41 4.4a1.06 1.06 0 00.57.17 1 1 0 001-1v-1.67l-2-2zM13.5 5.9v4.77l2 2V4a1 1 0 00-1.57-.83L9.23 6.4l1.44 1.44z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function InfoIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="info">
+                    <Path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8z" />
+                    <Circle cx={12} cy={8} r={1} />
+                    <Path d="M12 10a1 1 0 00-1 1v5a1 1 0 002 0v-5a1 1 0 00-1-1z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function BellOffIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="bell-off">
+                    <Path d="M8.9 5.17A4.67 4.67 0 0112.64 4a4.86 4.86 0 014.08 4.9v4.5a1.92 1.92 0 00.1.59l3.6 3.6a1.58 1.58 0 00.45-.6 1.62 1.62 0 00-.35-1.78l-1.8-1.81V8.94a6.86 6.86 0 00-5.82-6.88 6.71 6.71 0 00-5.32 1.61 6.88 6.88 0 00-.58.54l1.47 1.43a4.79 4.79 0 01.43-.47zM14 16.86l-.83-.86H5.51l1.18-1.18a2 2 0 00.59-1.42v-3.29l-2-2a5.68 5.68 0 000 .59v4.7l-1.8 1.81A1.63 1.63 0 004.64 18H8v.34A3.84 3.84 0 0012 22a3.88 3.88 0 004-3.22l-.83-.78zM12 20a1.88 1.88 0 01-2-1.66V18h4v.34A1.88 1.88 0 0112 20zM20.71 19.29L19.41 18l-2-2-9.52-9.53L6.42 5 4.71 3.29a1 1 0 00-1.42 1.42L5.53 7l1.75 1.7 7.31 7.3.07.07L16 17.41l.59.59 2.7 2.71a1 1 0 001.42 0 1 1 0 000-1.42z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function CrossIconRounded(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="close-circle">
+                    <Path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8z" />
+                    <Path d="M14.71 9.29a1 1 0 00-1.42 0L12 10.59l-1.29-1.3a1 1 0 00-1.42 1.42l1.3 1.29-1.3 1.29a1 1 0 000 1.42 1 1 0 001.42 0l1.29-1.3 1.29 1.3a1 1 0 001.42 0 1 1 0 000-1.42L13.41 12l1.3-1.29a1 1 0 000-1.42z" />
                 </G>
             </G>
         </Svg>
@@ -491,7 +596,7 @@ function EyeOutlineIcon(props: any) {
     )
 }
 
-function CheckmarkIcon(props: any) {
+function CheckmarkOutlineIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
             <G data-name="Layer 2">
@@ -537,6 +642,19 @@ function AttachmentIcon(props: any) {
                 <Path
                     d="M9.29 21a6.23 6.23 0 01-4.43-1.88 6 6 0 01-.22-8.49L12 3.2A4.11 4.11 0 0115 2a4.48 4.48 0 013.19 1.35 4.36 4.36 0 01.15 6.13l-7.4 7.43a2.54 2.54 0 01-1.81.75 2.72 2.72 0 01-1.95-.82 2.68 2.68 0 01-.08-3.77l6.83-6.86a1 1 0 011.37 1.41l-6.83 6.86a.68.68 0 00.08.95.78.78 0 00.53.23.56.56 0 00.4-.16l7.39-7.43a2.36 2.36 0 00-.15-3.31 2.38 2.38 0 00-3.27-.15L6.06 12a4 4 0 00.22 5.67 4.22 4.22 0 003 1.29 3.67 3.67 0 002.61-1.06l7.39-7.43a1 1 0 111.42 1.41l-7.39 7.43A5.65 5.65 0 019.29 21z"
                     data-name="attach"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function BellFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M20.52 15.21l-1.8-1.81V8.94a6.86 6.86 0 00-5.82-6.88 6.74 6.74 0 00-7.62 6.67v4.67l-1.8 1.81A1.64 1.64 0 004.64 18H8v.34A3.84 3.84 0 0012 22a3.84 3.84 0 004-3.66V18h3.36a1.64 1.64 0 001.16-2.79zM14 18.34A1.88 1.88 0 0112 20a1.88 1.88 0 01-2-1.66V18h4z"
+                    data-name="bell"
                 />
             </G>
         </Svg>
@@ -596,5 +714,14 @@ export {
     VideoCameraFilledIcon,
     CameraFilledIcon,
     VerifiedIcon,
-    AttachmentIcon
+    AttachmentIcon,
+    FlagIcon,
+    MuteIcon,
+    InfoIcon,
+    CrossIconRounded,
+    BellOffIcon,
+    BellFilledIcon,
+    TextIcon,
+    MentionIcon,
+    CheckmarkOutlineIcon
 };

@@ -107,9 +107,6 @@ export default function Menu({ navigation, modalRef }: any) {
 
             </View>
 
-            <View style={styles.footer}>
-                <Text style={styles.footer_text}>Glynet &copy; 2023</Text>
-            </View>
         </ScrollView>
     );
 }

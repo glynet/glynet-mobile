@@ -2,7 +2,14 @@ import React, {useState} from "react";
 import {View, Text, Image, TouchableOpacity, TextInput, ScrollView, KeyboardAvoidingView, Platform} from "react-native";
 import ScreenContainer from "../../utils/screen";
 import styles from "./CreatePost.style";
-import {AlbumIcon, CameraFilledIcon, CrossIcon, LocationPinIcon, VideoCameraFilledIcon} from "../../utils/icons";
+import {
+    AlbumIcon,
+    CameraFilledIcon,
+    CrossIcon,
+    LocationPinIcon,
+    MentionIcon,
+    VideoCameraFilledIcon
+} from "../../utils/icons";
 import getTheme from "../../constants/colors";
 const theme = getTheme();
 
@@ -14,20 +21,6 @@ export default function CreatePost({ navigation }: any) {
     return (
         <ScreenContainer headerTitle={"Yeni Gönderi"} hideTabs={true} navigation={navigation}>
             <View style={styles.container}>
-
-                <View style={styles.top}>
-                    <Image
-                        style={styles.userAvatar}
-                        source={{
-                            uri: "https://source.unsplash.com/random?human"
-                        }}
-                    />
-                    <View style={styles.details}>
-                        <Text style={styles.userName}>Metehan Saral</Text>
-                        {location === null && <Text style={styles.username} onPress={() => setLocation("Caddebostan")}>@saral</Text>}
-                        {location !== null && <Text style={styles.location} onPress={() => setLocation(null)}>{location}</Text>}
-                    </View>
-                </View>
 
                 <View style={styles.content}>
                     <TextInput
@@ -73,16 +66,13 @@ export default function CreatePost({ navigation }: any) {
                             <CameraFilledIcon style={styles.button.icon} />
                         </View>
                     </View>
-                    <View style={styles.send_container}>
-                        <TouchableOpacity activeOpacity={0.8} style={[
-                            styles.send_button,
-                            !send ? styles.send_button_disabled : null
-                        ]}>
-                            <Text style={[
-                                styles.send_button.text,
-                                !send ? styles.send_button_disabled.text : null
-                            ]}>Paylaş</Text>
-                        </TouchableOpacity>
+                    <View style={styles.buttons}>
+                        <View style={styles.button}>
+                            <MentionIcon style={styles.button.icon} />
+                        </View>
+                        <View style={styles.button}>
+                            <LocationPinIcon style={styles.button.icon} />
+                        </View>
                     </View>
                 </View>
 

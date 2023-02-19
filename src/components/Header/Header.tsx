@@ -1,6 +1,6 @@
 import AppStyles from "../../App.style";
 import {Text, TextInput, TouchableOpacity, View} from "react-native";
-import {ArrowLeftIcon, BellOutlineIcon, CameraIcon, SearchOutlineIcon} from "../../utils/icons";
+import {ArrowLeftIcon, CheckmarkOutlineIcon, BellOutlineIcon, CameraIcon, SearchOutlineIcon} from "../../utils/icons";
 import * as React from "react";
 import { useRoute } from '@react-navigation/native';
 import {sendNotification} from "../../hooks/sendNotifications";
@@ -17,9 +17,15 @@ export default function Header({ title, navigation }: any) {
                 <TouchableOpacity activeOpacity={0.8} style={AppStyles.headerText}>
                     <Text style={AppStyles.headerText.text}>{title}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0} style={[AppStyles.headerButton, { opacity: 0 }]}>
-                    <ArrowLeftIcon style={AppStyles.headerButton.icon}/>
-                </TouchableOpacity>
+                {route.name === "CreatePost" ? (
+                    <TouchableOpacity activeOpacity={0} style={AppStyles.headerButton}>
+                        <CheckmarkOutlineIcon style={AppStyles.headerButton.icon}/>
+                    </TouchableOpacity>
+                ) : (
+                    <TouchableOpacity activeOpacity={0} style={[AppStyles.headerButton, { opacity: 0 }]}>
+                        <ArrowLeftIcon style={AppStyles.headerButton.icon}/>
+                    </TouchableOpacity>
+                )}
             </View>
         );
     } else {
@@ -36,10 +42,11 @@ export default function Header({ title, navigation }: any) {
                         </TouchableOpacity>
                         <View style={{ position: "relative", flexDirection: "row" }}>
                             <TextInput
-                                value="metehan sa"
+                                value="meteha"
                                 style={AppStyles.header_search_input}
                                 placeholder={"Glynet'te ara"}
                                 placeholderTextColor={"#556574"}
+                                autoFocus={true}
                             />
                             <View style={AppStyles.header_search_icon_container}>
                                 <SearchOutlineIcon style={{
