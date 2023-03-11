@@ -9,64 +9,39 @@ import { getSuggestions } from "./searchAPI";
 const theme = getTheme();
 
 export default function Search({ navigation }: any) {
-    const [writing, setWriting] = useState<boolean>(false);
     const state = useSelector((state) => state) as any;
 
     const [suggestions, setSuggestions] = useState<any>([]);
+
     useEffect(() => {
-        if (!writing) {
-            setWriting(true);
-            getSuggestions(state.header.searchInput, (response: any) => {
-                const data = response.data; 
-                
+        const timer = setTimeout(() => {
+            getSuggestions(state.header.searchInput, (response: any) => {                
                 setSuggestions(response.data);
-                setWriting(false);
             });
-        }
+        }, 600);
+  
+        return () => clearTimeout(timer)
     }, [state.header.searchInput]);
 
     return (
         <ScreenContainer hideTabs={true} navigation={navigation}>
             <View style={styles.results_container}>
                 {suggestions.map((item: any, index: number) => {
-                    const isProfile = item.type === "profile";
-
                     return (
                         <TouchableOpacity activeOpacity={0.7} style={styles.result_container} key={index}>
-                            {!isProfile && (
-                                <>
-                                    <View style={{
-                                        height: 35,
-                                        width: 35,
-                                        backgroundColor: theme.POST_BUTTON_BACKGROUND,
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        borderRadius: 100
-                                    }}>
-                                        <SearchOutlineIcon style={styles.result_icon} />
-                                    </View>
-                                    <Text style={styles.result_text}>{item.title}</Text>
-                                </>
-                            )}
-                            {isProfile && (
-                                <>
-                                    <Image
-                                        style={{
-                                            height: 35,
-                                            width: 35,
-                                            borderRadius: 100,
-                                            backgroundColor: theme.THEME_COLOR
-                                        }}
-                                        source={{
-                                            uri: global.CDN_URL + "/" + item.image
-                                        }}
-                                    />
-                                    <View>
-                                        <Text style={[styles.result_text, { fontFamily: "GilroyBold" }]}>{item.title}</Text>
-                                        <Text style={[styles.result_text, { fontSize: 14 }]}>{item.subtitle}</Text>
-                                    </View>
-                                </>
-                            )}
+                            {item.type !== "profile" && <View style={styles.result_icon_container}>
+                                <SearchOutlineIcon style={styles.result_icon} />
+                            </View>}
+                            {item.type === "profile" && <Image
+                                style={styles.result_icon_image}
+                                source={{
+                                    uri: `${global.CDN_URL}/${item.image}`
+                                }}
+                            />}
+                            <View>
+                                <Text style={[styles.result_text, item.type === "profile" && { fontFamily: "GilroyBold" }]}>{item.title}</Text>
+                                {item.type === "profile" && <Text style={[styles.result_text, { fontSize: 14 }]}>{item.subtitle}</Text>}
+                            </View>
                         </TouchableOpacity>
                     );
                 })}

@@ -16,6 +16,20 @@ const styles = StyleSheet.create({
         width: "100%",
         alignItems: "center"
     },
+    result_icon_container: {
+        height: 35,
+        width: 35,
+        backgroundColor: theme.POST_BUTTON_BACKGROUND,
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 100
+    },
+    result_icon_image: {
+        height: 35,
+        width: 35,
+        borderRadius: 100,
+        backgroundColor: theme.THEME_COLOR
+    },
     result_icon: {
         height: 20,
         width: 20,
@@ -24,7 +38,7 @@ const styles = StyleSheet.create({
     result_text: {
         color: theme.PRIMARY_COLOR,
         fontSize: 16,
-        marginLeft: 13,
+        marginLeft: 10,
     }
 });
 

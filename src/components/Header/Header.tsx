@@ -7,14 +7,15 @@ import {sendNotification} from "../../hooks/sendNotifications";
 import { setInput } from "../../store/header";
 import { useDispatch, useSelector } from "react-redux";
 export default function Header({ title, navigation }: any) {
-    const route = useRoute();
     const dispatch = useDispatch();
-
     const state = useSelector((state) => state) as any;
+
+    const route = useRoute();
     
     React.useEffect(() => {
         dispatch(setInput(""));
     }, [route.name])
+    
     if (title !== undefined) {
         return (
             <View style={AppStyles.header}>
