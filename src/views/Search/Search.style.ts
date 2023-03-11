@@ -11,33 +11,33 @@ const styles = StyleSheet.create({
     result_container: {
         padding: 15,
         flexDirection: "row",
-        borderBottomWidth: theme.BORDER_WIDTH,
-        borderBottomColor: theme.BOX_BORDER_COLOR,
+        borderTopWidth: theme.BORDER_WIDTH,
+        borderColor: theme.BOX_BORDER_COLOR,
         width: "100%",
         alignItems: "center"
     },
     result_icon_container: {
-        height: 35,
-        width: 35,
+        height: 45,
+        width: 45,
         backgroundColor: theme.POST_BUTTON_BACKGROUND,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 100
     },
     result_icon_image: {
-        height: 35,
-        width: 35,
+        height: 45,
+        width: 45,
         borderRadius: 100,
         backgroundColor: theme.THEME_COLOR
     },
     result_icon: {
-        height: 20,
-        width: 20,
+        height: 25,
+        width: 25,
         fill: theme.PRIMARY_COLOR
     },
     result_text: {
         color: theme.PRIMARY_COLOR,
-        fontSize: 16,
+        fontSize: 18,
         marginLeft: 10,
     }
 });
