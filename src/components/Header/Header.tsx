@@ -4,10 +4,17 @@ import {ArrowLeftIcon, CheckmarkOutlineIcon, BellOutlineIcon, CameraIcon, Search
 import * as React from "react";
 import { useRoute } from '@react-navigation/native';
 import {sendNotification} from "../../hooks/sendNotifications";
-
+import { setInput } from "../../store/header";
+import { useDispatch, useSelector } from "react-redux";
 export default function Header({ title, navigation }: any) {
     const route = useRoute();
+    const dispatch = useDispatch();
 
+    const state = useSelector((state) => state) as any;
+    
+    React.useEffect(() => {
+        dispatch(setInput(""));
+    }, [route.name])
     if (title !== undefined) {
         return (
             <View style={AppStyles.header}>
@@ -42,11 +49,12 @@ export default function Header({ title, navigation }: any) {
                         </TouchableOpacity>
                         <View style={{ position: "relative", flexDirection: "row" }}>
                             <TextInput
-                                value="meteha"
+                                value={state.header.searchInput}
                                 style={AppStyles.header_search_input}
                                 placeholder={"Glynet'te ara"}
                                 placeholderTextColor={"#556574"}
                                 autoFocus={true}
+                                onChange={(e: any) => dispatch(setInput(e.nativeEvent.text))}
                             />
                             <View style={AppStyles.header_search_icon_container}>
                                 <SearchOutlineIcon style={{

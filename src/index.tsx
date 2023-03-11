@@ -2,9 +2,9 @@ import * as React from "react";
 import {useFonts} from "expo-font";
 import {DefaultTheme, NavigationContainer} from "@react-navigation/native";
 import {Provider} from "react-redux";
-
 import store from "./store";
 import App from "./App";
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function Glynet() {
     const Theme = {
@@ -25,10 +25,12 @@ export default function Glynet() {
         return null;
 
     return (
-        <Provider store={store}>
-            <NavigationContainer theme={Theme}>
-                <App />
-            </NavigationContainer>
-        </Provider>
+        <GestureHandlerRootView style={{flex: 1}}>
+            <Provider store={store}>
+                <NavigationContainer theme={Theme}>
+                    <App />
+                </NavigationContainer>
+            </Provider>
+        </GestureHandlerRootView>
     )
 }

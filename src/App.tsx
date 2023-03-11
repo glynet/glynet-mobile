@@ -36,8 +36,8 @@ import Comments from "./views/Comments/Comments";
 
 import axios from "axios";
 
-global.BASE_URL = "http://192.168.1.4:3400";
-global.CDN_URL = "http://192.168.1.4:3400";
+global.BASE_URL = "http://192.168.1.53:3400";
+global.CDN_URL = "http://192.168.1.53:3400";
 
 const Stack = createStackNavigator();
 

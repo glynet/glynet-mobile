@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {Image, Text, TouchableOpacity, View} from "react-native";
 import {SearchOutlineIcon} from "../../utils/icons";
 import ScreenContainer from "../../utils/screen";
 import styles from "./Search.style";
 import getTheme from "../../constants/colors";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getSuggestions } from "./searchAPI";
 const theme = getTheme();
 
 export default function Search({ navigation }: any) {
+    const [writing, setWriting] = useState<boolean>(false);
+    const state = useSelector((state) => state) as any;
+
+    const [suggestions, setSuggestions] = useState<any>([]);
+    useEffect(() => {
+        if (!writing) {
+            setWriting(true);
+            getSuggestions(state.header.searchInput, (response: any) => {
+                const data = response.data; 
+                
+                setSuggestions(response.data);
+                setWriting(false);
+            });
+        }
+    }, [state.header.searchInput]);
+
     return (
         <ScreenContainer hideTabs={true} navigation={navigation}>
             <View style={styles.results_container}>
-                {Array(20).fill("").map((item, index: number) => {
-                    const isProfile = Math.floor(Math.random() * 100) < 50;
+                {suggestions.map((item: any, index: number) => {
+                    const isProfile = item.type === "profile";
 
                     return (
                         <TouchableOpacity activeOpacity={0.7} style={styles.result_container} key={index}>
@@ -28,7 +45,7 @@ export default function Search({ navigation }: any) {
                                     }}>
                                         <SearchOutlineIcon style={styles.result_icon} />
                                     </View>
-                                    <Text style={styles.result_text}>metehan saral</Text>
+                                    <Text style={styles.result_text}>{item.title}</Text>
                                 </>
                             )}
                             {isProfile && (
@@ -41,12 +58,12 @@ export default function Search({ navigation }: any) {
                                             backgroundColor: theme.THEME_COLOR
                                         }}
                                         source={{
-                                            uri: "https://source.unsplash.com/random"
+                                            uri: global.CDN_URL + "/" + item.image
                                         }}
                                     />
                                     <View>
-                                        <Text style={[styles.result_text, { fontFamily: "GilroyBold" }]}>metehan saral</Text>
-                                        <Text style={[styles.result_text, { fontSize: 14 }]}>alpsar4l</Text>
+                                        <Text style={[styles.result_text, { fontFamily: "GilroyBold" }]}>{item.title}</Text>
+                                        <Text style={[styles.result_text, { fontSize: 14 }]}>{item.subtitle}</Text>
                                     </View>
                                 </>
                             )}
