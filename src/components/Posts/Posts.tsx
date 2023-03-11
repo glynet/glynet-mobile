@@ -2,22 +2,42 @@ import React, {useEffect, useState} from "react";
 import {View, StyleSheet, ActivityIndicator, Platform} from "react-native";
 import Post from "./Post/Post";
 import getTheme from "../../constants/colors";
+import axios from "axios";
 
 const theme = getTheme();
 
-export default function Posts({ navigation }: any) {
+export default function Posts({ type, params, navigation }: any) {
     const [isFetched, setFetched] = useState<boolean>(false);
+    const [posts, setPosts] = useState([]) as any;
 
     useEffect(() => {
-        setTimeout(() => {
-            setFetched(true);
-        }, 500);
+        setFetched(false);
+
+        axios({
+            method: "GET",
+            url: "/api/@me/posts" + `?w=${type}${params !== undefined ? "&" + params : ""}`
+        }).then((response: any) => {
+            const data = response.data;
+            console.log(data.status, data.code);
+
+            if (data.status) {
+                setFetched(true);
+                setPosts(data.list);
+            }
+        }).catch((error: any) => {
+            const errMessage = error.toJSON();
+            console.log(errMessage);
+        });
     }, []);
 
     return (
         <View style={styles.posts}>
-            {isFetched && Array(20).fill("0").map((value, index) => {
-                return <Post key={index} navigation={navigation} />
+            {isFetched && posts.map((post: any, index: number) => {
+                return <Post
+                    content={post} 
+                    key={index} 
+                    navigation={navigation} 
+                />;
             })}
             {!isFetched && (
                 <View style={{

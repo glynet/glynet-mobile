@@ -8,7 +8,7 @@ export default function Location({ navigation }: any) {
 
     return (
         <ScreenContainer headerTitle={`${route.params?.location}`} navigation={navigation}>
-            <Posts navigation={navigation} />
+            {route.params?.location !== undefined && <Posts type={"location"} params={`q=${route.params?.location}`} navigation={navigation} />}
         </ScreenContainer>
     );
 }

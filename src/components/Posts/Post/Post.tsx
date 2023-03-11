@@ -15,16 +15,18 @@ import {BottomSheetModal} from "@gorhom/bottom-sheet";
 import BottomModal from "../../../utils/modal";
 import Options from "../Options/Options";
 import styles from "./Post.style";
+import moment from "moment";
+import { like } from "../PostsAPI";
+import { calculateUserFlags } from "../../../utils/flags";
 
 const theme = getTheme();
 
-export default function Post({ navigation }: any) {
+export default function Post({ content, navigation }: any) {
     const route = useRoute() as any;
 
-    const [isLiked, setLiked] = useState<boolean>(false);
-    const [isMarked, setMarked] = useState<boolean>(false);
-
-    const id = Math.floor(Math.random() * 2000);
+    const [likeCount, setLikeCount] = useState<number>(content.content.details.likes.count);
+    const [isLiked, setLiked] = useState<boolean>(content.content.details.likes.is_liked);
+    const [isMarked, setMarked] = useState<boolean>(content.content.details.is_bookmarked);
 
     const bottomSheetModalRef = useRef<BottomSheetModal>(null);
     const handlePresentModalPress = useCallback(() => {
@@ -43,6 +45,22 @@ export default function Post({ navigation }: any) {
         }
     };
 
+    const _like = () => {
+        if (isLiked) {
+            let newCount = Math.abs(likeCount - 1);
+            setLikeCount(newCount);
+            setLiked(false);
+        } else {
+            let newCount = Math.abs(likeCount + 1);
+            setLikeCount(newCount);
+            setLiked(true);
+        }
+
+        like(content.id, (response: any) => {
+            const status = response.data.status; // bool
+        });
+    }
+
     return (
         <View style={styles.post}>
             <BottomModal modalRef={bottomSheetModalRef} snapPoints={useMemo(() => ["35%", "35%"], [])}>
@@ -55,10 +73,10 @@ export default function Post({ navigation }: any) {
                 justifyContent: "space-between",
             }}>
                 <View style={styles.post_author}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate("Profile", { name: content.author.username })}>
                         <Image
                             source={{
-                                uri: "https://source.unsplash.com/random?human&" + id,
+                                uri: `${global.CDN_URL}/${content.author.avatar}`,
                             }}
                             style={styles.post_author_avatar}
                         />
@@ -66,12 +84,12 @@ export default function Post({ navigation }: any) {
                     <View style={styles.post_author_details}>
 
                         <View style={styles.post_author_name}>
-                            <Text style={styles.post_author_name_text}>Metehan Saral</Text>
-                            <VerifiedIcon style={styles.post_author_verified_icon} />
+                            <Text onPress={() => navigation.navigate("Profile", { name: content.author.username })} style={styles.post_author_name_text}>{content.author.name}</Text>
+                            {calculateUserFlags(content.author.flags).includes("VERIFIED_USER") && <VerifiedIcon style={styles.post_author_verified_icon} />}
                         </View>
 
-                        {id < 40 && <Text style={styles.post_author_date}><Text onPress={() => navigation.navigate("Location", { location: "Kuruçeşme" })} style={styles.post_author_location}>Kuruçeşme</Text> ─ 1 saat önce</Text>}
-                        {id >= 40 && <Text style={styles.post_author_date}>1 saat önce</Text>}
+                        {content.content.location !== "" && <Text style={styles.post_author_date}><Text onPress={() => navigation.navigate("Location", { location: content.content.location })} style={styles.post_author_location}>{content.content.location}</Text> ─ {moment.unix(content.content.timestamp).fromNow()}</Text>}
+                        {content.content.location === "" && <Text style={styles.post_author_date}>{moment.unix(content.content.timestamp).fromNow()}</Text>}
                     </View>
                 </View>
                 <TouchableOpacity activeOpacity={0.8} style={{
@@ -87,25 +105,18 @@ export default function Post({ navigation }: any) {
                 </TouchableOpacity>
             </View>
 
-            {id < 60 && <View style={styles.post_text_container}>
+            {content.content.text !== "" && <View style={styles.post_text_container}>
                 <TextView
                     style={styles.post_text}
                     mentionHashtagPress={mentionHashtagClick}
                     mentionHashtagColor={theme.THEME_COLOR}
-                >
-                    #nomatter what I did it didn't mean at all (oh)
-                    Whenever I said no you said "come along"
-                    And now I have lost my #throne
-                    #yousaid you would walk me home
-
-                    @ecealtug, @alpsar4l
-                </TextView>
+                >{content.content.text}</TextView>
             </View>}
 
-            {(id > 50) && <View style={styles.post_content_container}>
+            {content.content.attachments.length !== 0 && <View style={styles.post_content_container}>
                 <Image
                     source={{
-                        uri: "https://source.unsplash.com/random?" + id,
+                        uri: `${global.CDN_URL}/${content.content.attachments[0]}`
                     }}
                     style={styles.post_content}
                 />
@@ -116,17 +127,17 @@ export default function Post({ navigation }: any) {
                     <TouchableOpacity activeOpacity={0.8} style={{
                         ...styles.post_button_part,
                         alignItems: "flex-end",
-                    }} onPress={() => setLiked(!isLiked)}>
+                    }} onPress={_like}>
                         {isLiked && <HeartFilledIcon style={[styles.post_button.icon, styles.post_button_red.icon]} />}
                         {!isLiked && <HeartOutlineIcon style={styles.post_button.icon} />}
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={0.8} style={{...styles.post_button_part, alignItems: "flex-start"}} onPress={() => navigation.navigate("UserList", { title: "Beğenenler" })}>
-                        <Text style={[styles.post_button.text, isLiked ? styles.post_button_red.text : null]}>{Math.floor(Math.random() * 100)}</Text>
+                        <Text style={[styles.post_button.text, isLiked ? styles.post_button_red.text : null]}>{likeCount}</Text>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }} onPress={() => navigation.navigate("Comments")}>
                     <CommentIcon style={styles.post_button.icon} />
-                    <Text style={styles.post_button.text}>{Math.floor(Math.random() * 100)}</Text>
+                    <Text style={styles.post_button.text}>{content.content.details.comments}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }} onPress={() => setMarked(!isMarked)}>
                     {isMarked && <BookmarkFilledIcon style={[styles.post_button.icon]} />}

@@ -5,7 +5,7 @@ import ScreenContainer from "../../utils/screen";
 export default function Likes({ navigation }: any) {
     return (
         <ScreenContainer headerTitle={"Beğeniler"} navigation={navigation}>
-            <Posts navigation={navigation} />
+            <Posts type={"likes"} navigation={navigation} />
         </ScreenContainer>
     );
 }

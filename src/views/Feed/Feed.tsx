@@ -7,7 +7,7 @@ export default function Feed({ navigation }: any) {
     return (
         <ScreenContainer navigation={navigation}>
             <Shots />
-            <Posts navigation={navigation} />
+            <Posts type={"feed"} navigation={navigation} />
         </ScreenContainer>
     );
 }

@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from "react-native";
+import {Dimensions, Platform, StyleSheet} from "react-native";
 import getTheme from "../../../constants/colors";
 
 const theme = getTheme();
@@ -84,10 +84,10 @@ const styles = StyleSheet.create({
     post_button_part: {
         width: "50%",
         justifyContent: "center",
-        height: 36,
+        height: 42,
     },
     post_button_padding: {
-        height: 36
+        height: 42
     },
     post_button: {
         flexDirection: "row",
@@ -98,15 +98,15 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
         borderWidth: theme.BORDER_WIDTH,
         icon: {
-            height: 23,
-            width: 23,
+            height: 25,
+            width: 25,
             fill: theme.POST_BUTTON_COLOR
         },
         text: {
             fontFamily: "GilroyBold",
-            fontSize: 15,
+            fontSize: 17,
             color: theme.POST_BUTTON_COLOR,
-            marginTop: 2,
+            marginTop: Platform.OS === "ios" ? 3 : 0,
             marginLeft: 5,
         }
     },

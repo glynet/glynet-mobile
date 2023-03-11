@@ -62,7 +62,7 @@ export default function Tabs({ navigation }: any) {
                 accessibilityRole="button"
                 activeOpacity={0.8}
                 style={AppStyles.buttonContainer}
-                onPress={() => navigation.navigate("Profile", { name: "alpsar4l" })}
+                onPress={() => navigation.navigate("Profile", { name: "avokadoyesili" })}
             >
                 {route.name !== "Profile" && <UserOutlineIcon style={AppStyles.buttonContainer.icon} />}
                 {route.name === "Profile" && <UserFilledIcon style={AppStyles.buttonContainer.icon} />}

@@ -1,5 +1,5 @@
 import React from "react";
-import Svg, {Circle, G, Path} from "react-native-svg";
+import Svg, {LinearGradient, Stop, Circle, G, Path} from "react-native-svg";
 
 function PaperPlaneIcon(props: any) {
     return (
@@ -622,6 +622,41 @@ function CrossIcon(props: any) {
     )
 }
 
+function StaffIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="code">
+                    <Path d="M8.64 5.23a1 1 0 00-1.41.13l-5 6a1 1 0 000 1.27l4.83 6a1 1 0 00.78.37 1 1 0 00.78-1.63L4.29 12l4.48-5.36a1 1 0 00-.13-1.41zM21.78 11.37l-4.78-6a1 1 0 00-1.41-.15 1 1 0 00-.15 1.41L19.71 12l-4.48 5.37a1 1 0 00.13 1.41A1 1 0 0016 19a1 1 0 00.77-.36l5-6a1 1 0 00.01-1.27z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function PremiumIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <LinearGradient
+                id="a"
+                x1="0%"
+                y1="0%"
+                x2="0%"
+                y2="100%"
+                // @ts-ignore
+                spreadMethod="pad"
+            >
+                <Stop offset="0%" stopColor="#4dbbff" />
+                <Stop offset="100%" stopColor="#dd63ff" />
+            </LinearGradient>
+            <Path
+                d="M11.11 23a1 1 0 01-.34-.06 1 1 0 01-.65-1.05l.77-7.09H5a1 1 0 01-.83-1.56l7.89-11.8a1 1 0 011.17-.38 1 1 0 01.65 1l-.77 7.14H19a1 1 0 01.83 1.56l-7.89 11.8a1 1 0 01-.83.44z"
+                fill="url(#a)"
+            />
+        </Svg>
+    )
+}
+
 function VerifiedIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -723,5 +758,7 @@ export {
     BellFilledIcon,
     TextIcon,
     MentionIcon,
-    CheckmarkOutlineIcon
+    CheckmarkOutlineIcon,
+    StaffIcon,
+    PremiumIcon
 };

@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.THEME_COLOR,
     },
     profile_details_website: {
-        marginTop: 7,
+        marginTop: 5,
         fontFamily: "GilroyMedium",
         fontSize: Dimensions.get("window").width / 29,
         color: theme.THEME_COLOR,
@@ -53,20 +53,20 @@ const styles = StyleSheet.create({
         marginTop: 10,
         name: {
             fontFamily: "GilroyBold",
-            fontSize: Dimensions.get("window").width / 21,
+            fontSize: Dimensions.get("window").width / 19,
             color: theme.PRIMARY_COLOR
         },
         username: {
-            marginTop: 3,
+            marginTop: 2,
             fontFamily: "GilroyMedium",
-            fontSize: Dimensions.get("window").width / 27,
+            fontSize: Dimensions.get("window").width / 24,
             color: theme.PRIMARY_COLOR
         },
         about: {
-            marginTop: 10,
+            marginTop: 5,
             fontFamily: "GilroyMedium",
-            fontSize: Dimensions.get("window").width / 29,
-            color: theme.PRIMARY_COLOR
+            fontSize: Dimensions.get("window").width / 27,
+            color: theme.PRIMARY_COLOR,
         }
     },
     profile_metrics_container: {
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         paddingBottom: 0,
     },
     profile_metric: {
-        fontSize: 14,
+        fontSize: 15,
         color: theme.SECONDARY_COLOR,
         paddingVertical: 5,
     },
@@ -93,11 +93,12 @@ const styles = StyleSheet.create({
         position: "absolute",
         right: 14,
         top: 85 + (14 - 2),
+        flexDirection: "row"
     },
     profile_badge: {
         fill: theme.PRIMARY_COLOR,
-        height: 19,
-        width: 19,
+        height: 22,
+        width: 22,
         marginLeft: 4,
     },
     empty_column: {
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
     },
     profile_button: {
         backgroundColor: theme.BUTTON_BACKGROUND,
-        padding: 8,
+        padding: 10,
         borderRadius: 9,
         alignSelf: "stretch",
         flexDirection: "row",
@@ -115,17 +116,17 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
         icon: {
             fill: theme.BUTTON_COLOR,
-            height: 19,
-            width: 19
+            height: 23,
+            width: 23
         },
     },
     profile_button_with_text: {
-        paddingHorizontal: 12,
+        paddingHorizontal: 16,
         text: {
-            marginLeft: 4,
+            marginLeft: 6.5,
             color: theme.BUTTON_COLOR,
             fontFamily: "GilroyBold",
-            fontSize: 14,
+            fontSize: 15,
         }
     },
     profile_extras: {

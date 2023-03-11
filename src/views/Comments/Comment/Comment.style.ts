@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     },
     comment_button_value: {
         fontSize: 12,
-        fontfamily: "GilroyMedium",
+        fontFamily: "GilroyMedium",
         color: theme.SECONDARY_COLOR,
         marginLeft: 3,
     },

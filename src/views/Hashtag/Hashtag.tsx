@@ -8,7 +8,7 @@ export default function Hashtag({ navigation }: any) {
 
     return (
         <ScreenContainer headerTitle={`#${route.params?.tag}`} navigation={navigation}>
-            <Posts navigation={navigation} />
+            {route.params?.tag !== undefined && <Posts type={"hashtag"} params={`q=${route.params?.tag}`} navigation={navigation} />}
         </ScreenContainer>
     );
 }

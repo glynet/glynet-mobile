@@ -1,7 +1,7 @@
 import React from "react";
 import AppStyles from "./App.style";
 import {StatusBar} from "expo-status-bar";
-import {View} from "react-native";
+import {Platform, View} from "react-native";
 import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 import {createStackNavigator} from "@react-navigation/stack";
 import {useSelector} from "react-redux";
@@ -34,6 +34,11 @@ import { NativeViewGestureHandler } from "react-native-gesture-handler";
 import CreatePost from "./views/CreatePost/CreatePost";
 import Comments from "./views/Comments/Comments";
 
+import axios from "axios";
+
+global.BASE_URL = "http://192.168.1.4:3400";
+global.CDN_URL = "http://192.168.1.4:3400";
+
 const Stack = createStackNavigator();
 
 Notifications.setNotificationHandler({
@@ -46,6 +51,8 @@ Notifications.setNotificationHandler({
 
 export default function App() {
     const state = useSelector((state: any) => state);
+    axios.defaults.baseURL = global.BASE_URL;
+    axios.defaults.headers.common["Authorization"] = "3fb1658bc02772c76eaa7054009ec462aa0def40fb5faa13e82a4d6d206f0915";
 
     return (
         <SafeAreaProvider>
@@ -62,7 +69,10 @@ export default function App() {
                     <BottomSheetModalProvider>
                         <NativeViewGestureHandler disallowInterruption={true}>
                             <View style={AppStyles.body}>
-                                <Stack.Navigator screenOptions={{ headerShown: false }}>
+                                <Stack.Navigator screenOptions={{ 
+                                    headerShown: false, 
+                                    animationEnabled: Platform.OS === "ios" ? true : false
+                                }}>
                                     <Stack.Screen name="Feed" component={Feed} />
                                     <Stack.Screen name="Search" component={Search} />
                                     <Stack.Screen name="Profile" component={Profile} />
