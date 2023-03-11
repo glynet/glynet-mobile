@@ -8,8 +8,10 @@ Glynet requires [Node.js](https://nodejs.org/) v10+ to run.
 
 Install the dependencies and Glynet and start the server.
 
+---
+For development
 ```sh
 cd glynet-mobile
-npm i
-npm run ios|android
+yarn
+yarn ios|android
 ```
