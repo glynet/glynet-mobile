@@ -5,16 +5,22 @@ const theme = getTheme();
 const styles = StyleSheet.create({
     container: {
         padding: 30,
+        backgroundColor: theme.BOX_BACKGROUND,
+        borderRadius: 15,
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: 240,
     },
     image: {
-        height: 85,
+        height: 50,
         width: "100%",
     },
     title: {
         fontFamily: "GilroyBold",
         fontSize: 20,
         color: theme.PRIMARY_COLOR,
-        marginTop: 30,
+        marginTop: 15,
     },
     description: {
         fontFamily: "GilroyMedium",

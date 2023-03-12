@@ -16,7 +16,7 @@ import BottomModal from "../../../utils/modal";
 import Options from "../Options/Options";
 import styles from "./Post.style";
 import moment from "moment";
-import { like } from "../PostsAPI";
+import { like, save } from "../PostsAPI";
 import { calculateUserFlags } from "../../../utils/flags";
 
 const theme = getTheme();
@@ -58,6 +58,15 @@ export default function Post({ content, navigation }: any) {
 
         like(content.id, (response: any) => {
             const status = response.data.status; // bool
+        });
+    }
+
+    const _save = () => {
+        setMarked(!isMarked);
+
+        save(content.id, (response: any) => {
+            const status = response.data.status; // bool
+            console.log(status);
         });
     }
 
@@ -139,7 +148,7 @@ export default function Post({ content, navigation }: any) {
                     <CommentIcon style={styles.post_button.icon} />
                     <Text style={styles.post_button.text}>{content.content.details.comments}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }} onPress={() => setMarked(!isMarked)}>
+                <TouchableOpacity activeOpacity={0.8} style={{ ...styles.post_button, ...styles.post_button_padding }} onPress={_save}>
                     {isMarked && <BookmarkFilledIcon style={[styles.post_button.icon]} />}
                     {!isMarked && <BookmarkOutlineIcon style={styles.post_button.icon} />}
                 </TouchableOpacity>

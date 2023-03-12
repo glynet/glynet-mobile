@@ -4,12 +4,17 @@ import AppStyle from "../App.style";
 import {RefreshControl, ScrollView} from "react-native";
 import React, {useCallback, useState} from "react";
 import {BlurView} from "expo-blur";
-
+import {useDispatch, useSelector} from "react-redux";
+import { setRefresh } from "../store/preferences";
 export default function ScreenContainer(props: any) {
+    const dispatch = useDispatch();
+    
     const [refreshing, setRefreshing] = useState<boolean>(false);
 
     const onRefresh = useCallback(() => {
         setRefreshing(true);
+        dispatch(setRefresh());
+
         setTimeout(() => {
             setRefreshing(false);
         }, 2000);

@@ -6,6 +6,7 @@ import { useRoute } from '@react-navigation/native';
 import {sendNotification} from "../../hooks/sendNotifications";
 import { setInput } from "../../store/header";
 import { useDispatch, useSelector } from "react-redux";
+
 export default function Header({ title, navigation }: any) {
     const dispatch = useDispatch();
     const state = useSelector((state) => state) as any;
@@ -13,7 +14,8 @@ export default function Header({ title, navigation }: any) {
     const route = useRoute();
     
     React.useEffect(() => {
-        dispatch(setInput(""));
+        console.log("Search input could be clear but we didn't clear :P (Header.tsx, 17. line)");
+        // dispatch(setInput(""));
     }, [route.name])
     
     if (title !== undefined) {
@@ -23,7 +25,7 @@ export default function Header({ title, navigation }: any) {
                     <ArrowLeftIcon style={AppStyles.headerButton.icon}/>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.8} style={AppStyles.headerText}>
-                    <Text style={AppStyles.headerText.text}>{title}</Text>
+                    <Text style={AppStyles.headerText.text}>{title.length > 20 ? `${title.substring(0, 20)}...` : title}</Text>
                 </TouchableOpacity>
                 {route.name === "CreatePost" ? (
                     <TouchableOpacity activeOpacity={0} style={AppStyles.headerButton}>

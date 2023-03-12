@@ -4,8 +4,12 @@ import {SearchOutlineIcon} from "../../utils/icons";
 import ScreenContainer from "../../utils/screen";
 import styles from "./Search.style";
 import getTheme from "../../constants/colors";
-import { useDispatch, useSelector } from "react-redux";
-import { getSuggestions } from "./searchAPI";
+import {useSelector} from "react-redux";
+import {getSuggestions} from "./searchAPI";
+import Alert from "../../components/Alert/Alert";
+import FeelingBlue from "../../utils/illustrations/FeelingBlue";
+import Searching from "../../utils/illustrations/Searching";
+
 const theme = getTheme();
 
 export default function Search({ navigation }: any) {
@@ -15,7 +19,7 @@ export default function Search({ navigation }: any) {
     const [onFetching, setFetching] = useState<boolean>(false);
 
     useEffect(() => {
-        if (onFetching)
+        if (onFetching || state.header.searchInput.length === 0)
             return;
 
         const timer = setTimeout(() => {
@@ -46,6 +50,14 @@ export default function Search({ navigation }: any) {
                     color={theme.THEME_COLOR}
                 />
             </View>}
+
+            {(!onFetching && suggestions.length === 0) && (
+                <Alert 
+                    image={<Searching themeColor={theme.THEME_COLOR} style={{ height: 120, width: 120 }} />} 
+                    title={"Gösterecek bir şey bulamadık"} 
+                    description={"Daha başka şeyler yazmayı deneyebilirsin"} 
+                />
+            )}
 
             {!onFetching && (
                 <View style={styles.results_container}>

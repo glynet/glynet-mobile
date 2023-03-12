@@ -23,7 +23,7 @@ const theme = getTheme();
 type FollowingTypes = "following" | "on_request" | "no_follow" | "waiting";
 
 export default function Profile({ navigation }: any) {
-    const state = useSelector((state: any) => state);
+    const state = useSelector((state: any) => state) as any;
     const dispatch = useDispatch();
 
     const route = useRoute() as any;
@@ -68,6 +68,8 @@ export default function Profile({ navigation }: any) {
     useEffect(() => {
         setFetched(false);
 
+        console.log("setrefresh", state.preferences.setRefresh);
+
         loadProfile((route.params["name"] !== null ? route.params["name"] : "glynet"), (response: any) => {
             const data = response.data;
 
@@ -77,10 +79,10 @@ export default function Profile({ navigation }: any) {
                 setPremium(data.profile.premium.is_active);
                 setFollow(data.profile.following);
             } else {
-                navigation.navigate("Feed");
+                navigation.goBack();
             }
         });
-    }, []);
+    }, [(route.params as any).name, state.preferences.setRefresh]);
 
     return (
         <ScreenContainer headerTitle={(route.params as any).name} navigation={navigation}>
@@ -145,7 +147,7 @@ export default function Profile({ navigation }: any) {
                         }
                     }}>
                         {(profileData.banner && profileData.banner.type === "text") && (
-                            <View style={styles.profile_banner} />
+                            <View style={styles.profile_banner_text} />
                         )}
                         {(profileData.banner && profileData.banner.type === "image") && (
                             <Image style={styles.profile_banner} source={{

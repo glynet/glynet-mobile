@@ -14,6 +14,14 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         marginBottom: 12,
     },
+    profile_banner_text: {
+        height: 120,
+        width: "100%",
+        backgroundColor: theme.THEME_COLOR,
+        borderRadius: 12,
+        borderBottomLeftRadius: 0,
+        borderBottomRightRadius: 0,
+    },
     profile_banner: {
         height: 170,
         width: "100%",
@@ -28,6 +36,16 @@ const styles = StyleSheet.create({
         padding: 14,
     },
     profile_avatar_container: {
+        height: avatarSize + 8,
+        width: avatarSize + 8,
+        borderRadius: 100,
+        borderWidth: 3.5,
+        borderColor: theme.BOX_BACKGROUND,
+        backgroundColor: "#fff",
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    profile_avatar_container_with_shot: {
         height: avatarSize + 14,
         width: avatarSize + 14,
         borderRadius: 100,
@@ -67,6 +85,7 @@ const styles = StyleSheet.create({
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 27,
             color: theme.PRIMARY_COLOR,
+            lineHeight: 19,
         }
     },
     profile_metrics_container: {

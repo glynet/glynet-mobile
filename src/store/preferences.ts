@@ -4,7 +4,8 @@ export const appPreferences = createSlice({
     name: "preferences",
     initialState: {
         playVideosAsMuted: false,
-        blackBackground: false
+        blackBackground: false,
+        setRefresh: false,
     },
     reducers: {
         setMute: (state, action) => {
@@ -13,9 +14,12 @@ export const appPreferences = createSlice({
         setBlackBackground: (state, action) => {
             state.blackBackground = action.payload;
         },
+        setRefresh: (state) => {
+            state.setRefresh = !state.setRefresh;
+        }
     },
 });
 
-export const { setMute, setBlackBackground } = appPreferences.actions;
+export const { setMute, setBlackBackground, setRefresh } = appPreferences.actions;
 
 export default appPreferences.reducer;
