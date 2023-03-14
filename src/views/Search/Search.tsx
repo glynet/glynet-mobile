@@ -5,9 +5,8 @@ import ScreenContainer from "../../utils/screen";
 import styles from "./Search.style";
 import getTheme from "../../constants/colors";
 import {useSelector} from "react-redux";
-import {getSuggestions} from "./searchAPI";
+import {getSuggestions} from "./SearchAPI";
 import Alert from "../../components/Alert/Alert";
-import FeelingBlue from "../../utils/illustrations/FeelingBlue";
 import Searching from "../../utils/illustrations/Searching";
 
 const theme = getTheme();
@@ -22,14 +21,14 @@ export default function Search({ navigation }: any) {
         if (onFetching || state.header.searchInput.length === 0)
             return;
 
-        const timer = setTimeout(() => {
-            setFetching(true);
+        setFetching(true);
 
+        const timer = setTimeout(() => {
             getSuggestions(state.header.searchInput, (response: any) => {                
                 setSuggestions(response.data);
                 setFetching(false);
             });
-        }, 600);
+        }, 130);
   
         return () => clearTimeout(timer)
     }, [state.header.searchInput]);

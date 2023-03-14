@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export function getSuggestions(input: string, callback?: any) {
+export function getNotifications(callback?: any) {
     axios({
         method: "GET",
-        url: "/api/@me/search?value=" + input,
+        url: "/api/@me/notifications"
     }).then((data) => callback(data)).catch((error: any) => {
         const errMessage = error.toJSON();
         console.log(errMessage);

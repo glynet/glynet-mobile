@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         paddingBottom: 0,
     },
     post_text: {
-        fontSize: 14.5,
+        fontSize: 16,
     },
 
     post_buttons_container: {

@@ -122,7 +122,7 @@ export default function Post({ content, navigation }: any) {
                 >{content.content.text}</TextView>
             </View>}
 
-            {content.content.attachments.length !== 0 && <View style={styles.post_content_container}>
+            {(content.content.attachments.length !== 0 && content.content.attachments[0] !== "") && <View style={styles.post_content_container}>
                 <Image
                     source={{
                         uri: `${global.CDN_URL}/${content.content.attachments[0]}`
