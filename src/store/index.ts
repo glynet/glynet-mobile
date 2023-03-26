@@ -1,13 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit"
 
-import preferencesReduces from "./preferences";
-import headerReduces from "./header";
+import preferencesReduces from "./preferences"
+import headerReduces from "./header"
 
 const store = configureStore({
     reducer: {
         preferences: preferencesReduces,
-        header: headerReduces
+        header: headerReduces,
     },
-});
+})
 
-export default store;
+export default store

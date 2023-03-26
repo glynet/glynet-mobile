@@ -1,7 +1,7 @@
-import {StyleSheet} from "react-native";
-import getTheme from "../../../constants/colors";
+import { Platform, StyleSheet } from "react-native"
+import getTheme from "../../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     notification_container: {
@@ -10,10 +10,18 @@ const styles = StyleSheet.create({
         borderBottomColor: theme.BOX_BORDER_COLOR,
         flexDirection: "row",
         alignItems: "center",
-        position: "relative"
+        position: "relative",
+    },
+    user_details: {
+        flexDirection: "row",
+        alignItems: "center",
     },
     notification_details: {
         marginLeft: 10,
+    },
+    user_name: {
+        flexDirection: "row",
+        alignItems: "center",
     },
     notification_text: {
         fontSize: 16,
@@ -22,15 +30,21 @@ const styles = StyleSheet.create({
     },
     notification_date: {
         fontSize: 14,
-        marginTop: 3,
+        marginTop: Platform.OS === "ios" ? 3 : 0,
         color: theme.SECONDARY_COLOR,
         fontFamily: "GilroyMedium",
     },
+    user_badge: {
+        height: 16,
+        width: 16,
+        fill: theme.PRIMARY_COLOR,
+        marginLeft: 3,
+    },
     notification_avatar: {
-        height: 45,
-        width: 45,
+        height: 50,
+        width: 50,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
 
     buttons: {
@@ -60,8 +74,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: "GilroyBold",
         marginLeft: 4,
-        color: theme.BUTTON_COLOR
-    }
-});
+        color: theme.BUTTON_COLOR,
+    },
+})
 
-export default styles;
+export default styles

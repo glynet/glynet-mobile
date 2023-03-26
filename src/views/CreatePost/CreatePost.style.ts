@@ -1,13 +1,13 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
-const theme = getTheme();
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
+        // borderRadius: 12,
         flex: 1,
-        height: Dimensions.get("window").height - 80
+        height: Dimensions.get("window").height - 80,
     },
     top: {
         padding: 12,
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         // borderBottomWidth: 1,
-        borderColor: theme.BORDER_COLOR
+        borderColor: theme.BORDER_COLOR,
     },
     userAvatar: {
         height: Dimensions.get("window").width / 9,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     userName: {
         fontSize: 16,
         fontFamily: "GilroyBold",
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     addLocation: {
         display: "flex",
@@ -56,14 +56,14 @@ const styles = StyleSheet.create({
         icon: {
             height: 16,
             width: 16,
-            fill: theme.PRIMARY_COLOR
+            fill: theme.PRIMARY_COLOR,
         },
         text: {
             fontSize: 16,
             color: theme.PRIMARY_COLOR,
             marginLeft: 2,
             fontFamily: "GilroyMedium",
-        }
+        },
     },
     content: {
         height: 200,
@@ -101,14 +101,14 @@ const styles = StyleSheet.create({
             fontFamily: "GilroyBold",
             fontSize: 17,
             color: theme.THEME_COLOR,
-        }
+        },
     },
     send_button_disabled: {
         borderColor: theme.INPUT_BACKGROUND,
         backgroundColor: theme.INPUT_BACKGROUND,
         text: {
             color: theme.SECONDARY_COLOR,
-        }
+        },
     },
     buttons: {
         display: "flex",
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
             height: 26,
             width: 26,
             fill: theme.SECONDARY_COLOR,
-        }
+        },
     },
     attachments: {
         display: "flex",
@@ -136,14 +136,14 @@ const styles = StyleSheet.create({
         marginRight: 12,
         height: 200,
         width: 200,
-        borderRadius: 12,
+        // borderRadius: 12,
         position: "relative",
         backgroundColor: theme.THEME_COLOR,
     },
     attachment_content: {
         height: 200,
         width: 200,
-        borderRadius: 12,
+        // borderRadius: 12,
         backgroundColor: theme.THEME_COLOR,
     },
     attachment_buttons: {
@@ -163,8 +163,8 @@ const styles = StyleSheet.create({
             height: 26,
             width: 26,
             fill: "#d3d3d3",
-        }
-    }
-});
+        },
+    },
+})
 
-export default styles;
+export default styles

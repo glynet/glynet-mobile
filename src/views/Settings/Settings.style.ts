@@ -1,6 +1,6 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
-const theme = getTheme();
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     profile_inputs_container: {
@@ -18,19 +18,19 @@ const styles = StyleSheet.create({
     profile_input_title: {
         fontFamily: "GilroyBold",
         fontSize: 15,
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     profile_input_title_desc: {
         fontFamily: "GilroyMedium",
         fontSize: 13,
         color: theme.SECONDARY_COLOR,
-        marginTop: 4
+        marginTop: 4,
     },
     profile_input_warn: {
         fontFamily: "GilroyMedium",
         fontSize: 11,
         marginTop: 7,
-        color: "#ff0000"
+        color: "#ff0000",
     },
     profile_input: {
         borderWidth: theme.BORDER_WIDTH,
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.INPUT_BACKGROUND,
         padding: 12,
         fontSize: 14,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginTop: 7,
         color: theme.PRIMARY_COLOR,
     },
@@ -66,18 +66,18 @@ const styles = StyleSheet.create({
             marginLeft: 4,
             fontFamily: "GilroyBold",
             fontSize: 14,
-        }
+        },
     },
     profile_button_colored: {
         borderColor: "rgba(1,6,255,0.73)",
         backgroundColor: "rgba(0,5,255,0.16)",
         text: {
             color: "rgb(0,2,108)",
-        }
+        },
     },
     follow_requests_button_container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginBottom: 12,
         padding: 15,
         flexDirection: "row",
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: "#ececec",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     follow_requests_details: {
         marginLeft: 10,
@@ -113,6 +113,6 @@ const styles = StyleSheet.create({
         right: 12,
         fill: theme.PRIMARY_COLOR,
     },
-});
+})
 
-export default styles;
+export default styles

@@ -1,11 +1,11 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
-const theme = getTheme();
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     follow_requests_button_container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginBottom: 12,
         padding: 15,
         flexDirection: "row",
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: "#ececec",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     follow_requests_details: {
         marginLeft: 10,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     },
     notifications_container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
+        // borderRadius: 12,
     },
 
     search_container: {
@@ -64,13 +64,13 @@ const styles = StyleSheet.create({
 
         borderWidth: 1,
         backgroundColor: "rgba(249,249,249,0.82)",
-        borderColor: "#bbc1c5"
+        borderColor: "#bbc1c5",
     },
     search_icon: {
         position: "absolute",
         top: 27.5,
         left: 26,
-    }
-});
+    },
+})
 
-export default styles;
+export default styles

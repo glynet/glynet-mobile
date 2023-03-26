@@ -1,20 +1,13 @@
-import React, {useState} from "react";
-import {Dimensions, StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import {
-    AlbumOutlineIcon, ArrowRightIosIcon,
-    BellOutlineIcon, EyeOutlineIcon, LogoutIcon,
-    MailIcon, MoonIcon,
-    PencilIcon,
-    SecurityOutlineIcon, SunIcon,
-    TrashIcon,
-} from "../../utils/icons";
-import ScreenContainer from "../../utils/screen";
-import getTheme from "../../constants/colors";
+import React, { useState } from "react"
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native"
+import { AlbumOutlineIcon, ArrowRightIosIcon, BellOutlineIcon, EyeOutlineIcon, LogoutIcon, MailIcon, MoonIcon, PencilIcon, SecurityOutlineIcon, SunIcon, TrashIcon } from "../../utils/icons"
+import ScreenContainer from "../../utils/screen"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 export default function Settings({ navigation }: any) {
-    const [lightMode, setLightMode] = useState<boolean>(true);
+    const [lightMode, setLightMode] = useState<boolean>(true)
 
     return (
         <ScreenContainer headerTitle={"Ayarlar"} hideTabs={true} navigation={navigation}>
@@ -112,7 +105,13 @@ export default function Settings({ navigation }: any) {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <TouchableOpacity activeOpacity={0.8} style={{...styles.category_container, borderBottomWidth: 0 }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={{
+                        ...styles.category_container,
+                        borderBottomWidth: 0,
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <LogoutIcon style={styles.category_container.icon} />
@@ -124,7 +123,7 @@ export default function Settings({ navigation }: any) {
                 </TouchableOpacity>
             </View>
         </ScreenContainer>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -169,7 +168,7 @@ const styles = StyleSheet.create({
         title: {
             fontSize: 15,
             fontFamily: "GilroyBold",
-            color: theme.PRIMARY_COLOR
+            color: theme.PRIMARY_COLOR,
         },
         description: {
             fontSize: 13,
@@ -177,6 +176,6 @@ const styles = StyleSheet.create({
             marginTop: 4,
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,
-        }
-    }
-});
+        },
+    },
+})

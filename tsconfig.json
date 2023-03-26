@@ -4,5 +4,6 @@
         "jsx": "react",
         "strict": true,
         "allowSyntheticDefaultImports": true
-    }
+    },
+    "typeRoots": ["src/types/global.d.ts" ]
 }

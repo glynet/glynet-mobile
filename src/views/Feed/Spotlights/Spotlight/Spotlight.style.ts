@@ -1,8 +1,8 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../../../constants/colors";
-const theme = getTheme();
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../../../constants/colors"
+const theme = getTheme()
 
-const avatarSize = Dimensions.get("window").width / 6;
+const avatarSize = Dimensions.get("window").width / 6
 
 const styles = StyleSheet.create({
     shot_container: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         width: avatarSize,
         borderRadius: 100,
         borderWidth: 2,
-        borderColor: theme.BOX_BACKGROUND
+        borderColor: theme.BOX_BACKGROUND,
     },
     shot_username: {
         marginTop: 5,
@@ -33,8 +33,8 @@ const styles = StyleSheet.create({
         fontSize: 12,
         paddingTop: 1,
         fontFamily: "GilroyBold",
-        color: theme.THEME_COLOR
-    }
-});
+        color: theme.THEME_COLOR,
+    },
+})
 
-export default styles;
+export default styles

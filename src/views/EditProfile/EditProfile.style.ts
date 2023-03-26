@@ -1,8 +1,8 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
-const avatarSize = Dimensions.get("window").width / 4;
+const theme = getTheme()
+const avatarSize = Dimensions.get("window").width / 4
 
 const styles = StyleSheet.create({
     profile_inputs_container: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         // borderTopLeftRadius: 0,
         // borderTopRightRadius: 0,
         width: "100%",
-        borderRadius: 12,
+        // borderRadius: 12,
         marginBottom: 12,
     },
     profile_input_container: {
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     profile_input_title: {
         fontFamily: "GilroyMedium",
         fontSize: 14,
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     profile_input: {
         borderWidth: theme.BORDER_WIDTH,
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.INPUT_BACKGROUND,
         padding: 12,
         fontSize: 14,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginTop: 7,
         color: theme.PRIMARY_COLOR,
     },
@@ -39,14 +39,14 @@ const styles = StyleSheet.create({
         // borderTopLeftRadius: 0,
         // borderTopRightRadius: 0,
         width: "100%",
-        borderRadius: 12,
+        // borderRadius: 12,
         marginBottom: 12,
     },
     profile_banner: {
         height: 170,
         width: "100%",
         backgroundColor: theme.THEME_COLOR,
-        borderRadius: 12,
+        // borderRadius: 12,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
     },
@@ -81,20 +81,20 @@ const styles = StyleSheet.create({
         name: {
             fontFamily: "GilroyBold",
             fontSize: Dimensions.get("window").width / 21,
-            color: theme.PRIMARY_COLOR
+            color: theme.PRIMARY_COLOR,
         },
         username: {
             marginTop: 3,
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 27,
-            color: theme.PRIMARY_COLOR
+            color: theme.PRIMARY_COLOR,
         },
         about: {
             marginTop: 10,
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 29,
-            color: theme.PRIMARY_COLOR
-        }
+            color: theme.PRIMARY_COLOR,
+        },
     },
     profile_metrics_container: {
         flexDirection: "row",
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         opacity: 0.7,
     },
     profile_metric_value: {
-        fontFamily: "GilroyBold"
+        fontFamily: "GilroyBold",
     },
     profile_buttons: {
         flexDirection: "row",
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         marginLeft: 4,
     },
     empty_column: {
-        width: 7
+        width: 7,
     },
     profile_button: {
         backgroundColor: theme.BUTTON_BACKGROUND,
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
         icon: {
             fill: theme.BUTTON_COLOR,
             height: 19,
-            width: 19
+            width: 19,
         },
     },
     profile_button_with_text: {
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
             color: theme.BUTTON_COLOR,
             fontFamily: "GilroyBold",
             fontSize: 14,
-        }
+        },
     },
     profile_extras: {
         alignItems: "center",
@@ -170,14 +170,14 @@ const styles = StyleSheet.create({
         icon: {
             height: Dimensions.get("window").width / 20,
             width: Dimensions.get("window").width / 20,
-            fill: theme.SECONDARY_COLOR
+            fill: theme.SECONDARY_COLOR,
         },
         text: {
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 29,
             color: theme.SECONDARY_COLOR,
             marginLeft: 2,
-        }
+        },
     },
     profile_banner_edit: {
         position: "absolute",
@@ -188,15 +188,15 @@ const styles = StyleSheet.create({
         alignItems: "flex-end",
         justifyContent: "flex-start",
         padding: 18,
-        borderRadius: 12,
+        // borderRadius: 12,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         backgroundColor: "rgba(1,1,1,0.36)",
         icon: {
             height: 24,
             width: 24,
-            fill: "rgba(255,255,255,0.68)"
-        }
+            fill: "rgba(255,255,255,0.68)",
+        },
     },
     profile_avatar_edit: {
         position: "absolute",
@@ -211,9 +211,9 @@ const styles = StyleSheet.create({
         icon: {
             height: 28,
             width: 28,
-            fill: "rgba(255,255,255,0.82)"
-        }
+            fill: "rgba(255,255,255,0.82)",
+        },
     },
-});
+})
 
-export default styles;
+export default styles

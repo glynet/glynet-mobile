@@ -1,6 +1,6 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
-const theme = getTheme();
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     user_container: {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         height: 55,
         width: 55,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
     user_details: {
         marginLeft: 10,
@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
         username: {
             fontFamily: "GilroyMedium",
             fontSize: 16,
-            marginTop: 2
-        }
+            marginTop: 2,
+        },
     },
     menu_container: {
         marginTop: 15,
@@ -58,18 +58,18 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     menu_button: {
-        height: 28,
-        width: 28,
+        height: 36,
+        width: 36,
         borderRadius: 100,
         backgroundColor: "rgba(185,190,193,0.3)",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     menu_icon: {
-        height: 20,
-        width: 20,
-        fill: theme.PRIMARY_COLOR
+        height: 24,
+        width: 24,
+        fill: theme.PRIMARY_COLOR,
     },
 
     category_container_left: {
@@ -90,22 +90,22 @@ const styles = StyleSheet.create({
         padding: 15,
         paddingTop: 0,
         icon_container: {
-            padding: 7,
+            padding: 8,
             backgroundColor: theme.BUTTON_BACKGROUND,
-            borderRadius: 9,
+            borderRadius: 11,
         },
         icon: {
-            height: 22,
-            width: 22,
+            height: 27,
+            width: 27,
             fill: theme.PRIMARY_COLOR,
         },
         details: {
             marginLeft: 8,
         },
         title: {
-            fontSize: 15,
+            fontSize: 19,
             fontFamily: "GilroyBold",
-            color: theme.PRIMARY_COLOR
+            color: theme.PRIMARY_COLOR,
         },
         description: {
             fontSize: 13,
@@ -113,19 +113,19 @@ const styles = StyleSheet.create({
             marginTop: 4,
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,
-        }
+        },
     },
 
     footer: {
-        paddingBottom: 20
+        paddingBottom: 20,
     },
     footer_text: {
         fontFamily: "GilroyMedium",
         fontSize: 13,
         padding: 15,
         textAlign: "center",
-        color: "#5d6d74"
-    }
-});
+        color: "#5d6d74",
+    },
+})
 
-export default styles;
+export default styles

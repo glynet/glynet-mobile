@@ -1,16 +1,16 @@
-import React, {useState} from "react";
-import {StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput} from "react-native";
-import ScreenContainer from "../../utils/screen";
-import getTheme from "../../constants/colors";
+import React, { useState } from "react"
+import { StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput } from "react-native"
+import ScreenContainer from "../../utils/screen"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 export default function MailSettings({ navigation }: any) {
-    const [currentMail, setCurrentMail] = useState<string>("metehansaral@glynet.com");
-    const [newMail, setNewMail] = useState<string>(currentMail);
-    const [isValid, setValid] = useState<boolean>(true);
+    const [currentMail, setCurrentMail] = useState<string>("metehansaral@glynet.com")
+    const [newMail, setNewMail] = useState<string>(currentMail)
+    const [isValid, setValid] = useState<boolean>(true)
 
-    const isValidEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const isValidEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
 
     return (
         <ScreenContainer headerTitle={"E-Posta Ayarları"} hideTabs={true} navigation={navigation}>
@@ -20,9 +20,9 @@ export default function MailSettings({ navigation }: any) {
                     <TextInput
                         value={newMail}
                         placeholder={"E-posta adresi"}
-                        onChangeText={newValue => {
-                            setNewMail(newValue);
-                            setValid(Boolean(newValue.match(isValidEmail)));
+                        onChangeText={(newValue) => {
+                            setNewMail(newValue)
+                            setValid(Boolean(newValue.match(isValidEmail)))
                         }}
                         style={styles.profile_input}
                         maxLength={24}
@@ -35,7 +35,7 @@ export default function MailSettings({ navigation }: any) {
                             <Text style={styles.profile_button.text}>E-Posta Adresini Güncelle</Text>
                         </View>
                     )}
-                    {(newMail !== currentMail && isValid) && (
+                    {newMail !== currentMail && isValid && (
                         <TouchableOpacity style={[styles.profile_button, styles.profile_button_colored]} activeOpacity={0.8}>
                             <Text style={[styles.profile_button.text, styles.profile_button_colored.text]}>E-Posta Adresini Güncelle</Text>
                         </TouchableOpacity>
@@ -43,7 +43,7 @@ export default function MailSettings({ navigation }: any) {
                 </View>
             </View>
         </ScreenContainer>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
     profile_input_title: {
         fontFamily: "GilroyMedium",
         fontSize: 14,
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     profile_input_warn: {
         fontFamily: "GilroyMedium",
         fontSize: 11,
         marginTop: 7,
-        color: "#ff0000"
+        color: "#ff0000",
     },
     profile_input: {
         borderWidth: theme.BORDER_WIDTH,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.INPUT_BACKGROUND,
         padding: 12,
         fontSize: 14,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginTop: 7,
         color: theme.PRIMARY_COLOR,
     },
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     },
     profile_button: {
         padding: 14,
-        borderRadius: 12,
+        // borderRadius: 12,
         alignSelf: "stretch",
         flexDirection: "row",
         alignItems: "center",
@@ -104,13 +104,13 @@ const styles = StyleSheet.create({
             marginLeft: 4,
             fontFamily: "GilroyBold",
             fontSize: 14,
-        }
+        },
     },
     profile_button_colored: {
         borderColor: "rgba(1,6,255,0.73)",
         backgroundColor: "rgba(0,5,255,0.16)",
         text: {
             color: "rgb(0,2,108)",
-        }
-    }
-});
+        },
+    },
+})

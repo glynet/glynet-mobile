@@ -1,13 +1,7 @@
-import React from "react";
-import {View, Text, TouchableOpacity, ScrollView} from "react-native";
-import {
-    BellFilledIcon,
-    BellOffIcon, BellOutlineIcon,
-    CrossIcon, CrossIconRounded,
-    InfoIcon,
-    MuteIcon,
-} from "../../utils/icons";
-import styles from "../Menu/Menu.style";
+import React from "react"
+import { View, Text, TouchableOpacity, ScrollView } from "react-native"
+import { BellFilledIcon, BellOffIcon, BellOutlineIcon, CrossIcon, CrossIconRounded, InfoIcon, MuteIcon } from "../../utils/icons"
+import styles from "../Menu/Menu.style"
 
 export default function NotificationDropdown({ navigation, modalRef }: any) {
     return (
@@ -21,11 +15,14 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                 </View>
             </View>
 
-            <View style={{...styles.menu_container, marginTop: 0 }}>
-
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    modalRef.current?.close();
-                }}>
+            <View style={{ ...styles.menu_container, marginTop: 0 }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <BellFilledIcon style={styles.category_container.icon} />
@@ -36,9 +33,13 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <BellOutlineIcon style={styles.category_container.icon} />
@@ -49,9 +50,13 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <BellOffIcon style={styles.category_container.icon} />
@@ -61,8 +66,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                         </View>
                     </View>
                 </TouchableOpacity>
-
             </View>
         </ScrollView>
-    );
+    )
 }

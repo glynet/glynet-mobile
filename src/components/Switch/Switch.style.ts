@@ -1,7 +1,7 @@
-import {StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
+import { StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     switch_container: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         borderWidth: theme.BORDER_WIDTH,
         padding: 4.5,
-        borderColor: theme.BORDER_COLOR
+        borderColor: theme.BORDER_COLOR,
     },
     switch_item: {
         width: "50%",
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     switch_text: {
         fontSize: 15,
         fontFamily: "GilroyBold",
-        color: theme.SECONDARY_COLOR
+        color: theme.SECONDARY_COLOR,
     },
     switch_text_green: {
         color: "#037b28",
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
     switch_text_red: {
         color: "#dc0b0b",
     },
-});
+})
 
-export default styles;
+export default styles

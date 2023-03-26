@@ -1,11 +1,11 @@
-import {StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
-const theme = getTheme();
+import { StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     follow_requests_button_container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginBottom: 12,
         padding: 15,
         flexDirection: "row",
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: "#ececec",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     follow_requests_details: {
         marginLeft: 10,
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
     },
     notifications_container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
-    }
-});
+        // borderRadius: 12,
+    },
+})
 
-export default styles;
+export default styles

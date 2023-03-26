@@ -1,17 +1,17 @@
-import {Dimensions, Platform, StyleSheet} from "react-native";
-import getTheme from "../../../constants/colors";
+import { Dimensions, Platform, StyleSheet } from "react-native"
+import getTheme from "../../../constants/colors"
 
-const theme = getTheme();
-const defaultPadding = 12;
+const theme = getTheme()
+const defaultPadding = 12
 
 const styles = StyleSheet.create({
     post: {
         backgroundColor: theme.BOX_BACKGROUND,
         width: "100%",
-        // borderTopWidth: theme.BORDER_WIDTH,
-        // borderColor: theme.BOX_BORDER_COLOR,
-        borderRadius: 15,
-        marginBottom: 12,
+        borderBottomWidth: theme.BORDER_WIDTH,
+        borderColor: theme.BORDER_COLOR,
+        // borderRadius: 15,
+        // marginBottom: 12,
     },
 
     post_author: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     },
     post_author_name: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
     },
     post_author_verified_icon: {
         fill: theme.PRIMARY_COLOR,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     post_author_name_text: {
         fontSize: 16,
         fontFamily: "GilroyBold",
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     post_author_date: {
         fontSize: 13,
@@ -60,10 +60,10 @@ const styles = StyleSheet.create({
         paddingTop: defaultPadding,
     },
     post_content: {
-        width: "100%",
-        height: (Dimensions.get("window").width - defaultPadding),
+        // width: "100%",
+        // height: (Dimensions.get("window").width - defaultPadding),
         // borderRadius: defaultPadding,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
 
     post_text_container: {
@@ -79,46 +79,46 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 12,
         // paddingTop: 0,
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
     post_button_part: {
         width: "50%",
         justifyContent: "center",
-        height: 42,
+        height: 38,
     },
     post_button_padding: {
-        height: 42
+        height: 38,
     },
     post_button: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 10,
-        width: (Dimensions.get("window").width / 3) - (12 * 1.2),
+        width: Dimensions.get("window").width / 3 - 12 * 1.2,
         borderColor: theme.BORDER_COLOR,
         borderWidth: theme.BORDER_WIDTH,
         icon: {
-            height: 25,
-            width: 25,
-            fill: theme.POST_BUTTON_COLOR
+            height: 23,
+            width: 23,
+            fill: theme.POST_BUTTON_COLOR,
         },
         text: {
             fontFamily: "GilroyBold",
             fontSize: 17,
             color: theme.POST_BUTTON_COLOR,
             marginTop: Platform.OS === "ios" ? 3 : 0,
-            marginLeft: 5,
-        }
+            marginLeft: 4,
+        },
     },
     post_button_red: {
         backgroundColor: "", // "rgba(255,71,71,0.24)",
         icon: {
-            fill: "#FF0000"
+            fill: "#FF0000",
         },
         text: {
             color: "#FF0000",
-        }
-    }
-});
+        },
+    },
+})
 
-export default styles;
+export default styles

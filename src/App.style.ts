@@ -1,7 +1,7 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "./constants/colors";
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "./constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     container: {
@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     header: {
-        backgroundColor: theme.APP_BACKGROUND,
+        backgroundColor: "#fff", // theme.APP_BACKGROUND,
         width: "100%",
-        // borderBottomWidth: theme.BORDER_WIDTH,
+        borderBottomWidth: theme.BORDER_WIDTH,
         borderBottomColor: theme.BORDER_COLOR,
         flexDirection: "row",
         alignItems: "center",
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 
         borderWidth: 1,
         backgroundColor: "rgba(249,249,249,0.62)",
-        borderColor: "#bbc1c5"
+        borderColor: "#bbc1c5",
     },
     header_search_icon_container: {
         position: "absolute",
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
             fill: theme.HEADER_ITEM_COLOR,
             height: 26,
             width: 26,
-        }
+        },
     },
     headerAvatar: {
         height: 36,
@@ -72,18 +72,18 @@ const styles = StyleSheet.create({
             fontSize: 22,
             color: theme.HEADER_ITEM_COLOR,
             fontFamily: "GilroyBold",
-        }
+        },
     },
     content: {
         marginBottom: Dimensions.get("window").width / 6.5,
     },
     bottomBar: {
-        backgroundColor: theme.APP_BACKGROUND,
+        backgroundColor: "#000", // theme.APP_BACKGROUND,
         width: "100%",
         position: "absolute",
         bottom: 0,
-        // borderTopWidth: theme.BORDER_WIDTH,
-        borderTopColor: theme.BORDER_COLOR,
+        borderTopWidth: theme.BORDER_WIDTH,
+        borderTopColor: "#141419",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-evenly",
@@ -95,9 +95,14 @@ const styles = StyleSheet.create({
         icon: {
             height: 28,
             opacity: 1,
-            fill: theme.HEADER_ITEM_COLOR
-        }
-    }
-});
+            fill: "#8c96aa", // theme.HEADER_ITEM_COLOR
+        },
+        icon_selected: {
+            height: 28,
+            opacity: 1,
+            fill: "#e4ebed", // theme.HEADER_ITEM_COLOR
+        },
+    },
+})
 
-export default styles;
+export default styles

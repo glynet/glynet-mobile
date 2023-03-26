@@ -1,7 +1,7 @@
-import {StyleSheet} from "react-native";
-import getTheme from "../../../constants/colors";
+import { Dimensions, Platform, StyleSheet } from "react-native"
+import getTheme from "../../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     notification_container: {
@@ -12,15 +12,40 @@ const styles = StyleSheet.create({
         position: "relative",
         width: "100%",
     },
+    follow_request_author: {
+        flexDirection: "row",
+        alignItems: "center",
+        width: "100%",
+    },
+    request_details: {
+        marginLeft: 10,
+        flex: 1,
+    },
     notification_details: {
         marginLeft: 10,
-        marginTop: 5,
+        marginTop: Platform.OS === "ios" ? 5 : 1,
         flex: 1,
+    },
+    notification_name_container: {
+        flexDirection: "row",
+        alignItems: "center",
     },
     notification_text: {
         fontSize: 16,
         fontFamily: "GilroyMedium",
         color: theme.PRIMARY_COLOR,
+    },
+    user_badge: {
+        height: 16,
+        width: 16,
+        fill: theme.PRIMARY_COLOR,
+        marginLeft: 3,
+    },
+    request_username: {
+        fontSize: 14,
+        marginTop: Platform.OS === "ios" ? 3 : 0,
+        color: theme.SECONDARY_COLOR,
+        fontFamily: "GilroyMedium",
     },
     notification_date: {
         fontSize: 14,
@@ -29,10 +54,10 @@ const styles = StyleSheet.create({
         fontFamily: "GilroyMedium",
     },
     notification_avatar: {
-        height: 45,
-        width: 45,
+        height: 50,
+        width: 50,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
     request_buttons: {
         position: "absolute",
@@ -52,7 +77,7 @@ const styles = StyleSheet.create({
     request_button: {
         height: 24,
         width: 24,
-        fill: theme.BUTTON_COLOR
+        fill: theme.BUTTON_COLOR,
     },
 
     embed_post: {
@@ -64,10 +89,10 @@ const styles = StyleSheet.create({
     },
     embed_post_image_container: {},
     embed_post_image: {
-        height: 170,
+        height: Dimensions.get("window").width,
         width: "100%",
         borderRadius: 15,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
     embed_text_container: {
         padding: 10,
@@ -76,7 +101,7 @@ const styles = StyleSheet.create({
         fontFamily: "GilroyMedium",
         fontSize: 14,
         lineHeight: 18,
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     embed_comment: {
         flexDirection: "row",
@@ -86,8 +111,8 @@ const styles = StyleSheet.create({
         height: 16,
         width: 16,
         marginTop: 2,
-        fill: theme.PRIMARY_COLOR
-    }
-});
+        fill: theme.PRIMARY_COLOR,
+    },
+})
 
-export default styles;
+export default styles

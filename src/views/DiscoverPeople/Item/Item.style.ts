@@ -1,7 +1,7 @@
-import {StyleSheet} from "react-native";
-import getTheme from "../../../constants/colors";
+import { StyleSheet } from "react-native"
+import getTheme from "../../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     notification_container: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         borderBottomColor: theme.BOX_BORDER_COLOR,
         flexDirection: "row",
         alignItems: "center",
-        position: "relative"
+        position: "relative",
     },
     notification_details: {
         marginLeft: 10,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         height: 45,
         width: 45,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
 
     buttons: {
@@ -60,8 +60,8 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontFamily: "GilroyBold",
         marginLeft: 4,
-        color: theme.BUTTON_COLOR
-    }
-});
+        color: theme.BUTTON_COLOR,
+    },
+})
 
-export default styles;
+export default styles

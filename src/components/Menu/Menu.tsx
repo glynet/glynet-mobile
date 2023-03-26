@@ -1,12 +1,7 @@
-import React from "react";
-import {View, Text, Image, TouchableOpacity, ScrollView} from "react-native";
-import {
-    BookmarkOutlineIcon, CompassOutlineIcon, CrossIcon,
-    HeartOutlineIcon,
-    PencilIcon,
-    UserOutlineIcon
-} from "../../utils/icons";
-import styles from "./Menu.style";
+import React from "react"
+import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native"
+import { BookmarkOutlineIcon, CompassOutlineIcon, CrossIcon, HeartOutlineIcon, PencilIcon, UserOutlineIcon } from "../../utils/icons"
+import styles from "./Menu.style"
 
 export default function Menu({ navigation, modalRef }: any) {
     return (
@@ -24,7 +19,7 @@ export default function Menu({ navigation, modalRef }: any) {
                 <Image
                     style={styles.user_avatar}
                     source={{
-                        uri: "https://source.unsplash.com/random"
+                        uri: "https://source.unsplash.com/random",
                     }}
                 />
                 <View style={styles.user_details}>
@@ -34,11 +29,14 @@ export default function Menu({ navigation, modalRef }: any) {
             </TouchableOpacity>
 
             <View style={styles.menu_container}>
-
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("Settings");
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        navigation.navigate("Settings")
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <UserOutlineIcon style={styles.category_container.icon} />
@@ -49,10 +47,14 @@ export default function Menu({ navigation, modalRef }: any) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("EditProfile");
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        navigation.navigate("EditProfile")
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <PencilIcon style={styles.category_container.icon} />
@@ -63,10 +65,14 @@ export default function Menu({ navigation, modalRef }: any) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("DiscoverPeople");
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        navigation.navigate("DiscoverPeople")
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <CompassOutlineIcon style={styles.category_container.icon} />
@@ -77,10 +83,14 @@ export default function Menu({ navigation, modalRef }: any) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("Likes");
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        navigation.navigate("Likes")
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <HeartOutlineIcon style={styles.category_container.icon} />
@@ -91,10 +101,14 @@ export default function Menu({ navigation, modalRef }: any) {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => {
-                    navigation.navigate("Bookmarks");
-                    modalRef.current?.close();
-                }}>
+                <TouchableOpacity
+                    activeOpacity={0.8}
+                    style={styles.category_container}
+                    onPress={() => {
+                        navigation.navigate("Bookmarks")
+                        modalRef.current?.close()
+                    }}
+                >
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <BookmarkOutlineIcon style={styles.category_container.icon} />
@@ -104,9 +118,7 @@ export default function Menu({ navigation, modalRef }: any) {
                         </View>
                     </View>
                 </TouchableOpacity>
-
             </View>
-
         </ScrollView>
-    );
+    )
 }

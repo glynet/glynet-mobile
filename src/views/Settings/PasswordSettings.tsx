@@ -1,61 +1,43 @@
-import React, {useEffect, useState} from "react";
-import {StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput} from "react-native";
-import {PencilIcon} from "../../utils/icons";
-import ScreenContainer from "../../utils/screen";
-import {useRoute} from "@react-navigation/native";
-import getTheme from "../../constants/colors";
+import React, { useEffect, useState } from "react"
+import { StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput } from "react-native"
+import { PencilIcon } from "../../utils/icons"
+import ScreenContainer from "../../utils/screen"
+import { useRoute } from "@react-navigation/native"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 export default function PasswordSettings({ navigation }: any) {
-    const [currentMail, setCurrentMail] = useState<string>("");
-    const [newMail, setNewMail] = useState<string>("");
-    const [newMailAgain, setNewMailAgain] = useState<string>("");
+    const [currentMail, setCurrentMail] = useState<string>("")
+    const [newMail, setNewMail] = useState<string>("")
+    const [newMailAgain, setNewMailAgain] = useState<string>("")
 
-    const [isValid, setValid] = useState<boolean>(false);
+    const [isValid, setValid] = useState<boolean>(false)
 
     useEffect(() => {
-        setValid(false);
+        setValid(false)
 
         if (newMail.length >= 6) {
             if (newMail === newMailAgain) {
-                setValid(true);
+                setValid(true)
             }
         }
-    }, [currentMail, newMail, newMailAgain]);
+    }, [currentMail, newMail, newMailAgain])
 
     return (
         <ScreenContainer headerTitle={"Şifre Değiştirme"} hideTabs={true} navigation={navigation}>
             <View style={styles.profile_inputs_container}>
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>Güncel şifre</Text>
-                    <TextInput
-                        value={currentMail}
-                        onChangeText={newValue => setCurrentMail(newValue)}
-                        placeholder={"Güncel şifre"}
-                        style={styles.profile_input}
-                        maxLength={24}
-                    />
+                    <TextInput value={currentMail} onChangeText={(newValue) => setCurrentMail(newValue)} placeholder={"Güncel şifre"} style={styles.profile_input} maxLength={24} />
                 </View>
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>Yeni şifre</Text>
-                    <TextInput
-                        value={newMail}
-                        onChangeText={newValue => setNewMail(newValue)}
-                        placeholder={"Yeni şifre"}
-                        style={styles.profile_input}
-                        maxLength={24}
-                    />
+                    <TextInput value={newMail} onChangeText={(newValue) => setNewMail(newValue)} placeholder={"Yeni şifre"} style={styles.profile_input} maxLength={24} />
                 </View>
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>Yeni şifre tekrarı</Text>
-                    <TextInput
-                        value={newMailAgain}
-                        onChangeText={newValue => setNewMailAgain(newValue)}
-                        placeholder={"Yeni şifre tekrarı"}
-                        style={styles.profile_input}
-                        maxLength={24}
-                    />
+                    <TextInput value={newMailAgain} onChangeText={(newValue) => setNewMailAgain(newValue)} placeholder={"Yeni şifre tekrarı"} style={styles.profile_input} maxLength={24} />
                 </View>
                 <View style={{ padding: 15 }}>
                     {!isValid && (
@@ -71,7 +53,7 @@ export default function PasswordSettings({ navigation }: any) {
                 </View>
             </View>
         </ScreenContainer>
-    );
+    )
 }
 
 const styles = StyleSheet.create({
@@ -90,13 +72,13 @@ const styles = StyleSheet.create({
     profile_input_title: {
         fontFamily: "GilroyMedium",
         fontSize: 14,
-        color: theme.PRIMARY_COLOR
+        color: theme.PRIMARY_COLOR,
     },
     profile_input_warn: {
         fontFamily: "GilroyMedium",
         fontSize: 11,
         marginTop: 7,
-        color: "#ff0000"
+        color: "#ff0000",
     },
     profile_input: {
         borderWidth: theme.BORDER_WIDTH,
@@ -104,7 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: theme.INPUT_BACKGROUND,
         padding: 12,
         fontSize: 14,
-        borderRadius: 12,
+        // borderRadius: 12,
         marginTop: 7,
         color: theme.PRIMARY_COLOR,
     },
@@ -119,7 +101,7 @@ const styles = StyleSheet.create({
     },
     profile_button: {
         padding: 14,
-        borderRadius: 12,
+        // borderRadius: 12,
         alignSelf: "stretch",
         flexDirection: "row",
         alignItems: "center",
@@ -132,13 +114,13 @@ const styles = StyleSheet.create({
             marginLeft: 4,
             fontFamily: "GilroyBold",
             fontSize: 14,
-        }
+        },
     },
     profile_button_colored: {
         borderColor: "rgba(1,6,255,0.73)",
         backgroundColor: "rgba(0,5,255,0.16)",
         text: {
             color: "rgb(0,2,108)",
-        }
-    }
-});
+        },
+    },
+})

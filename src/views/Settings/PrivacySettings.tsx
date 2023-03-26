@@ -1,12 +1,12 @@
-import React, {useState} from "react";
-import {Text, View} from "react-native";
-import ScreenContainer from "../../utils/screen";
-import Switch from "../../components/Switch/Switch";
-import styles from "./Settings.style";
+import React, { useState } from "react"
+import { Text, View } from "react-native"
+import ScreenContainer from "../../utils/screen"
+import Switch from "../../components/Switch/Switch"
+import styles from "./Settings.style"
 
 export default function PrivacySettings({ navigation }: any) {
-    const [profilePrivacy, setProfilePrivacy] = useState<boolean>(false);
-    const [hideNSFW, setHideNSFW] = useState<boolean>(true);
+    const [profilePrivacy, setProfilePrivacy] = useState<boolean>(false)
+    const [hideNSFW, setHideNSFW] = useState<boolean>(true)
 
     return (
         <ScreenContainer headerTitle={"Gizlilik ve Güvenlik"} hideTabs={true} navigation={navigation}>
@@ -29,24 +29,19 @@ export default function PrivacySettings({ navigation }: any) {
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>Profil gizliliği</Text>
                     <Text style={styles.profile_input_title_desc}>Herkese açık profiller tüm kullanıcılar tarafından görünür ve arama motoru sonuçlarında yer alır.</Text>
-                    <Switch
-                        selected={profilePrivacy}
-                        selector={setProfilePrivacy}
-                        greenText={"Herkese açık"}
-                        redText={"Gizli"}
-                    />
+                    <Switch selected={profilePrivacy} selector={setProfilePrivacy} greenText={"Herkese açık"} redText={"Gizli"} />
                 </View>
-                <View style={{...styles.profile_input_container, borderBottomWidth: 0}}>
+                <View
+                    style={{
+                        ...styles.profile_input_container,
+                        borderBottomWidth: 0,
+                    }}
+                >
                     <Text style={styles.profile_input_title}>Sakıncalı içeriği buzla</Text>
                     <Text style={styles.profile_input_title_desc}>Sakıncalı içerik olarak işaretlenen gönderileri ve shotları buzla.</Text>
-                    <Switch
-                        selected={hideNSFW}
-                        selector={setHideNSFW}
-                        greenText={"Göster"}
-                        redText={"Buzla"}
-                    />
+                    <Switch selected={hideNSFW} selector={setHideNSFW} greenText={"Göster"} redText={"Buzla"} />
                 </View>
             </View>
         </ScreenContainer>
-    );
+    )
 }

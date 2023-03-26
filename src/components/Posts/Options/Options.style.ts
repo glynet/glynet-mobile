@@ -1,7 +1,7 @@
-import getTheme from "../../../constants/colors";
-import {StyleSheet} from "react-native";
+import getTheme from "../../../constants/colors"
+import { StyleSheet } from "react-native"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     container: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 15,
         paddingTop: 5,
-        justifyContent: "space-between"
+        justifyContent: "space-between",
     },
     button: {
         padding: 15,
@@ -20,19 +20,19 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: theme.BORDER_COLOR,
         width: "48%",
-        borderRadius: 15
+        borderRadius: 15,
     },
     button_icon: {
         height: 24,
         width: 24,
-        fill: theme.SECONDARY_COLOR
+        fill: theme.SECONDARY_COLOR,
     },
     button_text: {
         marginTop: 8,
         fontFamily: "GilroyBold",
         fontSize: 14,
-        color: theme.SECONDARY_COLOR
-    }
-});
+        color: theme.SECONDARY_COLOR,
+    },
+})
 
-export default styles;
+export default styles

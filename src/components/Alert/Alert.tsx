@@ -1,11 +1,11 @@
-import React from "react";
-import {View, Text} from "react-native";
-import styles from "./Alert.style";
+import React from "react"
+import { View, Text } from "react-native"
+import styles from "./Alert.style"
 
 export type AlertComponent = {
-    image?: any;
-    title: string;
-    description: string;
+    image?: any
+    title: string
+    description: string
 }
 
 export default function Alert(props: AlertComponent) {

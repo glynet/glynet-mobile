@@ -1,5 +1,5 @@
-import React from "react";
-import Svg, {LinearGradient, Stop, Circle, G, Path} from "react-native-svg";
+import React from "react"
+import Svg, { LinearGradient, Stop, Circle, G, Path, Defs } from "react-native-svg"
 
 function PaperPlaneIcon(props: any) {
     return (
@@ -90,7 +90,6 @@ function UserFilledIcon(props: any) {
     )
 }
 
-
 function CompassOutlineIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -134,10 +133,7 @@ function SearchOutlineIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
             <G data-name="Layer 2">
-                <Path
-                    d="M20.71 19.29l-3.4-3.39A7.92 7.92 0 0019 11a8 8 0 10-8 8 7.92 7.92 0 004.9-1.69l3.39 3.4a1 1 0 001.42 0 1 1 0 000-1.42zM5 11a6 6 0 116 6 6 6 0 01-6-6z"
-                    data-name="search"
-                />
+                <Path d="M20.71 19.29l-3.4-3.39A7.92 7.92 0 0019 11a8 8 0 10-8 8 7.92 7.92 0 004.9-1.69l3.39 3.4a1 1 0 001.42 0 1 1 0 000-1.42zM5 11a6 6 0 116 6 6 6 0 01-6-6z" data-name="search" />
             </G>
         </Svg>
     )
@@ -280,10 +276,7 @@ function CheckmarkIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
             <G data-name="Layer 2">
-                <Path
-                    d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1 1 0 111.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33z"
-                    data-name="checkmark"
-                />
+                <Path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1 1 0 111.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33z" data-name="checkmark" />
             </G>
         </Svg>
     )
@@ -392,10 +385,7 @@ function TextIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
             <G data-name="Layer 2">
-                <Path
-                    d="M20 4H4a1 1 0 00-1 1v3a1 1 0 002 0V6h6v13H9a1 1 0 000 2h6a1 1 0 000-2h-2V6h6v2a1 1 0 002 0V5a1 1 0 00-1-1z"
-                    data-name="text"
-                />
+                <Path d="M20 4H4a1 1 0 00-1 1v3a1 1 0 002 0V6h6v13H9a1 1 0 000 2h6a1 1 0 000-2h-2V6h6v2a1 1 0 002 0V5a1 1 0 00-1-1z" data-name="text" />
             </G>
         </Svg>
     )
@@ -439,7 +429,6 @@ function MailIcon(props: any) {
         </Svg>
     )
 }
-
 
 function TrashIcon(props: any) {
     return (
@@ -574,10 +563,7 @@ function ArrowRightIosIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
             <G data-name="Layer 2">
-                <Path
-                    d="M10 19a1 1 0 01-.64-.23 1 1 0 01-.13-1.41L13.71 12 9.39 6.63a1 1 0 01.15-1.41 1 1 0 011.46.15l4.83 6a1 1 0 010 1.27l-5 6A1 1 0 0110 19z"
-                    data-name="arrow-ios-forward"
-                />
+                <Path d="M10 19a1 1 0 01-.64-.23 1 1 0 01-.13-1.41L13.71 12 9.39 6.63a1 1 0 01.15-1.41 1 1 0 011.46.15l4.83 6a1 1 0 010 1.27l-5 6A1 1 0 0110 19z" data-name="arrow-ios-forward" />
             </G>
         </Svg>
     )
@@ -600,9 +586,19 @@ function CheckmarkOutlineIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
             <G data-name="Layer 2">
+                <Path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1 1 0 111.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33z" data-name="checkmark" />
+            </G>
+        </Svg>
+    )
+}
+
+function CommentsFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
                 <Path
-                    d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1 1 0 111.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33z"
-                    data-name="checkmark"
+                    d="M19.07 4.93a10 10 0 00-16.28 11 1.06 1.06 0 01.09.64L2 20.8a1 1 0 00.27.91A1 1 0 003 22h.2l4.28-.86a1.26 1.26 0 01.64.09 10 10 0 0011-16.28zM8 13a1 1 0 111-1 1 1 0 01-1 1zm4 0a1 1 0 111-1 1 1 0 01-1 1zm4 0a1 1 0 111-1 1 1 0 01-1 1z"
+                    data-name="message-circle"
                 />
             </G>
         </Svg>
@@ -634,16 +630,32 @@ function StaffIcon(props: any) {
     )
 }
 
+function SettingsIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="settings-2">
+                    <Path
+                        d="M12.94 22h-1.89a1.68 1.68 0 01-1.68-1.68v-1.09a.34.34 0 00-.22-.29.38.38 0 00-.41 0l-.74.8a1.67 1.67 0 01-2.37 0L4.26 18.4a1.66 1.66 0 01-.5-1.19 1.72 1.72 0 01.5-1.21l.74-.74a.34.34 0 000-.37c-.06-.15-.16-.26-.3-.26H3.68A1.69 1.69 0 012 12.94v-1.89a1.68 1.68 0 011.68-1.68h1.09a.34.34 0 00.29-.22.38.38 0 000-.41L4.26 8a1.67 1.67 0 010-2.37L5.6 4.26a1.65 1.65 0 011.18-.5 1.72 1.72 0 011.22.5l.74.74a.34.34 0 00.37 0c.15-.06.26-.16.26-.3V3.68A1.69 1.69 0 0111.06 2H13a1.68 1.68 0 011.68 1.68v1.09a.34.34 0 00.22.29.38.38 0 00.41 0l.69-.8a1.67 1.67 0 012.37 0l1.37 1.34a1.67 1.67 0 01.5 1.19 1.63 1.63 0 01-.5 1.21l-.74.74a.34.34 0 000 .37c.06.15.16.26.3.26h1.09A1.69 1.69 0 0122 11.06V13a1.68 1.68 0 01-1.68 1.68h-1.09a.34.34 0 00-.29.22.34.34 0 000 .37l.77.77a1.67 1.67 0 010 2.37l-1.31 1.33a1.65 1.65 0 01-1.18.5 1.72 1.72 0 01-1.19-.5l-.77-.74a.34.34 0 00-.37 0c-.15.06-.26.16-.26.3v1.09A1.69 1.69 0 0112.94 22zm-1.57-2h1.26v-.77a2.33 2.33 0 011.46-2.14 2.36 2.36 0 012.59.47l.54.54.88-.88-.54-.55a2.34 2.34 0 01-.48-2.56 2.33 2.33 0 012.14-1.45H20v-1.29h-.77a2.33 2.33 0 01-2.14-1.46 2.36 2.36 0 01.47-2.59l.54-.54-.88-.88-.55.54a2.39 2.39 0 01-4-1.67V4h-1.3v.77a2.33 2.33 0 01-1.46 2.14 2.36 2.36 0 01-2.59-.47l-.54-.54-.88.88.54.55a2.39 2.39 0 01-1.67 4H4v1.26h.77a2.33 2.33 0 012.14 1.46 2.36 2.36 0 01-.47 2.59l-.54.54.88.88.55-.54a2.39 2.39 0 014 1.67z"
+                        data-name="&lt;Group&gt;"
+                    />
+                    <Path d="M12 15.5a3.5 3.5 0 113.5-3.5 3.5 3.5 0 01-3.5 3.5zm0-5a1.5 1.5 0 101.5 1.5 1.5 1.5 0 00-1.5-1.5z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
 function ArrowCornerDownRight(props: any) {
     return (
-      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
-        <G data-name="Layer 2">
-          <Path
-            d="M19.78 12.38l-4-5a1 1 0 00-1.56 1.24l2.7 3.38H8a1 1 0 01-1-1V6a1 1 0 00-2 0v5a3 3 0 003 3h8.92l-2.7 3.38a1 1 0 00.16 1.4A1 1 0 0015 19a1 1 0 00.78-.38l4-5a1 1 0 000-1.24z"
-            data-name="corner-down-right"
-          />
-        </G>
-      </Svg>
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M19.78 12.38l-4-5a1 1 0 00-1.56 1.24l2.7 3.38H8a1 1 0 01-1-1V6a1 1 0 00-2 0v5a3 3 0 003 3h8.92l-2.7 3.38a1 1 0 00.16 1.4A1 1 0 0015 19a1 1 0 00.78-.38l4-5a1 1 0 000-1.24z"
+                    data-name="corner-down-right"
+                />
+            </G>
+        </Svg>
     )
 }
 
@@ -709,36 +721,148 @@ function BellFilledIcon(props: any) {
     )
 }
 
+function FlashIconOutline(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M11.11 23a1 1 0 01-.34-.06 1 1 0 01-.65-1.05l.77-7.09H5a1 1 0 01-.83-1.56l7.89-11.8a1 1 0 011.17-.38 1 1 0 01.65 1l-.77 7.14H19a1 1 0 01.83 1.56l-7.89 11.8a1 1 0 01-.83.44zM6.87 12.8H12a1 1 0 01.74.33 1 1 0 01.25.78l-.45 4.15 4.59-6.86H12a1 1 0 01-1-1.11l.45-4.15z"
+                    data-name="flash"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function FlashIconFilled(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M11.11 23a1 1 0 01-.34-.06 1 1 0 01-.65-1.05l.77-7.09H5a1 1 0 01-.83-1.56l7.89-11.8a1 1 0 011.17-.38 1 1 0 01.65 1l-.77 7.14H19a1 1 0 01.83 1.56l-7.89 11.8a1 1 0 01-.83.44z"
+                    data-name="flash"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function PlayIconOutline(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M10.46 18a2.23 2.23 0 01-.91-.2 1.76 1.76 0 01-1.05-1.59V7.79A1.76 1.76 0 019.55 6.2a2.1 2.1 0 012.21.26l5.1 4.21a1.7 1.7 0 010 2.66l-5.1 4.21a2.06 2.06 0 01-1.3.46zm0-10v7.9l4.86-3.9z"
+                    data-name="arrow-right"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function PlayIconFilled(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M10.46 18a2.23 2.23 0 01-.91-.2 1.76 1.76 0 01-1.05-1.59V7.79A1.76 1.76 0 019.55 6.2a2.1 2.1 0 012.21.26l5.1 4.21a1.7 1.7 0 010 2.66l-5.1 4.21a2.06 2.06 0 01-1.3.46z"
+                    data-name="arrow-right"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function MusicIconFilled(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <Path
+                    d="M19 15V4a1 1 0 00-.38-.78 1 1 0 00-.84-.2l-9 2A1 1 0 008 6v8.34a3.49 3.49 0 102 3.18 4.36 4.36 0 000-.52V6.8l7-1.55v7.09a3.49 3.49 0 102 3.17 4.57 4.57 0 000-.51z"
+                    data-name="music"
+                />
+            </G>
+        </Svg>
+    )
+}
+
+function SoundOffFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="volume-off">
+                    <Path d="M16.91 14.08l1.44 1.44a6 6 0 00-.07-7.15 1 1 0 10-1.56 1.26 4 4 0 01.19 4.45z" />
+                    <Path d="M21 12a6.51 6.51 0 01-1.78 4.39l1.42 1.42A8.53 8.53 0 0023 12a8.75 8.75 0 00-3.36-6.77 1 1 0 10-1.28 1.54A6.8 6.8 0 0121 12zM15 12.17V4a1 1 0 00-1.57-.83L9 6.2zM4.74 7.57H2a1 1 0 00-1 1v6.86a1 1 0 001 1h5l6.41 4.4A1.06 1.06 0 0014 21a1 1 0 001-1v-2.17zM4.71 3.29a1 1 0 00-1.42 1.42l16 16a1 1 0 001.42 0 1 1 0 000-1.42z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function SoundOnFilledIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="volume-up">
+                    <Path d="M18.28 8.37a1 1 0 10-1.56 1.26 4 4 0 010 4.74A1 1 0 0017.5 16a1 1 0 00.78-.37 6 6 0 000-7.26z" />
+                    <Path d="M19.64 5.23a1 1 0 10-1.28 1.54A6.8 6.8 0 0121 12a6.8 6.8 0 01-2.64 5.23 1 1 0 00-.13 1.41A1 1 0 0019 19a1 1 0 00.64-.23A8.75 8.75 0 0023 12a8.75 8.75 0 00-3.36-6.77zM14.47 3.12a1 1 0 00-1 0L7 7.57H2a1 1 0 00-1 1v6.86a1 1 0 001 1h5l6.41 4.4A1.06 1.06 0 0014 21a1 1 0 001-1V4a1 1 0 00-.53-.88z" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function GIFIcon(props: any) {
+    return (
+        <Svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+            <Path
+                d="M17.61 21.71H6.39a4.11 4.11 0 01-4.11-4.11V6.38a4.11 4.11 0 014.11-4.11h11.22a4.11 4.11 0 014.11 4.11V17.6a4.11 4.11 0 01-4.11 4.11zM6.39 3.77a2.61 2.61 0 00-2.61 2.61V17.6a2.61 2.61 0 002.61 2.61h11.22a2.61 2.61 0 002.61-2.61V6.38a2.61 2.61 0 00-2.61-2.61H6.39z"
+                fill="#000"
+            />
+            <Path
+                d="M7.86 14.9a2.9 2.9 0 110-5.8.75.75 0 110 1.5 1.4 1.4 0 101.19 2.15h-.46a.75.75 0 110-1.5H10a.76.76 0 01.75.75 2.91 2.91 0 01-2.89 2.9zM12.65 14.89a.74.74 0 01-.75-.75v-4.3a.75.75 0 111.5 0v4.3a.75.75 0 01-.75.75zM15.33 14.9a.76.76 0 01-.75-.75v-4.3a.75.75 0 111.5 0v4.3a.75.75 0 01-.75.75z"
+                fill="#000"
+            />
+            <Path d="M17.93 12.81h-2.6a.75.75 0 110-1.5h2.6a.75.75 0 110 1.5zM17.93 10.6h-2.6a.75.75 0 110-1.5h2.6a.75.75 0 110 1.5z" fill="#000" />
+        </Svg>
+    )
+}
+
+function SmilingFace(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <Defs></Defs>
+            <G id="Layer_2" data-name="Layer 2">
+                <G id="smiling-face">
+                    <G id="smiling-face" data-name="smiling-face">
+                        <Path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2a8 8 0 100 16 8 8 0 000-16zm5 9a5 5 0 01-10 0z" id="\uD83C\uDFA8-Icon-\u0421olor" />
+                    </G>
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
 export {
     PaperPlaneIcon,
     CameraIcon,
-
     UserOutlineIcon,
     UserFilledIcon,
-
     CompassOutlineIcon,
-
     HomeOutlineIcon,
     HomeFilledIcon,
-
     SearchOutlineIcon,
     CommentIcon,
-
     HeartOutlineIcon,
     HeartFilledIcon,
-
     BookmarkOutlineIcon,
     BookmarkFilledIcon,
-
     FlashOutlineIcon,
     FlashFilledIcon,
-
     PlusOutlineIcon,
     BellOutlineIcon,
-
     GridOutlineIcon,
     GridFilledIcon,
-
     VerticalIcon,
     LocationPinIcon,
     WebIcon,
@@ -758,7 +882,6 @@ export {
     EyeOutlineIcon,
     CheckmarkIcon,
     CrossIcon,
-
     VideoCameraFilledIcon,
     CameraFilledIcon,
     VerifiedIcon,
@@ -774,5 +897,16 @@ export {
     CheckmarkOutlineIcon,
     StaffIcon,
     PremiumIcon,
-    ArrowCornerDownRight
-};
+    ArrowCornerDownRight,
+    SettingsIcon,
+    FlashIconOutline,
+    FlashIconFilled,
+    CommentsFilledIcon,
+    PlayIconOutline,
+    PlayIconFilled,
+    MusicIconFilled,
+    SoundOffFilledIcon,
+    SoundOnFilledIcon,
+    GIFIcon,
+    SmilingFace,
+}

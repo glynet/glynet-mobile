@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"
 
 export const appPreferences = createSlice({
     name: "preferences",
@@ -6,20 +6,30 @@ export const appPreferences = createSlice({
         playVideosAsMuted: false,
         blackBackground: false,
         setRefresh: false,
+        compactNotifications: false,
+        performanceMode: false,
+        loopId: 0,
     },
     reducers: {
+        setLoopId: (state, action) => {
+            state.loopId = action.payload
+        },
         setMute: (state, action) => {
-            state.playVideosAsMuted = !state.playVideosAsMuted;
+            state.playVideosAsMuted = !state.playVideosAsMuted
         },
         setBlackBackground: (state, action) => {
-            state.blackBackground = action.payload;
+            state.blackBackground = action.payload
         },
         setRefresh: (state) => {
-            state.setRefresh = !state.setRefresh;
-        }
+            state.setRefresh = !state.setRefresh
+        },
+
+        setCompactNotifications: (state, action) => {
+            state.compactNotifications = action.payload
+        },
     },
-});
+})
 
-export const { setMute, setBlackBackground, setRefresh } = appPreferences.actions;
+export const { setLoopId, setMute, setBlackBackground, setRefresh, setCompactNotifications } = appPreferences.actions
 
-export default appPreferences.reducer;
+export default appPreferences.reducer

@@ -1,9 +1,9 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
+import { Dimensions, Platform, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
-const avatarSize = Dimensions.get("window").width / 4;
+const avatarSize = Dimensions.get("window").width / 4
 
 const styles = StyleSheet.create({
     profile_container: {
@@ -11,14 +11,16 @@ const styles = StyleSheet.create({
         // borderTopLeftRadius: 0,
         // borderTopRightRadius: 0,
         width: "100%",
-        borderRadius: 12,
-        marginBottom: 12,
+        borderBottomWidth: theme.BORDER_WIDTH,
+        borderColor: theme.BORDER_COLOR,
+        // // borderRadius: 12,
+        // marginBottom: 12,
     },
     profile_banner_text: {
         height: 120,
         width: "100%",
         backgroundColor: theme.THEME_COLOR,
-        borderRadius: 12,
+        // // borderRadius: 12,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
     },
@@ -26,7 +28,7 @@ const styles = StyleSheet.create({
         height: 170,
         width: "100%",
         backgroundColor: theme.THEME_COLOR,
-        borderRadius: 12,
+        // // borderRadius: 12,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
     },
@@ -68,17 +70,17 @@ const styles = StyleSheet.create({
         color: theme.THEME_COLOR,
     },
     profile_details: {
-        marginTop: 10,
+        marginTop: Platform.OS === "ios" ? 10 : 6,
         name: {
             fontFamily: "GilroyBold",
             fontSize: Dimensions.get("window").width / 19,
-            color: theme.PRIMARY_COLOR
+            color: theme.PRIMARY_COLOR,
         },
         username: {
-            marginTop: 2,
+            marginTop: Platform.OS === "ios" ? 2 : -2,
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 24,
-            color: theme.PRIMARY_COLOR
+            color: theme.PRIMARY_COLOR,
         },
         about: {
             marginTop: 5,
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
             fontSize: Dimensions.get("window").width / 27,
             color: theme.PRIMARY_COLOR,
             lineHeight: 19,
-        }
+        },
     },
     profile_metrics_container: {
         flexDirection: "row",
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
         paddingVertical: 5,
     },
     profile_metric_value: {
-        fontFamily: "GilroyBold"
+        fontFamily: "GilroyBold",
     },
     profile_buttons: {
         flexDirection: "row",
@@ -112,7 +114,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         right: 14,
         top: 85 + (14 - 2),
-        flexDirection: "row"
+        flexDirection: "row",
     },
     profile_badge: {
         fill: theme.PRIMARY_COLOR,
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
         marginLeft: 4,
     },
     empty_column: {
-        width: 7
+        width: 7,
     },
     profile_button: {
         backgroundColor: theme.BUTTON_BACKGROUND,
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
         icon: {
             fill: theme.BUTTON_COLOR,
             height: 23,
-            width: 23
+            width: 23,
         },
     },
     profile_button_with_text: {
@@ -146,7 +148,7 @@ const styles = StyleSheet.create({
             color: theme.BUTTON_COLOR,
             fontFamily: "GilroyBold",
             fontSize: 15,
-        }
+        },
     },
     profile_extras: {
         alignItems: "center",
@@ -161,15 +163,15 @@ const styles = StyleSheet.create({
         icon: {
             height: Dimensions.get("window").width / 20,
             width: Dimensions.get("window").width / 20,
-            fill: theme.SECONDARY_COLOR
+            fill: theme.SECONDARY_COLOR,
         },
         text: {
             fontFamily: "GilroyMedium",
             fontSize: Dimensions.get("window").width / 29,
             color: theme.SECONDARY_COLOR,
             marginLeft: 2,
-        }
-    }
-});
+        },
+    },
+})
 
-export default styles;
+export default styles

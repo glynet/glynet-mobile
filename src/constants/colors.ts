@@ -1,8 +1,8 @@
 export default function getTheme() {
-    const theme = "dark";
+    const theme = "dark"
 
     if (theme !== "dark") {
-        const borderColor = "#252833";
+        const borderColor = "#252833"
         return {
             APP_BACKGROUND: "rgba(0,0,0,0)",
             BODY_BACKGROUND: "rgba(0,0,0,0)",
@@ -24,10 +24,10 @@ export default function getTheme() {
             BUTTON_COLOR: "#adadb4",
 
             THEME_COLOR: "#2D00C6",
-            ILLUSTRATION_COLOR: "#66B6F7"
+            ILLUSTRATION_COLOR: "#66B6F7",
         }
     } else {
-        const borderColor = "#e6e6e6";
+        const borderColor = "#dfe0e6"
         return {
             APP_BACKGROUND: "rgba(46,57,138,0)",
             BODY_BACKGROUND: "rgba(67,79,178,0)",
@@ -43,13 +43,13 @@ export default function getTheme() {
             TERTIARY_COLOR: "#747272",
 
             POST_BUTTON_BACKGROUND: "rgba(233,233,235,0.62)",
-            POST_BUTTON_COLOR: "#656b6f",
+            POST_BUTTON_COLOR: "#82879b",
 
             BUTTON_BACKGROUND: "#f4f5f5",
             BUTTON_COLOR: "#414055",
 
             THEME_COLOR: "#2D00C6",
-            ILLUSTRATION_COLOR: "#66B6F7"
+            ILLUSTRATION_COLOR: "#66B6F7",
         }
     }
 }

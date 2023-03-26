@@ -1,13 +1,16 @@
-import {Dimensions, StyleSheet} from "react-native";
-import getTheme from "../../constants/colors";
+import { Dimensions, StyleSheet } from "react-native"
+import getTheme from "../../constants/colors"
 
-const theme = getTheme();
+const theme = getTheme()
 
 const styles = StyleSheet.create({
     container: {
         backgroundColor: theme.BOX_BACKGROUND,
-        borderRadius: 12,
-        marginBottom: 65,
+    },
+    loader: {
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "center",
     },
     new_comment: {
         position: "absolute",
@@ -21,35 +24,49 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width,
     },
     new_comment_avatar: {
-        height: 35,
-        width: 35,
+        height: 45,
+        width: 45,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR
+        backgroundColor: theme.THEME_COLOR,
     },
     new_comment_input: {
-        borderWidth: 1,
-        backgroundColor: "rgba(249,249,249,0.82)",
+        // borderWidth: 1,
+        backgroundColor: "#EDEDED",
         borderColor: theme.BORDER_COLOR,
-        height: 35,
-        borderRadius: 20,
-        paddingHorizontal: 12,
-        width: Dimensions.get("window").width - 115,
+        height: 45,
+        borderRadius: 30,
+        fontSize: 15,
+        paddingHorizontal: 20,
     },
     new_comment_send_container: {
         borderWidth: 1,
         backgroundColor: "rgba(249,249,249,0.82)",
         borderColor: theme.BORDER_COLOR,
-        height: 35,
-        width: 35,
+        height: 45,
+        width: 45,
         borderRadius: 100,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     new_comment_send: {
-        height: 19,
-        width: 19,
-        fill: theme.SECONDARY_COLOR
-    }
-});
+        height: 25,
+        width: 25,
+        fill: "#141416",
+    },
+    new_comment_input_buttons_container: {
+        position: "absolute",
+        top: 15,
+        right: 15,
+        height: 45,
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    new_comment_input_button: {
+        height: 45,
+        width: 45,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+})
 
-export default styles;
+export default styles

@@ -113,7 +113,7 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.glynet"
+    namespace 'com.glynet.glynetapp'
     defaultConfig {
         applicationId 'com.glynet.glynetapp'
         minSdkVersion rootProject.ext.minSdkVersion
