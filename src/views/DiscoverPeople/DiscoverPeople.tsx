@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { View, ActivityIndicator, Platform } from "react-native"
 import Item from "./Item/Item"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./Container.style"
 import getTheme from "../../constants/colors"
 import * as Contacts from "expo-contacts"
@@ -42,7 +42,7 @@ export default function DiscoverPeople({ navigation }: any) {
     }, [])
 
     return (
-        <ScreenContainer headerTitle={"Tanıyor Olabileceklerin"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Tanıyor Olabileceklerin"} hideTabs={true} navigation={navigation}>
             <View style={styles.notifications_container}>
                 {isFetching &&
                     data.map((item: any, index: number) => {
@@ -67,6 +67,6 @@ export default function DiscoverPeople({ navigation }: any) {
                     />
                 )}
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

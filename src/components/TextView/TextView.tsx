@@ -1,12 +1,17 @@
 import React from "react"
 import { Text } from "react-native"
+import Hyperlink from "react-native-hyperlink"
+import getTheme from "../../constants/colors"
+
+const theme = getTheme()
 
 const TextView = (props: any) => {
     const prepareText = (text: string, mentionHashtagPress: any, mentionHashtagColor: string) => {
         const result = []
 
-        let mentList = props.children.match(/[@#][a-zA-Z0-9ğüşöçİĞÜŞÖÇ_.]+/gi)
-        if (mentList == null) return [text]
+        const mentList = props.children.match(/[@#][a-zA-Z0-9ğüşöçİĞÜŞÖÇ_.]+/gi)
+
+        if (mentList === null) return [text]
 
         for (let i = 0; i < mentList.length; i++) {
             const ment = mentList[i]
@@ -21,9 +26,15 @@ const TextView = (props: any) => {
     }
 
     return (
-        <Text style={{ ...props.style }} onPress={props.onPress} numberOfLines={props.numberOfLines} ellipsizeMode={props.ellipsizeMode}>
-            {prepareText(props.children, props.mentionHashtagPress, props.mentionHashtagColor)}
-        </Text>
+        <Hyperlink linkDefault={true} linkStyle={{
+            color: props.mentionHashtagColor ? props.mentionHashtagColor : theme.THEME_COLOR,
+            // fontWeight: "bold",
+            // fontWeight: "bold"
+        }}>
+            <Text style={{ ...props.style }} onPress={props.onPress} numberOfLines={props.numberOfLines} ellipsizeMode={props.ellipsizeMode}>
+                {prepareText(props.children, props.mentionHashtagPress, props.mentionHashtagColor)}
+            </Text>
+        </Hyperlink>
     )
 }
 
@@ -31,8 +42,8 @@ const Mention = (props: any) => {
     return (
         <Text
             style={{
-                color: props.mentionHashtagColor ? props.mentionHashtagColor : "#15AA7D",
-                fontFamily: "GilroyBold",
+                color: props.mentionHashtagColor ? props.mentionHashtagColor : theme.THEME_COLOR,
+                // fontWeight: "bold"
             }}
             onPress={() => {
                 if (props.mentionHashtagPress) {

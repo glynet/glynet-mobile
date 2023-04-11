@@ -1,54 +1,32 @@
 import Header from "../components/Header/Header"
 import Tabs from "./tabs"
-import AppStyle from "../App.style"
-import { Platform, RefreshControl, ScrollView, View } from "react-native"
-import React, { useCallback, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { setRefresh } from "../store/preferences"
+import React, { ReactNode } from "react"
+import { View, KeyboardAvoidingView, Platform } from "react-native"
 import { useRoute } from "@react-navigation/native"
 import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context"
 import { StatusBar } from "expo-status-bar"
+import AppStyle from "../App.style"
 
-export default function ScreenContainer(props: any) {
-    const state = useSelector((state: any) => state) as any
-    const dispatch = useDispatch()
+export default function AppContainer(props: {
+    hideHeader?: boolean;
+    headerTitle?: string;
+    hideTabs?: boolean;
+    children: ReactNode;
+    navigation: any,
+}) {
     const route = useRoute()
     const insets = useSafeAreaInsets()
 
-    const [refreshing, setRefreshing] = useState<boolean>(false)
-
-    const onRefresh = useCallback(() => {
-        setRefreshing(true)
-        dispatch(setRefresh())
-
-        setTimeout(() => {
-            setRefreshing(false)
-        }, 500)
-    }, [])
-
     return (
-        <View style={{ height: "100%" }}>
-            <SafeAreaView
-                style={{
-                    flex: 1,
-                    backgroundColor: route.name === "Loops" ? "#000" : "#fff", // #eef0f4
-                }}
-            >
+        <KeyboardAvoidingView 
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={{ height: "100%" }}
+        >
+            <SafeAreaView style={{ flex: 1, backgroundColor: route.name === "Loops" ? "#000" : "#fff" }}>
                 {!props.hideHeader && <Header title={props.headerTitle} navigation={props.navigation} />}
 
-                {props.disableScrollView ? (
-                    <View style={[AppStyle.content, props.hideTabs ? { marginBottom: 0 } : null]}>{props.children}</View>
-                ) : (
-                    <ScrollView
-                        style={[AppStyle.content, props.hideTabs ? { marginBottom: 0 } : null]}
-                        showsVerticalScrollIndicator={false}
-                        refreshControl={route.name !== "Loops" ? <RefreshControl refreshing={refreshing} colors={["grey"]} onRefresh={onRefresh} tintColor={"grey"} /> : undefined}
-                        bounces={route.name === "Loops" ? false : true}
-                    >
-                        {props.children}
-                    </ScrollView>
-                )}
-
+                <View style={[AppStyle.content, props.hideTabs ? { marginBottom: 0 } : null]}>{props.children && props.children}</View>
+                
                 {!props.hideTabs && <Tabs navigation={props.navigation} />}
             </SafeAreaView>
 
@@ -76,6 +54,6 @@ export default function ScreenContainer(props: any) {
                     }}
                 />
             )}
-        </View>
+        </KeyboardAvoidingView>
     )
 }

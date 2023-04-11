@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import getTheme from "../../constants/colors"
 
 const theme = getTheme()
@@ -13,7 +13,7 @@ export default function MailSettings({ navigation }: any) {
     const isValidEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
 
     return (
-        <ScreenContainer headerTitle={"E-Posta Ayarları"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"E-Posta Ayarları"} hideTabs={true} navigation={navigation}>
             <View style={styles.profile_inputs_container}>
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>E-posta adresi</Text>
@@ -42,7 +42,7 @@ export default function MailSettings({ navigation }: any) {
                     )}
                 </View>
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }
 
@@ -60,12 +60,12 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
     },
     profile_input_title: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 14,
         color: theme.PRIMARY_COLOR,
     },
     profile_input_warn: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 11,
         marginTop: 7,
         color: "#ff0000",
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         text: {
             color: theme.BUTTON_COLOR,
             marginLeft: 4,
-            fontFamily: "GilroyBold",
+            fontWeight: "bold",
             fontSize: 14,
         },
     },

@@ -1,11 +1,14 @@
 import React from "react"
-import Posts from "../../components/Posts/Posts"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
+import PostList from "../../components/PostList/PostList"
 
 export default function Likes({ navigation }: any) {
     return (
-        <ScreenContainer headerTitle={"Beğeniler"} navigation={navigation}>
-            <Posts type={"likes"} navigation={navigation} />
-        </ScreenContainer>
+        <AppContainer headerTitle={"Beğeniler"} navigation={navigation}>
+            <PostList
+                collect={"likes"} 
+                navigation={navigation}
+            />
+        </AppContainer>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { StyleSheet, Text, TouchableOpacity, View, Dimensions, TextInput } from "react-native"
 import { PencilIcon } from "../../utils/icons"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import { useRoute } from "@react-navigation/native"
 import getTheme from "../../constants/colors"
 
@@ -25,7 +25,7 @@ export default function PasswordSettings({ navigation }: any) {
     }, [currentMail, newMail, newMailAgain])
 
     return (
-        <ScreenContainer headerTitle={"Şifre Değiştirme"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Şifre Değiştirme"} hideTabs={true} navigation={navigation}>
             <View style={styles.profile_inputs_container}>
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>Güncel şifre</Text>
@@ -52,7 +52,7 @@ export default function PasswordSettings({ navigation }: any) {
                     )}
                 </View>
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }
 
@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
     },
     profile_input_title: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 14,
         color: theme.PRIMARY_COLOR,
     },
     profile_input_warn: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 11,
         marginTop: 7,
         color: "#ff0000",
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
         text: {
             color: theme.BUTTON_COLOR,
             marginLeft: 4,
-            fontFamily: "GilroyBold",
+            fontWeight: "bold",
             fontSize: 14,
         },
     },

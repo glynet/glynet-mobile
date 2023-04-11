@@ -10,7 +10,15 @@ import Card from "./Card"
 
 import { Post } from "../../../../../glynet-api/source/models/post.model"
 
-export const Loop = ({ item, index, navigation }: { item: Post; index: number; navigation: any }) => {
+export const Loop = ({
+    item, 
+    index, 
+    navigation
+}: { 
+    item: Post; 
+    index: number; 
+    navigation: any
+}) => {
     const state = useSelector((state: any) => state.preferences) as any
 
     const ref = useRef<any>(null)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { View, Image, TextInput, Dimensions, ActivityIndicator } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import Comment from "./Comment/Comment"
 import styles from "./Comments.style"
 import getTheme from "../../constants/colors"
@@ -54,7 +54,7 @@ function Comments({ navigation }: any) {
 
     return (
         <>
-            <ScreenContainer disableScrollView={true} headerTitle={route.params.is_reply ? "Yanıtlar" : "Yorumlar"} hideTabs={true} navigation={navigation}>
+            <AppContainer headerTitle={route.params.is_reply ? "Yanıtlar" : "Yorumlar"} hideTabs={true} navigation={navigation}>
                 <View style={{ ...styles.container, height: pageHeight - 75 }}>
                     {!isFetched && (
                         <View style={styles.loader}>
@@ -63,7 +63,7 @@ function Comments({ navigation }: any) {
                     )}
                     {isFetched && <FlashList data={comments} renderItem={renderItem} estimatedItemSize={200} removeClippedSubviews={true} />}
                 </View>
-            </ScreenContainer>
+            </AppContainer>
 
             {isFetched && (
                 <View style={{ ...styles.new_comment, bottom: insets.bottom }}>

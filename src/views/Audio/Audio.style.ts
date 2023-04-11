@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     audio_title: {
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         fontSize: 21,
     },
     audio_author: {
@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
         marginLeft: 4,
     },
     audio_author_name: {
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         fontSize: 16,
     },
     audio_count: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 14,
         color: "#2E2E2E",
         marginTop: 10,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     use_audio_text: {
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         fontSize: 17,
         color: "#fff",
     },

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { View, Text, Image, TouchableOpacity, TextInput, ScrollView, KeyboardAvoidingView, Platform } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./CreatePost.style"
 import { AlbumIcon, CameraFilledIcon, CrossIcon, LocationPinIcon, MentionIcon, VideoCameraFilledIcon } from "../../utils/icons"
 import getTheme from "../../constants/colors"
@@ -12,7 +12,7 @@ export default function CreatePost({ navigation }: any) {
     const [send, setSend] = useState<boolean>(false)
 
     return (
-        <ScreenContainer headerTitle={"Yeni Gönderi"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Yeni Gönderi"} hideTabs={true} navigation={navigation}>
             <View style={styles.container}>
                 <View style={styles.content}>
                     <TextInput
@@ -70,6 +70,6 @@ export default function CreatePost({ navigation }: any) {
                     </View>
                 </View>
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

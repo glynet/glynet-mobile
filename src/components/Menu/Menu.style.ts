@@ -23,15 +23,15 @@ const styles = StyleSheet.create({
     },
     user_details: {
         marginLeft: 10,
-        name: {
-            fontFamily: "GilroyBold",
-            fontSize: 20,
-        },
-        username: {
-            fontFamily: "GilroyMedium",
-            fontSize: 16,
-            marginTop: 2,
-        },
+    },
+    user_details_name: {
+        fontWeight: "bold",
+        fontSize: 20,
+    },
+    user_details_username: {
+        fontWeight: "normal",
+        fontSize: 16,
+        marginTop: 2,
     },
     menu_container: {
         marginTop: 15,
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     menu_title: {
         fontSize: 27,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: theme.PRIMARY_COLOR,
     },
 
@@ -102,25 +102,24 @@ const styles = StyleSheet.create({
         details: {
             marginLeft: 8,
         },
-        title: {
-            fontSize: 19,
-            fontFamily: "GilroyBold",
-            color: theme.PRIMARY_COLOR,
-        },
         description: {
             fontSize: 13,
-            fontFamily: "GilroyMedium",
+            fontWeight: "normal",
             marginTop: 4,
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,
         },
     },
-
+    category_container_title: {
+        fontSize: 19,
+        fontWeight: "bold",
+        color: theme.PRIMARY_COLOR,
+    },
     footer: {
         paddingBottom: 20,
     },
     footer_text: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 13,
         padding: 15,
         textAlign: "center",

@@ -1,9 +1,9 @@
 import axios from "axios"
 
-export function getPosts(type: string, params: string, callback?: any) {
+export function getPosts(type: string, page: number, params: string, callback?: any) {
     axios({
         method: "GET",
-        url: "/api/@me/posts" + `?w=${type}${params !== undefined ? "&" + params : ""}`,
+        url: "/api/@me/v1/posts" + `?collect=${type}${params !== undefined ? "&" + params : ""}` + `&skip=${page}&loop_only=0`,
     })
         .then((data) => callback(data))
         .catch((error: any) => {

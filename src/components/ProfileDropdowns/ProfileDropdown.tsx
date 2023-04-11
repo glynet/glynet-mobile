@@ -30,7 +30,7 @@ export default function ProfileDropdown({ navigation, modalRef }: any) {
                             <PaperPlaneIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Profili Paylaş</Text>
+                            <Text style={styles.category_container_title}>Profili Paylaş</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -47,7 +47,7 @@ export default function ProfileDropdown({ navigation, modalRef }: any) {
                             <CrossIconRounded style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Engelle</Text>
+                            <Text style={styles.category_container_title}>Engelle</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -64,7 +64,7 @@ export default function ProfileDropdown({ navigation, modalRef }: any) {
                             <MuteIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Sessize Al</Text>
+                            <Text style={styles.category_container_title}>Sessize Al</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -81,7 +81,7 @@ export default function ProfileDropdown({ navigation, modalRef }: any) {
                             <InfoIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bu Profil Hakkında</Text>
+                            <Text style={styles.category_container_title}>Bu Profil Hakkında</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -98,7 +98,7 @@ export default function ProfileDropdown({ navigation, modalRef }: any) {
                             <FlagIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bildir</Text>
+                            <Text style={styles.category_container_title}>Bildir</Text>
                         </View>
                     </View>
                 </TouchableOpacity>

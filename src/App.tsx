@@ -36,6 +36,9 @@ import { getData } from "./utils/localStorage"
 import { setCompactNotifications } from "./store/preferences"
 import * as NavigationBar from "expo-navigation-bar"
 
+import "react-native-reanimated"
+import 'react-native-gesture-handler'
+
 const Stack = createStackNavigator()
 
 Notifications.setNotificationHandler({

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { Text, View } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import Switch from "../../components/Switch/Switch"
 import styles from "./Settings.style"
 
@@ -9,7 +9,7 @@ export default function PrivacySettings({ navigation }: any) {
     const [hideNSFW, setHideNSFW] = useState<boolean>(true)
 
     return (
-        <ScreenContainer headerTitle={"Gizlilik ve Güvenlik"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Gizlilik ve Güvenlik"} hideTabs={true} navigation={navigation}>
             {/* <TouchableOpacity activeOpacity={0.8} style={styles.follow_requests_button_container} onPress={() => navigation.navigate("LoginDevices")}>
                 <View style={styles.follow_requests_icon}>
                     <SecurityOutlineIcon style={{
@@ -42,6 +42,6 @@ export default function PrivacySettings({ navigation }: any) {
                     <Switch selected={hideNSFW} selector={setHideNSFW} greenText={"Göster"} redText={"Buzla"} />
                 </View>
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

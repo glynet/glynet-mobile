@@ -3,9 +3,9 @@ import { Image, View, Text, TouchableOpacity, Pressable, Animated } from "react-
 import { LinearGradient } from "expo-linear-gradient"
 import styles from "./Loop.style"
 import { BookmarkFilledIcon, CommentsFilledIcon, HeartFilledIcon } from "../../../utils/icons"
-import { like, save } from "../../../components/Posts/PostsAPI"
+import { like, save } from "../../../components/PostList/PostListAPI"
 import BottomModal from "../../../utils/modal"
-import Options from "../../../components/Posts/Options/Options"
+import Options from "../../../components/PostList/Options/Options"
 import { BottomSheetModal } from "@gorhom/bottom-sheet"
 import Profile from "./Profile"
 

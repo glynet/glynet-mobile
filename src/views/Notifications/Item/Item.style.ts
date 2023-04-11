@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     },
     notification_text: {
         fontSize: 16,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: theme.PRIMARY_COLOR,
     },
     user_badge: {
@@ -45,13 +45,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         marginTop: Platform.OS === "ios" ? 3 : 0,
         color: theme.SECONDARY_COLOR,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     notification_date: {
         fontSize: 14,
         marginTop: 3,
         color: theme.SECONDARY_COLOR,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     notification_avatar: {
         height: 50,
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     embed_text: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 14,
         lineHeight: 18,
         color: theme.PRIMARY_COLOR,

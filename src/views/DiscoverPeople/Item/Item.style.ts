@@ -17,14 +17,14 @@ const styles = StyleSheet.create({
     },
     notification_text: {
         fontSize: 16,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: theme.PRIMARY_COLOR,
     },
     notification_date: {
         fontSize: 14,
         marginTop: 3,
         color: theme.SECONDARY_COLOR,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     notification_avatar: {
         height: 45,
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     button_text: {
         fontSize: 14,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         marginLeft: 4,
         color: theme.BUTTON_COLOR,
     },

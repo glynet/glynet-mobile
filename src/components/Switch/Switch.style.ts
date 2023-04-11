@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     },
     switch_text: {
         fontSize: 15,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: theme.SECONDARY_COLOR,
     },
     switch_text_green: {

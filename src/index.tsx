@@ -26,12 +26,12 @@ export default function Glynet() {
 
     if (!loaded) return null
 
-    global.BASE_URL = Platform.OS === "ios" ? "http://localhost:7770" : "http://192.168.1.4:7770"
-    global.CDN_URL = Platform.OS === "ios" ? "http://localhost:7770" : "http://192.168.1.4:7770"
+    global.BASE_URL = Platform.OS === "ios" ? "http://localhost:7771" : "http://192.168.0.13:7771"
+    global.CDN_URL = Platform.OS === "ios" ? "http://localhost:7771" : "http://192.168.0.13:7771"
     axios.defaults.baseURL = global.BASE_URL
     axios.defaults.headers.common["Authorization"] =
-        Platform.OS === "ios"
-            ? "3fb1658bc02772c76eaa7054009ec462aa0def40fb5faa13e82a4d6d206f0915" : "2458689962"
+        "d901a23f5a6c976fe67c1b11afe72ab826b9a1e25c9c90c311743e3e016d1413"
+        // Platform.OS !== "ios" ? "d901a23f5a6c976fe67c1b11afe72ab826b9a1e25c9c90c311743e3e016d1413" : "2458689962"
 
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>

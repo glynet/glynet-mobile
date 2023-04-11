@@ -8,11 +8,20 @@ export const appPreferences = createSlice({
         setRefresh: false,
         compactNotifications: false,
         performanceMode: false,
-        loopId: 0,
+        loopId: -1,
+        postIndex: -1,
+        profile: {
+            username: "",
+            isFetched: false,
+            data: {}
+        }
     },
     reducers: {
         setLoopId: (state, action) => {
             state.loopId = action.payload
+        },
+        setPostIndex: (state, action) => {
+            state.postIndex = action.payload
         },
         setMute: (state, action) => {
             state.playVideosAsMuted = !state.playVideosAsMuted
@@ -27,9 +36,13 @@ export const appPreferences = createSlice({
         setCompactNotifications: (state, action) => {
             state.compactNotifications = action.payload
         },
+
+        setProfile: (state, action) => {
+            state.profile = action.payload
+        },
     },
 })
 
-export const { setLoopId, setMute, setBlackBackground, setRefresh, setCompactNotifications } = appPreferences.actions
+export const { setLoopId, setMute, setBlackBackground, setRefresh, setCompactNotifications, setPostIndex, setProfile } = appPreferences.actions
 
 export default appPreferences.reducer

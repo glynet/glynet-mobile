@@ -25,14 +25,14 @@ const styles = StyleSheet.create({
     },
     notification_text: {
         fontSize: 16,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: theme.PRIMARY_COLOR,
     },
     notification_date: {
         fontSize: 14,
         marginTop: Platform.OS === "ios" ? 3 : 0,
         color: theme.SECONDARY_COLOR,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     user_badge: {
         height: 16,
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     },
     button_text: {
         fontSize: 14,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         marginLeft: 4,
         color: theme.BUTTON_COLOR,
     },

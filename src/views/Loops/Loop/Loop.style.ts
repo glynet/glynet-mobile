@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         },
         text: {
             marginTop: 2,
-            fontFamily: "GilroyBold",
+            fontWeight: "bold",
             color: "#fff",
         },
 
@@ -149,12 +149,12 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     author_name: {
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: "#f8f5f6",
         fontSize: 17,
     },
     author_username: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: "#f8f5f6",
         fontSize: 14,
     },
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "#f8f5f6",
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 15,
         opacity: 0.9,
     },
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     },
     loop_text: {
         color: "#fff",
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         fontSize: 13,
     },
     play_button_container: {
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     loop_bottom_text_title: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: "#FFFFFFB2",
         fontSize: 14,
     },

@@ -37,7 +37,7 @@ export default function Tabs({ navigation }: any) {
                 {route.name !== "Loops" && <FlashIconOutline style={AppStyles.buttonContainer.icon} />}
                 {route.name === "Loops" && <FlashFilledIcon style={AppStyles.buttonContainer.icon_selected} />}
             </TouchableOpacity>
-            <TouchableOpacity accessibilityRole="button" activeOpacity={0.8} style={AppStyles.buttonContainer} onPress={() => navigation.navigate("Profile", { name: "avokadoyesili" })}>
+            <TouchableOpacity accessibilityRole="button" activeOpacity={0.8} style={AppStyles.buttonContainer} onPress={() => navigation.navigate("Profile", { name: "yugiohsena" })}>
                 {route.name !== "Profile" && <UserOutlineIcon style={AppStyles.buttonContainer.icon} />}
                 {route.name === "Profile" && <UserFilledIcon style={AppStyles.buttonContainer.icon_selected} />}
             </TouchableOpacity>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { View, Image, Text, TouchableOpacity, ActivityIndicator, Platform } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./FollowRequests.style"
 import { CheckmarkIcon, CrossIcon } from "../../utils/icons"
 import getTheme from "../../constants/colors"
@@ -50,7 +50,7 @@ export default function FollowRequests({ navigation }: any) {
     }, [state.preferences.setRefresh])
 
     return (
-        <ScreenContainer headerTitle={"Takip İstekleri"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Takip İstekleri"} hideTabs={true} navigation={navigation}>
             <View style={styles.notifications_container}>
                 {!isFetched && (
                     <View
@@ -92,7 +92,7 @@ export default function FollowRequests({ navigation }: any) {
                                         <Text
                                             style={{
                                                 ...styles.notification_text,
-                                                fontFamily: "GilroyBold",
+                                                fontWeight: "bold",
                                             }}
                                         >
                                             {item.user.name}
@@ -112,6 +112,6 @@ export default function FollowRequests({ navigation }: any) {
                         )
                     })}
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

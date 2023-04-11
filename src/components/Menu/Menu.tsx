@@ -23,8 +23,8 @@ export default function Menu({ navigation, modalRef }: any) {
                     }}
                 />
                 <View style={styles.user_details}>
-                    <Text style={styles.user_details.name}>Metehan Saral</Text>
-                    <Text style={styles.user_details.username}>alpsar4l</Text>
+                    <Text style={styles.user_details_name}>Metehan Saral</Text>
+                    <Text style={styles.user_details_username}>alpsar4l</Text>
                 </View>
             </TouchableOpacity>
 
@@ -42,7 +42,7 @@ export default function Menu({ navigation, modalRef }: any) {
                             <UserOutlineIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Hesap Ayarları</Text>
+                            <Text style={styles.category_container_title}>Hesap Ayarları</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -60,7 +60,7 @@ export default function Menu({ navigation, modalRef }: any) {
                             <PencilIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Profili Düzenle</Text>
+                            <Text style={styles.category_container_title}>Profili Düzenle</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -78,7 +78,7 @@ export default function Menu({ navigation, modalRef }: any) {
                             <CompassOutlineIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Tanıyor Olabileceklerin</Text>
+                            <Text style={styles.category_container_title}>Tanıyor Olabileceklerin</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -96,7 +96,7 @@ export default function Menu({ navigation, modalRef }: any) {
                             <HeartOutlineIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Beğeniler</Text>
+                            <Text style={styles.category_container_title}>Beğeniler</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -114,7 +114,7 @@ export default function Menu({ navigation, modalRef }: any) {
                             <BookmarkOutlineIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Kaydedilenler</Text>
+                            <Text style={styles.category_container_title}>Kaydedilenler</Text>
                         </View>
                     </View>
                 </TouchableOpacity>

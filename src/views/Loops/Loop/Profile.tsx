@@ -55,7 +55,7 @@ const Profile = ({ author, text, navigation }: any) => {
                         <PlayIconFilled style={styles.loop_bottom_icon} />
                     </View>
                     <MarqueeView style={styles.loop_bottom_text_container} speed={0.08}>
-                        <Text style={styles.loop_bottom_text_title}><Text style={{ fontFamily: "GilroyBold" }}>orijinal 31 ses</Text> - {author.username}</Text>
+                        <Text style={styles.loop_bottom_text_title}><Text style={{ fontWeight: "bold" }}>orijinal 31 ses</Text> - {author.username}</Text>
                     </MarqueeView>
                 </View>
             </View>

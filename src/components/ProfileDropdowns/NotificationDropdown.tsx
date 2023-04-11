@@ -1,6 +1,6 @@
 import React from "react"
 import { View, Text, TouchableOpacity, ScrollView } from "react-native"
-import { BellFilledIcon, BellOffIcon, BellOutlineIcon, CrossIcon, CrossIconRounded, InfoIcon, MuteIcon } from "../../utils/icons"
+import { BellFilledIcon, BellOffIcon, BellOutlineIcon, CrossIcon } from "../../utils/icons"
 import styles from "../Menu/Menu.style"
 
 export default function NotificationDropdown({ navigation, modalRef }: any) {
@@ -28,7 +28,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                             <BellFilledIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Tüm Bildirimleri Al</Text>
+                            <Text style={styles.category_container_title}>Tüm Bildirimleri Al</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -45,7 +45,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                             <BellOutlineIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Yalnızca Shotlar</Text>
+                            <Text style={styles.category_container_title}>Yalnızca Shotlar</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -62,7 +62,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                             <BellOffIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Kapalı</Text>
+                            <Text style={styles.category_container_title}>Kapalı</Text>
                         </View>
                     </View>
                 </TouchableOpacity>

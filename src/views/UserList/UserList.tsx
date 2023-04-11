@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { View, ActivityIndicator, Platform, FlatList, Dimensions } from "react-native"
 import Item from "./Item/Item"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./UserList.style"
 import { useRoute } from "@react-navigation/native"
 import getTheme from "../../constants/colors"
@@ -76,7 +76,7 @@ export default function UserList({ navigation }: any) {
     }, [pageCount])
 
     return (
-        <ScreenContainer
+        <AppContainer
             disableScrollView={true}
             headerTitle={route.params?.type === "likes" ? "Beğeniler" : route.params?.type === "followers" ? "Takipçiler" : "Takip Edilenler"}
             hideTabs={true}
@@ -162,6 +162,6 @@ export default function UserList({ navigation }: any) {
                     </View>
                 )}
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

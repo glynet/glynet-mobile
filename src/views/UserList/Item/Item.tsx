@@ -45,7 +45,7 @@ export default function Item({ item, index, navigation }: any) {
                         <Text
                             style={{
                                 ...styles.notification_text,
-                                fontFamily: "GilroyBold",
+                                fontWeight: "bold",
                             }}
                         >
                             {sliceText(item.user.data.name, 16, true)}

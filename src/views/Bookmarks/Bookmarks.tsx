@@ -1,11 +1,14 @@
 import React from "react"
-import Posts from "../../components/Posts/Posts"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
+import PostList from "../../components/PostList/PostList"
 
 export default function Bookmarks({ navigation }: any) {
     return (
-        <ScreenContainer headerTitle={"Kaydedilenler"} navigation={navigation}>
-            <Posts type={"bookmarks"} navigation={navigation} />
-        </ScreenContainer>
+        <AppContainer headerTitle={"Kaydedilenler"} navigation={navigation}>
+            <PostList
+                collect={"bookmarks"}
+                navigation={navigation}
+            />
+        </AppContainer>
     )
 }

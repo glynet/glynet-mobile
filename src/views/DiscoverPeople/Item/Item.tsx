@@ -22,7 +22,7 @@ export default function Item({ data, sendInvite }: any) {
                 <Text
                     style={{
                         ...styles.notification_text,
-                        fontFamily: "GilroyBold",
+                        fontWeight: "bold",
                     }}
                 >
                     {item.name}

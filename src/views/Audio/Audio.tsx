@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { View, Text, Image, ActivityIndicator, Platform } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./Audio.style"
 import MasonryList from "@react-native-seoul/masonry-list"
 import Item from "./Item/Item"
@@ -44,7 +44,7 @@ export default function Audio({ navigation }: any) {
 
     return (
         <>
-            <ScreenContainer headerTitle={"Ses"} navigation={navigation}>
+            <AppContainer headerTitle={"Ses"} navigation={navigation}>
                 {!isFetched && (
                     <View style={styles.loader}>
                         <ActivityIndicator size={Platform.OS === "ios" ? "small" : "large"} color={theme.THEME_COLOR} />
@@ -90,7 +90,7 @@ export default function Audio({ navigation }: any) {
                         </View>
                     </View>
                 )}
-            </ScreenContainer>
+            </AppContainer>
         </>
     )
 }

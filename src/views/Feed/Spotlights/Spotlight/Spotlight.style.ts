@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 12,
         paddingTop: 1,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: theme.THEME_COLOR,
     },
 })

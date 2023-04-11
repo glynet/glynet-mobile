@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Image, Text, TouchableOpacity, View, Dimensions, TextInput, ImageBackground, StatusBar } from "react-native"
 import { BellOutlineIcon, CameraIcon, LocationPinIcon, PencilIcon, UserAddIcon, UserDoneIcon, VerifiedIcon, VerticalIcon, WebIcon } from "../../utils/icons"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./EditProfile.style"
 import ImageView from "react-native-image-viewing"
 import { setBlackBackground } from "../../store/preferences"
@@ -21,7 +21,7 @@ export default function EditProfile({ navigation }: any) {
     const [website, setWebsite] = useState<string>("glynet.com")
 
     return (
-        <ScreenContainer headerTitle={"Profili Düzenleyici"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Profili Düzenleyici"} hideTabs={true} navigation={navigation}>
             <View style={styles.profile_container}>
                 <View style={styles.profile_container}>
                     <TouchableOpacity activeOpacity={0.95}>
@@ -129,6 +129,6 @@ export default function EditProfile({ navigation }: any) {
                     </TouchableOpacity>
                 </View>
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

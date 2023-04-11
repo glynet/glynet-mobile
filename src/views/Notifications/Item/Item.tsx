@@ -36,8 +36,6 @@ export default function Item({ content, index, navigation }: any) {
                 return setText("Gönderine yorum bıraktı")
             case "like_post":
                 return setText("Gönderini beğendi")
-            case "quote_post":
-                return setText("Gönderini alıntıladı")
             default:
                 return setText("Bir şeyler yaptı")
         }
@@ -65,7 +63,7 @@ export default function Item({ content, index, navigation }: any) {
                         onPress={() => _profile(content.from.username)}
                         style={{
                             ...styles.notification_text,
-                            fontFamily: "GilroyBold",
+                            fontWeight: "bold",
                         }}
                     >
                         {content.from.name}
@@ -89,7 +87,7 @@ export default function Item({ content, index, navigation }: any) {
                         {content.details.extend.post.content.text.length !== 0 && (
                             <View style={styles.embed_text_container}>
                                 <Text style={styles.embed_text}>
-                                    <Text onPress={() => _profile(content.details.extend.post.author.username)} style={{ fontFamily: "GilroyBold" }}>
+                                    <Text onPress={() => _profile(content.details.extend.post.author.username)} style={{ fontWeight: "bold" }}>
                                         {content.details.extend.post.author.username}
                                     </Text>{" "}
                                     {content.details.extend.post.content.text.trim()}
@@ -111,7 +109,7 @@ export default function Item({ content, index, navigation }: any) {
                                             <Text
                                                 onPress={() => _profile(content.details.extend.comment.author.username)}
                                                 style={{
-                                                    fontFamily: "GilroyBold",
+                                                    fontWeight: "bold",
                                                 }}
                                             >
                                                 {content.details.extend.comment.author.username}
@@ -125,7 +123,7 @@ export default function Item({ content, index, navigation }: any) {
                         {content.details.extend.post.content.text.length === 0 && content.details.extend.comment !== undefined && content.details.extend.comment.content.text.length !== 0 && (
                             <View style={styles.embed_text_container}>
                                 <Text style={styles.embed_text}>
-                                    <Text onPress={() => _profile(content.details.extend.comment.author.username)} style={{ fontFamily: "GilroyBold" }}>
+                                    <Text onPress={() => _profile(content.details.extend.comment.author.username)} style={{ fontWeight: "bold" }}>
                                         {content.details.extend.comment.author.username}
                                     </Text>{" "}
                                     {content.details.extend.comment.content.text.trim()}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { ActivityIndicator, Image, Platform, Text, TouchableOpacity, View } from "react-native"
 import { SearchOutlineIcon } from "../../utils/icons"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import styles from "./Search.style"
 import getTheme from "../../constants/colors"
 import { useSelector } from "react-redux"
@@ -37,7 +37,7 @@ export default function Search({ navigation }: any) {
     }, [state.header.searchInput])
 
     return (
-        <ScreenContainer hideTabs={true} navigation={navigation}>
+        <AppContainer hideTabs={true} navigation={navigation}>
             {onFetching && (
                 <View
                     style={{
@@ -100,7 +100,7 @@ export default function Search({ navigation }: any) {
                                         style={[
                                             styles.result_text,
                                             item.type === "profile" && {
-                                                fontFamily: "GilroyBold",
+                                                fontWeight: "bold",
                                             },
                                         ]}
                                     >
@@ -113,6 +113,6 @@ export default function Search({ navigation }: any) {
                     })}
                 </View>
             )}
-        </ScreenContainer>
+        </AppContainer>
     )
 }

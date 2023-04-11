@@ -1,14 +1,19 @@
-import React from "react"
-import Posts from "../../components/Posts/Posts"
-import ScreenContainer from "../../utils/screen"
+import React, { useRef } from "react"
+import PostList from "../../components/PostList/PostList"
+import AppContainer from "../../utils/screen"
 import { useRoute } from "@react-navigation/native"
+import useRouteParams from "../../hooks/useRouteParams"
 
 export default function Location({ navigation }: any) {
-    const route = useRoute() as any
+    const location = useRef(useRouteParams(useRoute(), "location")).current
 
     return (
-        <ScreenContainer headerTitle={`${route.params?.location}`} navigation={navigation}>
-            {route.params?.location !== undefined && <Posts type={"location"} params={`q=${route.params?.location}`} navigation={navigation} />}
-        </ScreenContainer>
+        <AppContainer headerTitle={location} navigation={navigation}>
+            <PostList
+                collect={"location"} 
+                params={`q=${location}`}
+                navigation={navigation}
+            />
+        </AppContainer>
     )
 }

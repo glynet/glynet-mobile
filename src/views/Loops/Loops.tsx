@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import { View, ActivityIndicator } from "react-native"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import Loop from "./Loop/Loop"
 import { getLoops } from "./LoopsAPI"
 import { FlatList } from "react-native-gesture-handler"
@@ -16,10 +16,10 @@ export default function Loops({ navigation }: any) {
     const dispatch = useDispatch()
 
     const route = useRoute() as any
-    const pageHeight = screenHeightWithoutInsets(60)
-
-    const collect_type = route.params?.collect === undefined ? "explore" : route.params.collect
-    const loop_id = route.params?.loop_id === undefined ? "" : route.params.loop_id
+    
+    const pageHeight = useRef(screenHeightWithoutInsets(60)).current
+    const collect_type = useRef(route.params?.collect === undefined ? "explore" : route.params.collect).current
+    const loop_id = useRef(route.params?.loop_id === undefined ? "" : route.params.loop_id).current
 
     const [loops, setLoops] = useState<Post[]>([])
     const [isLoading, setLoading] = useState<boolean>(false)
@@ -30,6 +30,7 @@ export default function Loops({ navigation }: any) {
     const onViewableItemsChanged = useRef(({ changed }: any) => {
         for (const element of changed) {
             if (element.isViewable) {
+                console.log(element.index);
                 dispatch(setLoopId(element.index))
             }
         }
@@ -54,7 +55,11 @@ export default function Loops({ navigation }: any) {
     }
 
     const renderLoop = ({ item, index }: any) => {
-        return <Loop item={item} navigation={navigation} index={index} />
+        return <Loop
+            item={item} 
+            navigation={navigation} 
+            index={index}
+        />
     }
 
     useEffect(() => {
@@ -76,7 +81,7 @@ export default function Loops({ navigation }: any) {
     }, [pageCount])
 
     return (
-        <ScreenContainer disableScrollView={true} hideHeader={true} navigation={navigation}>
+        <AppContainer hideHeader={true} navigation={navigation}>
             {!isFetched && loops.length === 0 && (
                 <View style={{ ...styles.loader, height: pageHeight }}>
                     <ActivityIndicator size={"large"} color={"grey"} />
@@ -99,7 +104,7 @@ export default function Loops({ navigation }: any) {
                     onViewableItemsChanged={onViewableItemsChanged.current}
                 />
             )}
-        </ScreenContainer>
+        </AppContainer>
     )
 }
 

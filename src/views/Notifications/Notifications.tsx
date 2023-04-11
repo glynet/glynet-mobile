@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react"
-import { View, Text, TouchableOpacity, ActivityIndicator, Platform, FlatList, Dimensions } from "react-native"
+import { View, Text, TouchableOpacity, ActivityIndicator, Platform, Dimensions } from "react-native"
 import Item from "./Item/Item"
-import ScreenContainer from "../../utils/screen"
-import { ArrowRightIosIcon, PencilIcon, UserAddIcon } from "../../utils/icons"
-import styles from "./Container.style"
+import AppContainer from "../../utils/screen"
+import { ArrowRightIosIcon, UserAddIcon } from "../../utils/icons"
+import styles from "./Notifications.style"
 import { getNotifications } from "./NotificationsAPI"
 import Alert from "../../components/Alert/Alert"
 import Notify from "../../utils/illustrations/Notify"
 import getTheme from "../../constants/colors"
-import { useSelector } from "react-redux"
 import { FlashList } from "@shopify/flash-list"
 import screenHeightWithoutInsets from "../../helpers/screenHeightWithoutInsets"
 
 const theme = getTheme()
 
 export default function Notifications({ navigation }: any) {
-    const state = useSelector((state: any) => state) as any
-
     const [showRequests, setShowRequests] = useState<boolean>(false)
     const [followRequests, setRequests] = useState<number>(0)
     const [list, setList] = useState<any>([])
@@ -44,10 +41,10 @@ export default function Notifications({ navigation }: any) {
                 setRequests(data.follow_requests.count)
             }
         })
-    }, [state.preferences.setRefresh])
+    }, [])
 
     return (
-        <ScreenContainer headerTitle={"Bildirimler"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Bildirimler"} hideTabs={true} navigation={navigation}>
             {showRequests && followRequests !== 0 && (
                 <TouchableOpacity activeOpacity={0.8} style={styles.follow_requests_button_container} onPress={() => navigation.navigate("FollowRequests")}>
                     <View style={styles.follow_requests_icon}>
@@ -66,6 +63,7 @@ export default function Notifications({ navigation }: any) {
                     <ArrowRightIosIcon style={styles.category_arrow} />
                 </TouchableOpacity>
             )}
+
             <View style={styles.notifications_container}>
                 {(isFetched && list.length !== 0) && (
                     <View style={{ height: pageHeight, width: Dimensions.get("window").width }}>
@@ -97,6 +95,6 @@ export default function Notifications({ navigation }: any) {
                     </View>
                 )}
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }

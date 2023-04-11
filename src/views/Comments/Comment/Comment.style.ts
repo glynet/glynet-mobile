@@ -26,14 +26,14 @@ const styles = StyleSheet.create({
     comment_content: {},
     comment_author_name: {
         fontSize: 14,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: "#292929",
     },
     comment_text: {
         fontSize: 15,
         marginTop: 0,
         color: "#000",
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     comment_attachment_container: {
         paddingTop: 10,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         marginTop: 7,
         color: theme.TERTIARY_COLOR,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     comment_bottom: {
         flexDirection: "row",
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     },
     reply_button: {
         marginLeft: 7,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: theme.SECONDARY_COLOR,
     },
     comment_button_container: {
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     },
     comment_button_value: {
         fontSize: 14,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: "#90969D",
         marginLeft: 3,
     },
@@ -102,19 +102,19 @@ const styles = StyleSheet.create({
     },
     reply_author_name: {
         fontSize: 14,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: "#292929",
     },
     reply_author_text: {
         fontSize: 14,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: "#000",
         marginTop: 2,
     },
     reply_author_date: {
         fontSize: 12,
         marginTop: 2,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         color: theme.TERTIARY_COLOR,
     },
     replies_count_container: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     },
     replies_text: {
         fontSize: 12,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: theme.TERTIARY_COLOR,
     },
     replies_icon: {

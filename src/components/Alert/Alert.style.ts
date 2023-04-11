@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     title: {
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         fontSize: 20,
         color: theme.PRIMARY_COLOR,
         marginTop: 15,
     },
     description: {
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
         fontSize: 14,
         marginTop: Platform.OS === "ios" ? 5 : 0,
         color: theme.SECONDARY_COLOR,

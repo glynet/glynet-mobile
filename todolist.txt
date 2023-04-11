@@ -1,8 +1,6 @@
 post/loop kaldırma
 post/loop bildirme
-posttaki videoya basınca loop sekmesine yönlendirme
 android için loopta sekme değiştirince geri dönünce en üste çıkma sorunu
-post optimizasyonu (flatlist'e çevrilecek)
 bu profil hakkında
 badge bilgisi
 *post butonları tasarımı daha hoş olabilir*
@@ -14,8 +12,6 @@ hikayeler? yapılacak
 gönderi/loop paylaşma yapılacak
 profili düzenleme yapılacak
 
-ses sayfası (shorts gibi yapılabilir)
-bu sese ait diğer videolar
 yorumlar (gönderme, yanıtlama, gif atma,< sabitleme, likelama, mentionlanama, ?hashtags)
 seçenekler kaliteli hale gelecek,
 

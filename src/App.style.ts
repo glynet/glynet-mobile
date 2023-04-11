@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
             marginTop: -2,
             fontSize: 22,
             color: theme.HEADER_ITEM_COLOR,
-            fontFamily: "GilroyBold",
+            fontFamily: "GilroyBold"
         },
     },
     content: {

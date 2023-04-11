@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 import { AlbumOutlineIcon, ArrowRightIosIcon, BellOutlineIcon, EyeOutlineIcon, LogoutIcon, MailIcon, MoonIcon, PencilIcon, SecurityOutlineIcon, SunIcon, TrashIcon } from "../../utils/icons"
-import ScreenContainer from "../../utils/screen"
+import AppContainer from "../../utils/screen"
 import getTheme from "../../constants/colors"
 
 const theme = getTheme()
@@ -10,7 +10,7 @@ export default function Settings({ navigation }: any) {
     const [lightMode, setLightMode] = useState<boolean>(true)
 
     return (
-        <ScreenContainer headerTitle={"Ayarlar"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Ayarlar"} hideTabs={true} navigation={navigation}>
             <View style={styles.settings_container}>
                 <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => navigation.navigate("EditProfile")}>
                     <View style={styles.category_container_left}>
@@ -122,7 +122,7 @@ export default function Settings({ navigation }: any) {
                     </View>
                 </TouchableOpacity>
             </View>
-        </ScreenContainer>
+        </AppContainer>
     )
 }
 
@@ -167,12 +167,12 @@ const styles = StyleSheet.create({
         },
         title: {
             fontSize: 15,
-            fontFamily: "GilroyBold",
+            fontWeight: "bold",
             color: theme.PRIMARY_COLOR,
         },
         description: {
             fontSize: 13,
-            fontFamily: "GilroyMedium",
+            fontWeight: "normal",
             marginTop: 4,
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,

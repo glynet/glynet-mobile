@@ -25,14 +25,14 @@ const styles = StyleSheet.create({
     },
     follow_requests_text: {
         fontSize: 16,
-        fontFamily: "GilroyBold",
+        fontWeight: "bold",
         color: theme.PRIMARY_COLOR,
     },
     follow_requests_description: {
         fontSize: 14,
         marginTop: 3,
         color: theme.SECONDARY_COLOR,
-        fontFamily: "GilroyMedium",
+        fontWeight: "normal",
     },
     category_arrow: {
         height: 22,
