@@ -5,19 +5,22 @@ const theme = getTheme()
 
 const styles = StyleSheet.create({
     notification_container: {
-        padding: 15,
         borderBottomWidth: theme.BORDER_WIDTH,
         borderBottomColor: theme.BOX_BORDER_COLOR,
         flexDirection: "row",
         alignItems: "center",
         position: "relative",
+        justifyContent: "space-between",
+        // backgroundColor: "red"
     },
     user_details: {
+        padding: 15,
         flexDirection: "row",
         alignItems: "center",
+        width: "100%"
     },
     notification_details: {
-        marginLeft: 10,
+        marginLeft: 9,
     },
     user_name: {
         flexDirection: "row",
@@ -25,14 +28,14 @@ const styles = StyleSheet.create({
     },
     notification_text: {
         fontSize: 16,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: theme.PRIMARY_COLOR,
     },
     notification_date: {
         fontSize: 14,
-        marginTop: Platform.OS === "ios" ? 3 : 0,
+        marginTop: Platform.OS === "ios" ? 2 : -2,
         color: theme.SECONDARY_COLOR,
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     user_badge: {
         height: 16,
@@ -48,17 +51,17 @@ const styles = StyleSheet.create({
     },
 
     buttons: {
-        position: "absolute",
-        top: 20,
-        right: 12,
         flexDirection: "row",
         alignItems: "center",
+        position: "absolute",
+        right: 15,
+        zIndex: 999
     },
     button_container: {
-        backgroundColor: "rgba(234,236,237,0.34)",
-        padding: 10,
-        paddingHorizontal: 12,
-        borderRadius: 10,
+        backgroundColor: "#fff",
+        padding: 9,
+        paddingHorizontal: 11,
+        borderRadius: 13,
         flexDirection: "row",
         alignItems: "center",
         borderWidth: theme.BORDER_WIDTH,
@@ -66,13 +69,13 @@ const styles = StyleSheet.create({
         marginLeft: 7,
     },
     button_icon: {
-        height: 16,
-        width: 16,
+        height: 18,
+        width: 18,
         fill: theme.BUTTON_COLOR,
     },
     button_text: {
         fontSize: 14,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         marginLeft: 4,
         color: theme.BUTTON_COLOR,
     },

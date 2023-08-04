@@ -18,18 +18,18 @@ export default function Options({ isMarked, updateMarked, navigation, modalRef }
                             {isMarked && <BookmarkFilledIcon style={styles.category_container.icon} />}
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>{isMarked ? "Kaydedildi" : "Kaydet"}</Text>
+                            <Text style={styles.category_container_title}>{isMarked ? "Kaydedildi" : "Kaydet"}</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={async () => {}}>
+                <TouchableOpacity activeOpacity={0.8} style={styles.category_container}>
                     <View style={styles.category_container_left}>
                         <View style={styles.category_container.icon_container}>
                             <AttachmentIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bağlantıyı Kopyala</Text>
+                            <Text style={styles.category_container_title}>Bağlantıyı Kopyala</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -46,7 +46,7 @@ export default function Options({ isMarked, updateMarked, navigation, modalRef }
                             <FlagIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Bildir</Text>
+                            <Text style={styles.category_container_title}>Bildir</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -63,7 +63,7 @@ export default function Options({ isMarked, updateMarked, navigation, modalRef }
                             <TrashIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container.title}>Kaldır</Text>
+                            <Text style={styles.category_container_title}>Kaldır</Text>
                         </View>
                     </View>
                 </TouchableOpacity>

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { memo, useCallback } from "react"
 import { Text } from "react-native"
 import Hyperlink from "react-native-hyperlink"
 import getTheme from "../../constants/colors"
@@ -6,7 +6,7 @@ import getTheme from "../../constants/colors"
 const theme = getTheme()
 
 const TextView = (props: any) => {
-    const prepareText = (text: string, mentionHashtagPress: any, mentionHashtagColor: string) => {
+    const prepareText = useCallback((text: string, mentionHashtagPress: any, mentionHashtagColor: string) => {
         const result = []
 
         const mentList = props.children.match(/[@#][a-zA-Z0-9ğüşöçİĞÜŞÖÇ_.]+/gi)
@@ -23,13 +23,12 @@ const TextView = (props: any) => {
         if (text.length > 0) result.push(text)
 
         return result
-    }
+    }, [])
 
     return (
         <Hyperlink linkDefault={true} linkStyle={{
             color: props.mentionHashtagColor ? props.mentionHashtagColor : theme.THEME_COLOR,
-            // fontWeight: "bold",
-            // fontWeight: "bold"
+            fontFamily: "SoftBold"
         }}>
             <Text style={{ ...props.style }} onPress={props.onPress} numberOfLines={props.numberOfLines} ellipsizeMode={props.ellipsizeMode}>
                 {prepareText(props.children, props.mentionHashtagPress, props.mentionHashtagColor)}
@@ -43,7 +42,7 @@ const Mention = (props: any) => {
         <Text
             style={{
                 color: props.mentionHashtagColor ? props.mentionHashtagColor : theme.THEME_COLOR,
-                // fontWeight: "bold"
+                fontFamily: "SoftBold"
             }}
             onPress={() => {
                 if (props.mentionHashtagPress) {
@@ -56,4 +55,4 @@ const Mention = (props: any) => {
     )
 }
 
-export default TextView
+export default memo(TextView)

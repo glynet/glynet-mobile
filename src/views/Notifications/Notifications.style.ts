@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
         position: "relative",
     },
     follow_requests_icon: {
-        height: 45,
-        width: 45,
+        height: 50,
+        width: 50,
         borderRadius: 100,
         backgroundColor: "#ececec",
         alignItems: "center",
@@ -25,14 +25,14 @@ const styles = StyleSheet.create({
     },
     follow_requests_text: {
         fontSize: 16,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.PRIMARY_COLOR,
     },
     follow_requests_description: {
         fontSize: 14,
-        marginTop: 3,
+        marginTop: 0,
         color: theme.SECONDARY_COLOR,
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     category_arrow: {
         height: 22,
@@ -45,6 +45,12 @@ const styles = StyleSheet.create({
         backgroundColor: theme.BOX_BACKGROUND,
         // borderRadius: 12,
     },
+    center_container: {
+        width: "100%",
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+    }
 })
 
 export default styles

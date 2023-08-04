@@ -24,3 +24,16 @@ export function follow(username: string, callback?: any) {
             console.log(errMessage)
         })
 }
+
+export function updateNotifications(id: string, type: string, callback?: any) {
+    axios({
+        method: "POST",
+        url: "/api/@me/v1/notifications/update",
+        data: { user_id: id, type },
+    })
+        .then((data) => callback(data))
+        .catch((error: any) => {
+            const errMessage = error.toJSON()
+            console.log(errMessage)
+        })
+}

@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     new_comment: {
+        flex: 1,
         position: "absolute",
         bottom: 0,
         zIndex: 99,
@@ -29,14 +30,24 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         backgroundColor: theme.THEME_COLOR,
     },
-    new_comment_input: {
+    new_comment_input_container: {
         // borderWidth: 1,
-        backgroundColor: "#EDEDED",
+        backgroundColor: "rgb(242,242,242)",
         borderColor: theme.BORDER_COLOR,
         height: 45,
         borderRadius: 30,
         fontSize: 15,
-        paddingHorizontal: 20,
+        paddingHorizontal: 15,
+        marginLeft: 10,
+        marginBottom: 5,
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        width: Dimensions.get("window").width - 85
+    },
+    new_comment_input: {
+        width: "90%",
+        fontFamily: "Medium",
     },
     new_comment_send_container: {
         borderWidth: 1,
@@ -67,6 +78,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
     },
+    disabled_button: {
+        opacity: 0.5,
+    }
 })
 
 export default styles

@@ -16,48 +16,66 @@ const styles = StyleSheet.create({
         height: 45,
         width: 45,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR,
+        // backgroundColor: theme.THEME_COLOR,
     },
     comment_right: {
         marginLeft: 10,
-        marginTop: 3,
+        marginTop: -3.5,
         flexShrink: 1,
+        width: "100%",
     },
     comment_content: {},
     comment_author_name: {
-        fontSize: 14,
-        fontWeight: "bold",
+        fontSize: 16,
+        fontFamily: "Bold",
         color: "#292929",
     },
     comment_text: {
-        fontSize: 15,
+        fontSize: 16,
         marginTop: 0,
         color: "#000",
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     comment_attachment_container: {
-        paddingTop: 10,
-        paddingBottom: 3,
+        marginTop: 8,
+        paddingBottom: 0,
+        height: 230,
+        width: 230,
+        borderRadius: 15,
+        backgroundColor: "rgb(240,240,240)"
+    },
+    attachment_gif_icon: {
+        position: "absolute",
+        top: 0,
+        right: 5,
+        zIndex: 99,
+        opacity: 0.75,
+    },
+    attachment_loader: {
+        justifyContent: "center",
+        flex: 1,
+        alignItems: "center"
     },
     comment_attachment_content: {
-        height: 130,
-        width: undefined,
-        resizeMode: "contain",
-        borderRadius: 10,
-        aspectRatio: 1,
-        flex: 1,
+        height: 230,
+        width: 230,
+        resizeMode: "cover",
+        overlayColor: "#fff",
+        borderRadius: 15,
+
+        // flex: 1,
     },
     comment_date: {
-        fontSize: 12,
+        fontSize: 13.5,
         marginTop: 7,
         color: theme.TERTIARY_COLOR,
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     comment_bottom: {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginTop: 0,
+        marginTop: -2
     },
     comment_bottom_left: {
         flexDirection: "row",
@@ -65,23 +83,24 @@ const styles = StyleSheet.create({
     },
     reply_button: {
         marginLeft: 7,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.SECONDARY_COLOR,
     },
     comment_button_container: {
         flexDirection: "row",
         alignItems: "center",
-        // backgroundColor: "red",
-        width: 40,
+        top: 8.5,
+        right: 0,
+        position: "absolute"
     },
     comment_button: {
-        height: 21,
-        width: 21,
+        height: 23,
+        width: 23,
         fill: "#90969D",
     },
     comment_button_value: {
         fontSize: 14,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: "#90969D",
         marginLeft: 3,
     },
@@ -102,19 +121,19 @@ const styles = StyleSheet.create({
     },
     reply_author_name: {
         fontSize: 14,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: "#292929",
     },
     reply_author_text: {
         fontSize: 14,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: "#000",
         marginTop: 2,
     },
     reply_author_date: {
         fontSize: 12,
         marginTop: 2,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: theme.TERTIARY_COLOR,
     },
     replies_count_container: {
@@ -124,7 +143,7 @@ const styles = StyleSheet.create({
     },
     replies_text: {
         fontSize: 12,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.TERTIARY_COLOR,
     },
     replies_icon: {

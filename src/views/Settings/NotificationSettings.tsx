@@ -22,7 +22,7 @@ export default function NotificationSettings({ navigation }: any) {
     }, [compactMode])
 
     return (
-        <AppContainer headerTitle={"Bildirim Ayarları"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Bildirim Ayarları"} hideTabs={false} navigation={navigation}>
             <View style={styles.profile_inputs_container}>
                 <View style={{ ...styles.profile_input_container }}>
                     <Text style={styles.profile_input_title}>E-Posta yoluyla bildirim alma</Text>

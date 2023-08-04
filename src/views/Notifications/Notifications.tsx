@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
-import { View, Text, TouchableOpacity, ActivityIndicator, Platform, Dimensions } from "react-native"
+import { View, Text, TouchableOpacity } from "react-native"
 import Item from "./Item/Item"
 import AppContainer from "../../utils/screen"
 import { ArrowRightIosIcon, UserAddIcon } from "../../utils/icons"
 import styles from "./Notifications.style"
 import { getNotifications } from "./NotificationsAPI"
 import Alert from "../../components/Alert/Alert"
-import Notify from "../../utils/illustrations/Notify"
-import getTheme from "../../constants/colors"
-import { FlashList } from "@shopify/flash-list"
+import Bird from "../../utils/handcrafts/Bird"
 import screenHeightWithoutInsets from "../../helpers/screenHeightWithoutInsets"
-
-const theme = getTheme()
+import FreshList from "../../components/FreshList/FreshList"
+import Loader from "../../components/Loader/Loader"
+import ScaleButton from "../../components/ScaleButton/ScaleButton"
+import scaleButtonStyle from "../../views/Communities/Communities.style"
 
 export default function Notifications({ navigation }: any) {
     const [showRequests, setShowRequests] = useState<boolean>(false)
@@ -19,7 +19,7 @@ export default function Notifications({ navigation }: any) {
     const [list, setList] = useState<any>([])
     const [isFetched, setFetched] = useState<boolean>(false)
 
-    const pageHeight = screenHeightWithoutInsets()
+    const pageHeight = screenHeightWithoutInsets(115)
 
     const renderItem = ({ item, index }: any) => {
         return <Item content={item} index={index} key={index} navigation={navigation} />
@@ -44,54 +44,43 @@ export default function Notifications({ navigation }: any) {
     }, [])
 
     return (
-        <AppContainer headerTitle={"Bildirimler"} hideTabs={true} navigation={navigation}>
-            {showRequests && followRequests !== 0 && (
-                <TouchableOpacity activeOpacity={0.8} style={styles.follow_requests_button_container} onPress={() => navigation.navigate("FollowRequests")}>
-                    <View style={styles.follow_requests_icon}>
-                        <UserAddIcon
-                            style={{
-                                height: 20,
-                                width: 20,
-                                fill: "#000",
-                            }}
-                        />
-                    </View>
-                    <View style={styles.follow_requests_details}>
-                        <Text style={styles.follow_requests_text}>Takip İstekleri</Text>
-                        <Text style={styles.follow_requests_description}>{followRequests} yeni takip isteği</Text>
-                    </View>
-                    <ArrowRightIosIcon style={styles.category_arrow} />
-                </TouchableOpacity>
-            )}
-
-            <View style={styles.notifications_container}>
-                {(isFetched && list.length !== 0) && (
-                    <View style={{ height: pageHeight, width: Dimensions.get("window").width }}>
-                        <FlashList
-                            data={list}
-                            estimatedItemSize={50}
-                            renderItem={renderItem}
+        <AppContainer headerTitle={"Bildirimler"} hideTabs={false} navigation={navigation}>
+            <View style={{ height: pageHeight }}>
+                {isFetched && (
+                    <FreshList
+                        data={list}
+                        renderComponent={renderItem}
+                        HeaderComponent={followRequests !== 0 && (
+                            <ScaleButton
+                                onPress={() => navigation.push("UserList", {
+                                    type: "follow_requests"
+                                })}
+                                activeScale={0.95}
+                                contentContainerStyle={[scaleButtonStyle.header_button, { marginBottom: 15 }]}
+                            >
+                                <View>
+                                    <Text style={scaleButtonStyle.header_button_title}>Takip İstekleri</Text>
+                                    <Text style={scaleButtonStyle.header_button_description}>{followRequests} yeni takip isteği</Text>
+                                </View>
+                                <View>
+                                    <ArrowRightIosIcon style={scaleButtonStyle.header_button_icon} />
+                                </View>
+                            </ScaleButton>
+                        )}
+                    />
+                )}
+                {(isFetched && list.length === 0) && (
+                    <View style={styles.center_container}>
+                        <Alert
+                            image={<Bird />}
+                            title={"Pırıl pırıl!"}
+                            description={"Hepimiz yeni mektup taşıyan bir güvercini bekliyoruz..."}
                         />
                     </View>
                 )}
-
-                {isFetched && list.length === 0 && (
-                    <Alert image={<Notify themeColor={theme.THEME_COLOR} style={{ height: 120, width: 120 }} />} title={"Tertemiz!"} description={"Yeni bildirimler geldiğinde burada görebilirsin!"} />
-                )}
-
                 {!isFetched && (
-                    <View
-                        style={{
-                            backgroundColor: theme.BOX_BACKGROUND,
-                            width: "100%",
-                            borderRadius: 15,
-                            marginBottom: 12,
-                            padding: 30,
-                            alignItems: "center",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <ActivityIndicator size={Platform.OS === "ios" ? "small" : "large"} color={theme.THEME_COLOR} />
+                    <View style={styles.center_container}>
+                        <Loader clearStyles={true} />
                     </View>
                 )}
             </View>

@@ -1,12 +1,10 @@
 
 import React, { memo, useEffect, useState } from "react"
-import { Image, Dimensions, Pressable, ActivityIndicator, View } from "react-native"
+import { Image, Dimensions, Pressable, View } from "react-native"
 import cdnUrl from "../../../helpers/cdnUrl"
-import { useSelector } from "react-redux"
-import styles from "./Post.style"
+import Loader from "../../Loader/Loader"
 
 const ImagePreview = ({ media, styles, pressCallback, isVisible, InnerComponent, autoHeight }: any) => {
-    const state = useSelector((state: any) => state.preferences) as any
     const [height, setHeight] = useState(Dimensions.get("window").width - 30)
 
     useEffect(() => {
@@ -19,11 +17,12 @@ const ImagePreview = ({ media, styles, pressCallback, isVisible, InnerComponent,
 
     return (
         <Pressable
-            onPress={pressCallback} 
+            onPress={pressCallback}
             style={[styles, autoHeight && { height: height }]}
         >
             {isVisible && (
                 <Image
+                    fadeDuration={0}
                     style={[styles, autoHeight && { height: height }, { position: "absolute", zIndex: 7 }]}
                     source={{
                         uri: cdnUrl(media.media_url)
@@ -31,7 +30,7 @@ const ImagePreview = ({ media, styles, pressCallback, isVisible, InnerComponent,
                 />
             )}
             <View style={{ alignItems: "center", justifyContent: "center", height: "100%", position: "absolute", width: "100%", zIndex: 5 }}>
-                <ActivityIndicator size="large" color="rgb(176,176,176)" />
+                <Loader clearStyles={true} size={"small"} />
             </View>
             {InnerComponent && <InnerComponent />}
         </Pressable>

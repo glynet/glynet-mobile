@@ -16,18 +16,18 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
     },
     profile_input_title: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 15,
         color: theme.PRIMARY_COLOR,
     },
     profile_input_title_desc: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 13,
         color: theme.SECONDARY_COLOR,
         marginTop: 4,
     },
     profile_input_warn: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 11,
         marginTop: 7,
         color: "#ff0000",
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         text: {
             color: theme.BUTTON_COLOR,
             marginLeft: 4,
-            fontWeight: "bold",
+            fontFamily: "Bold",
             fontSize: 14,
         },
     },
@@ -97,14 +97,14 @@ const styles = StyleSheet.create({
     },
     follow_requests_text: {
         fontSize: 16,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.PRIMARY_COLOR,
     },
     follow_requests_description: {
         fontSize: 14,
         marginTop: 3,
         color: theme.SECONDARY_COLOR,
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     category_arrow: {
         height: 22,

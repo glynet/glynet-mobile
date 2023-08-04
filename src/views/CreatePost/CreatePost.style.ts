@@ -24,13 +24,13 @@ const styles = StyleSheet.create({
     },
     username: {
         fontSize: 13,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: theme.SECONDARY_COLOR,
         marginTop: 2,
     },
     location: {
         fontSize: 13,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: theme.THEME_COLOR,
         marginTop: 2,
     },
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     userName: {
         fontSize: 16,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.PRIMARY_COLOR,
     },
     addLocation: {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
             fontSize: 16,
             color: theme.PRIMARY_COLOR,
             marginLeft: 2,
-            fontWeight: "normal",
+            fontFamily: "Medium",
         },
     },
     content: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: theme.THEME_COLOR,
         text: {
-            fontWeight: "bold",
+            fontFamily: "Bold",
             fontSize: 17,
             color: theme.THEME_COLOR,
         },

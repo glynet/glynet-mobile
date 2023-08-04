@@ -1,5 +1,5 @@
 import { registerRootComponent } from "expo";
 
-import Glynet from "./src/index";
+import Looplens from "./src/index";
 
-registerRootComponent(Glynet);
+registerRootComponent(Looplens);

@@ -9,7 +9,7 @@ export default function PrivacySettings({ navigation }: any) {
     const [hideNSFW, setHideNSFW] = useState<boolean>(true)
 
     return (
-        <AppContainer headerTitle={"Gizlilik ve Güvenlik"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Gizlilik ve Güvenlik"} hideTabs={false} navigation={navigation}>
             {/* <TouchableOpacity activeOpacity={0.8} style={styles.follow_requests_button_container} onPress={() => navigation.navigate("LoginDevices")}>
                 <View style={styles.follow_requests_icon}>
                     <SecurityOutlineIcon style={{

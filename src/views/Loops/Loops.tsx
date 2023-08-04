@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { View, ActivityIndicator } from "react-native"
+import { View } from "react-native"
 import AppContainer from "../../utils/screen"
 import Loop from "./Loop/Loop"
 import { getLoops } from "./LoopsAPI"
@@ -11,13 +11,14 @@ import { useRoute } from "@react-navigation/native"
 import screenHeightWithoutInsets from "../../helpers/screenHeightWithoutInsets"
 
 import { Post } from "../../../../glynet-api/source/models/post.model"
+import Loader from "../../components/Loader/Loader"
 
 export default function Loops({ navigation }: any) {
     const dispatch = useDispatch()
 
     const route = useRoute() as any
-    
-    const pageHeight = useRef(screenHeightWithoutInsets(60)).current
+
+    const pageHeight = useRef(screenHeightWithoutInsets(59)).current
     const collect_type = useRef(route.params?.collect === undefined ? "explore" : route.params.collect).current
     const loop_id = useRef(route.params?.loop_id === undefined ? "" : route.params.loop_id).current
 
@@ -56,8 +57,8 @@ export default function Loops({ navigation }: any) {
 
     const renderLoop = ({ item, index }: any) => {
         return <Loop
-            item={item} 
-            navigation={navigation} 
+            item={item}
+            navigation={navigation}
             index={index}
         />
     }
@@ -84,7 +85,7 @@ export default function Loops({ navigation }: any) {
         <AppContainer hideHeader={true} navigation={navigation}>
             {!isFetched && loops.length === 0 && (
                 <View style={{ ...styles.loader, height: pageHeight }}>
-                    <ActivityIndicator size={"large"} color={"grey"} />
+                    <Loader clearStyles={true} />
                 </View>
             )}
 

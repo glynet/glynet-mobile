@@ -206,6 +206,19 @@ function BookmarkFilledIcon(props: any) {
     )
 }
 
+function ShareIconFilled(props: any) {
+    return (
+      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+        <G data-name="Layer 2">
+          <Path
+            d="M18 15a3 3 0 00-2.1.86L8 12.34v-.67l7.9-3.53A3 3 0 1015 6v.34L7.1 9.86a3 3 0 100 4.28l7.9 3.53V18a3 3 0 103-3z"
+            data-name="share"
+          />
+        </G>
+      </Svg>
+    )
+  }
+
 function VerticalIcon(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -313,6 +326,18 @@ function UserDoneIcon(props: any) {
             <G data-name="Layer 2">
                 <G data-name="person-done">
                     <Path d="M21.66 4.25a1 1 0 00-1.41.09l-1.87 2.15-.63-.71a1 1 0 00-1.5 1.33l1.39 1.56a1 1 0 00.75.33 1 1 0 00.74-.34l2.61-3a1 1 0 00-.08-1.41zM10 11a4 4 0 10-4-4 4 4 0 004 4zM16 21a1 1 0 001-1 7 7 0 00-14 0 1 1 0 001 1" />
+                </G>
+            </G>
+        </Svg>
+    )
+}
+
+function UserRemoveIcon(props: any) {
+    return (
+        <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+            <G data-name="Layer 2">
+                <G data-name="person-remove">
+                    <Path d="M21 6h-4a1 1 0 000 2h4a1 1 0 000-2zM10 11a4 4 0 10-4-4 4 4 0 004 4zm0-6a2 2 0 11-2 2 2 2 0 012-2zM10 13a7 7 0 00-7 7 1 1 0 002 0 5 5 0 0110 0 1 1 0 002 0 7 7 0 00-7-7z" />
                 </G>
             </G>
         </Svg>
@@ -734,6 +759,19 @@ function FlashIconOutline(props: any) {
     )
 }
 
+function CompassFilledIcon(props: any) {
+    return (
+      <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+        <G data-name="Layer 2">
+          <G data-name="compass">
+            <Path d="M10.8 13.21L12.49 12.53 13.2 10.79 11.51 11.47 10.8 13.21z" />
+            <Path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm3.93 7.42l-1.75 4.26a1 1 0 01-.55.55l-4.21 1.7A1 1 0 019 16a1 1 0 01-.71-.31h-.05a1 1 0 01-.18-1l1.75-4.26a1 1 0 01.55-.55l4.21-1.7a1 1 0 011.1.25 1 1 0 01.26.99z" />
+          </G>
+        </G>
+      </Svg>
+    )
+}
+
 function FlashIconFilled(props: any) {
     return (
         <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
@@ -909,4 +947,7 @@ export {
     SoundOnFilledIcon,
     GIFIcon,
     SmilingFace,
+    CompassFilledIcon,
+    UserRemoveIcon,
+    ShareIconFilled
 }

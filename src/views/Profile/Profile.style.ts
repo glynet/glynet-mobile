@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     profile_banner_text: {
         height: 120,
         width: "100%",
-        backgroundColor: theme.THEME_COLOR,
+        // backgroundColor: theme.THEME_COLOR,
         // // borderRadius: 12,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
@@ -63,31 +63,32 @@ const styles = StyleSheet.create({
         height: avatarSize,
         width: avatarSize,
         borderRadius: 100,
-        backgroundColor: theme.THEME_COLOR,
+        // backgroundColor: theme.THEME_COLOR,
     },
     profile_details_website: {
-        marginTop: 5,
-        fontWeight: "normal",
+        marginTop: 2,
+        fontFamily: "SoftBold",
         fontSize: Dimensions.get("window").width / 29,
         color: theme.THEME_COLOR,
     },
     profile_details: {
-        marginTop: Platform.OS === "ios" ? 10 : 6,
+        marginTop: Platform.OS === "ios" ? 8 : 4,
         username: {
+            fontFamily: "Medium",
             marginTop: Platform.OS === "ios" ? 2 : -2,
             fontSize: Dimensions.get("window").width / 24,
             color: theme.PRIMARY_COLOR,
         },
         about: {
             marginTop: 5,
-            fontWeight: "normal",
+            fontFamily: "Medium",
             fontSize: Dimensions.get("window").width / 27,
             color: theme.PRIMARY_COLOR,
             lineHeight: 19,
         },
     },
     profile_details_name: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: Dimensions.get("window").width / 19,
         color: theme.PRIMARY_COLOR,
     },
@@ -101,9 +102,10 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: theme.SECONDARY_COLOR,
         paddingVertical: 5,
+        fontFamily: "Medium",
     },
     profile_metric_value: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
     },
     profile_buttons: {
         flexDirection: "row",
@@ -119,22 +121,22 @@ const styles = StyleSheet.create({
     },
     profile_badge: {
         fill: theme.PRIMARY_COLOR,
-        height: 22,
-        width: 22,
+        height: 24,
+        width: 24,
         marginLeft: 4,
     },
     empty_column: {
         width: 7,
     },
     profile_button: {
-        backgroundColor: theme.BUTTON_BACKGROUND,
+        backgroundColor: "transparent", // theme.BUTTON_BACKGROUND,
         padding: 10,
         borderRadius: 9,
         alignSelf: "stretch",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        borderWidth: 0.4,
+        borderWidth: 0.6,
         borderColor: theme.BORDER_COLOR,
         icon: {
             fill: theme.BUTTON_COLOR,
@@ -148,7 +150,8 @@ const styles = StyleSheet.create({
     profile_button_with_text_text: {
         marginLeft: 6.5,
         color: theme.BUTTON_COLOR,
-        fontWeight: "bold",
+        //fontFamily: "Bold",
+        fontFamily: "Bold",
         fontSize: 15,
     },
     profile_extras: {
@@ -167,7 +170,7 @@ const styles = StyleSheet.create({
             fill: theme.SECONDARY_COLOR,
         },
         text: {
-            fontWeight: "normal",
+            fontFamily: "Medium",
             fontSize: Dimensions.get("window").width / 29,
             color: theme.SECONDARY_COLOR,
             marginLeft: 2,

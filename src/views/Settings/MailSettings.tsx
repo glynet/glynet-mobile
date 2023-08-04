@@ -13,7 +13,7 @@ export default function MailSettings({ navigation }: any) {
     const isValidEmail = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g
 
     return (
-        <AppContainer headerTitle={"E-Posta Ayarları"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"E-Posta Ayarları"} hideTabs={false} navigation={navigation}>
             <View style={styles.profile_inputs_container}>
                 <View style={styles.profile_input_container}>
                     <Text style={styles.profile_input_title}>E-posta adresi</Text>
@@ -60,23 +60,23 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
     },
     profile_input_title: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 14,
         color: theme.PRIMARY_COLOR,
     },
     profile_input_warn: {
-        fontWeight: "normal",
-        fontSize: 11,
+        fontFamily: "Medium",
+        fontSize: 14,
         marginTop: 7,
         color: "#ff0000",
     },
     profile_input: {
         borderWidth: theme.BORDER_WIDTH,
         borderColor: theme.BORDER_COLOR,
-        backgroundColor: theme.INPUT_BACKGROUND,
+        backgroundColor: "rgb(250,250,250)", // theme.INPUT_BACKGROUND,
         padding: 12,
-        fontSize: 14,
-        // borderRadius: 12,
+        fontSize: 15,
+        borderRadius: 15,
         marginTop: 7,
         color: theme.PRIMARY_COLOR,
     },
@@ -96,21 +96,22 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+        borderRadius: 15,
         borderWidth: 1,
         borderColor: theme.BUTTON_BACKGROUND,
         backgroundColor: theme.BUTTON_BACKGROUND,
         text: {
             color: theme.BUTTON_COLOR,
             marginLeft: 4,
-            fontWeight: "bold",
+            fontFamily: "Bold",
             fontSize: 14,
         },
     },
     profile_button_colored: {
-        borderColor: "rgba(1,6,255,0.73)",
-        backgroundColor: "rgba(0,5,255,0.16)",
+        borderColor: "rgba(101,104,255,0.73)",
+        backgroundColor: "rgba(174,175,227,0.16)",
         text: {
-            color: "rgb(0,2,108)",
+            color: "rgb(13,15,170)",
         },
     },
 })

@@ -1,17 +1,16 @@
 {
   "expo": {
-    "name": "Glynet",
+    "name": "Looplens",
     "slug": "Glynet",
-    "description": "New shape of social media",
-    "version": "1.5.0",
+    "description": "New square of freedom",
+    "version": "2.0.0",
     "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
     "splash": {
       "image": "./assets/splash.png",
@@ -27,12 +26,12 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.glynet.glynetapp"
+      "bundleIdentifier": "com.cengel.looplensapp"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/android-icon.png",
-        "backgroundColor": "#28bcde"
+        "backgroundColor": "#2889DE"
       },
       "permissions": [
         "CAMERA",
@@ -43,7 +42,7 @@
         "SCHEDULE_EXACT_ALARM",
         "RECEIVE_BOOT_COMPLETED"
       ],
-      "package": "com.glynet.glynetapp"
+      "package": "com.cengel.looplensapp"
     },
     "plugins": [
       [

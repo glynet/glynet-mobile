@@ -71,36 +71,38 @@ const styles = StyleSheet.create({
             marginTop: -2,
             fontSize: 22,
             color: theme.HEADER_ITEM_COLOR,
-            fontFamily: "GilroyBold"
+            fontFamily: "Bold"
         },
     },
     content: {
-        marginBottom: Dimensions.get("window").width / 6.5,
+        marginBottom: Dimensions.get("window").width / 10,
     },
     bottomBar: {
-        backgroundColor: "#000", // theme.APP_BACKGROUND,
         width: "100%",
         position: "absolute",
         bottom: 0,
-        borderTopWidth: theme.BORDER_WIDTH,
-        borderTopColor: "#141419",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-evenly",
+
+        borderTopWidth: 0, // theme.BORDER_WIDTH,
+        backgroundColor: "#fff",
+        // borderTopColor: "rgb(242,242,242)",
+        // backgroundColor: "rgb(248,248,250)"
     },
     buttonContainer: {
-        height: Dimensions.get("window").width / 6.5,
-        width: Dimensions.get("window").width / 6.5,
+        height: Dimensions.get("window").width / 7.5,
+        width: Dimensions.get("window").width / 7.5,
         justifyContent: "center",
         icon: {
-            height: 28,
+            height: 26,
             opacity: 1,
-            fill: "#8c96aa", // theme.HEADER_ITEM_COLOR
+            fill: "rgb(110,110,120)", // theme.HEADER_ITEM_COLOR
         },
         icon_selected: {
-            height: 28,
+            height: 26,
             opacity: 1,
-            fill: "#e4ebed", // theme.HEADER_ITEM_COLOR
+            fill: "rgb(75,75,90)", // theme.HEADER_ITEM_COLOR
         },
     },
 })

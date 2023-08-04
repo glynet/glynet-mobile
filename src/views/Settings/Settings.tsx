@@ -10,7 +10,7 @@ export default function Settings({ navigation }: any) {
     const [lightMode, setLightMode] = useState<boolean>(true)
 
     return (
-        <AppContainer headerTitle={"Ayarlar"} hideTabs={true} navigation={navigation}>
+        <AppContainer headerTitle={"Ayarlar"} hideTabs={false} navigation={navigation}>
             <View style={styles.settings_container}>
                 <TouchableOpacity activeOpacity={0.8} style={styles.category_container} onPress={() => navigation.navigate("EditProfile")}>
                     <View style={styles.category_container_left}>
@@ -47,7 +47,7 @@ export default function Settings({ navigation }: any) {
                         </View>
                         <View style={styles.category_container.details}>
                             <Text style={styles.category_container.title}>Gizlilik & Güvenlik</Text>
-                            <Text style={styles.category_container.description}>O "defteri" kapatalı çok oldu.</Text>
+                            <Text style={styles.category_container.description}>O &quot;defteri&quot; kapatalı çok oldu.</Text>
                         </View>
                     </View>
                     <View>
@@ -153,27 +153,28 @@ const styles = StyleSheet.create({
         borderBottomColor: theme.BORDER_COLOR,
         padding: 15,
         icon_container: {
-            padding: 7,
-            backgroundColor: theme.BUTTON_BACKGROUND,
+            padding: 4, // 7,
+            // backgroundColor: theme.BUTTON_BACKGROUND,
             borderRadius: 9,
         },
         icon: {
-            height: 22,
-            width: 22,
-            fill: theme.PRIMARY_COLOR,
+            height: 25,
+            width: 25,
+            fill: "rgb(110,110,120)",
         },
         details: {
             marginLeft: 8,
         },
         title: {
+            marginTop: -2.5,
             fontSize: 15,
-            fontWeight: "bold",
+            fontFamily: "Bold",
             color: theme.PRIMARY_COLOR,
         },
         description: {
-            fontSize: 13,
-            fontWeight: "normal",
-            marginTop: 4,
+            fontSize: 14,
+            fontFamily: "Medium",
+            marginTop: 1,
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,
         },

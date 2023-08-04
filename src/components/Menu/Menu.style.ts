@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     user_details_name: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 20,
     },
     user_details_username: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 16,
         marginTop: 2,
     },
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     menu_title: {
         fontSize: 27,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.PRIMARY_COLOR,
     },
 
@@ -100,11 +100,11 @@ const styles = StyleSheet.create({
             fill: theme.PRIMARY_COLOR,
         },
         details: {
-            marginLeft: 8,
+            marginLeft: 9,
         },
         description: {
             fontSize: 13,
-            fontWeight: "normal",
+            fontFamily: "Medium",
             marginTop: 4,
             color: theme.SECONDARY_COLOR,
             width: Dimensions.get("window").width / 1.3,
@@ -112,14 +112,14 @@ const styles = StyleSheet.create({
     },
     category_container_title: {
         fontSize: 19,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.PRIMARY_COLOR,
     },
     footer: {
         paddingBottom: 20,
     },
     footer_text: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 13,
         padding: 15,
         textAlign: "center",

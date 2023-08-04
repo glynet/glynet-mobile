@@ -32,8 +32,9 @@ const styles = StyleSheet.create({
         borderRadius: 30,
     },
     switch_text: {
+        marginTop: -2.5,
         fontSize: 15,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: theme.SECONDARY_COLOR,
     },
     switch_text_green: {

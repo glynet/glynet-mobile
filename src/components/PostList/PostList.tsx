@@ -1,21 +1,23 @@
-import React, { useEffect, useRef, useState } from "react"
-import { View, ActivityIndicator, Dimensions, Platform, RefreshControl, FlatList } from "react-native"
+import React, { memo, useCallback, useEffect, useRef, useState } from "react"
+import { View, Dimensions, RefreshControl, FlatList } from "react-native"
 import { getPosts } from "./PostListAPI"
 import { useIsFocused, useRoute } from "@react-navigation/native"
 import screenHeightWithoutInsets from "../../helpers/screenHeightWithoutInsets"
 import Post from "./Post/Post"
 import { Post as PostType } from "../../../../glynet-api/source/models/post.model"
 import getTheme from "../../constants/colors"
-import { IOScrollView } from "react-native-intersection-observer"
 import { useDispatch, useSelector } from "react-redux"
 import { setPostIndex } from "../../store/preferences"
 
-const theme = getTheme()
+import PostSkeleton from "./Post/Skeleton"
+import Alert from "../Alert/Alert"
+import Ghost from "../../utils/handcrafts/Ghost"
+import Loader from "../Loader/Loader"
 
-export default function PostList({ 
-    collect, 
+function PostList({
+    collect,
     params,
-    navigation,  
+    navigation,
     HeaderComponent
 }: {
     collect: string;
@@ -28,7 +30,7 @@ export default function PostList({
 
     const route = useRoute()
     const isFocused = useIsFocused()
-    
+
     const [posts, setPosts] = useState<PostType[]>([])
     const [onFetching, setFetching] = useState<boolean>(false)
     const [isFetched, setFetched] = useState<boolean>(false)
@@ -36,26 +38,20 @@ export default function PostList({
     const [pageCount, setCount] = useState<number>(0)
     const [onRefreshing, setRefreshing] = useState(false)
 
+    const [fastNavigationShow, setFastNavShow] = useState(false)
+
     const containerStyle = useRef({
         height: screenHeightWithoutInsets(120),
         width: Dimensions.get("window").width,
     })
 
-    const refreshControl = () => {
+    const refreshControl = useCallback(() => {
         setRefreshing(true)
 
         setTimeout(() => {
             setRefreshing(false)
         }, 1000)
-    }
-
-    const onScroll = ({ nativeEvent }: any) => {
-        if (onFetching) return
-
-        if (isCloseToBottom(nativeEvent)) {
-            setCount(pageCount + 1)
-        }
-    }
+    }, [])
 
     const onViewableItemsChanged = useRef(({ changed }: any) => {
         for (const element of changed) {
@@ -66,69 +62,92 @@ export default function PostList({
     })
 
     const viewableConfig = useRef({
-        itemVisiblePercentThreshold: 55,
+        itemVisiblePercentThreshold: 35,
     })
 
-    const isCloseToBottom = ({layoutMeasurement, contentOffset, contentSize}: any) => {
-        const paddingToBottom = 400;
-    
-        return (
-            layoutMeasurement.height + contentOffset.y >=
-            contentSize.height - paddingToBottom
-        );
-    };
+    const renderItem = useCallback(({ item, index }: { item: PostType, index: number }) => {
+        const isVisible = [index - 2, index - 1, index, index + 1, index + 2, index + 3, index + 4].includes(state.postIndex)
 
-    const renderItem = ({ item, index }: { item: PostType, index: number }) => {
-        const isVisible = [index - 2, index - 1, index, index + 1, index + 2, index + 3].includes(state.postIndex);
-
-        return <Post 
-            entry={item} 
-            index={index} 
+        return <Post
+            entry={item}
+            index={index}
             key={index}
-            isVisible={isVisible} 
+            isVisible={isVisible}
             navigation={navigation}
         />
-    }
+    }, [])
 
     useEffect(() => {
-        if (!navigation.isFocused()) return
-        if (onFetching) return
-       
-        setFetched(false)
-        setFetching(true)
+        setTimeout(() => {
+            setFastNavShow(true)
 
-        let customParams = params
-        if (collect === "profile") customParams = `username=${(route.params as any).name}`
-            
-        getPosts(collect, pageCount, customParams, (response: any) => {
-            const data = response.data
-            
-            setFetched(true)
-            setCode(data?.error_code)
-            setFetching(false)
+            if (!navigation.isFocused()) return
+            if (onFetching) return
 
-            if (data.is_entries_available) {
-                setPosts([...posts, ...data.timeline])
-            }
-        })
+            setFetched(false)
+            setFetching(true)
+
+            let customParams = params
+            if (collect === "profile") customParams = `username=${(route.params as any).name}`
+
+            getPosts(collect, pageCount, customParams, (response: any) => {
+                const data = response.data
+
+                setFetched(true)
+                setCode(data?.error_code)
+                setFetching(false)
+
+                if (data.is_entries_available) {
+                    setPosts([...posts, ...data.timeline])
+                }
+            })
+        }, 250)
     }, [collect, params, pageCount])
 
     return (
         <View style={containerStyle.current}>
-            <FlatList
-                data={posts}
-                renderItem={renderItem}
-                keyExtractor={item => item.id.toString()}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={onRefreshing}
-                        onRefresh={refreshControl}
-                    />
-                }
-                ListHeaderComponent={HeaderComponent && HeaderComponent}
-                viewabilityConfig={viewableConfig.current}
-                onViewableItemsChanged={onViewableItemsChanged.current}
-            />
+            {!fastNavigationShow && (
+                <View style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: 15,
+                    marginBottom: 12,
+                    padding: 30,
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}>
+                    <Loader clearStyles={true} />
+                </View>
+            )}
+            {fastNavigationShow && (
+                <FlatList
+                    data={[]}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id.toString()}
+                    refreshControl={
+                        <RefreshControl
+                            refreshing={onRefreshing}
+                            onRefresh={refreshControl}
+                        />
+                    }
+                    ListHeaderComponent={HeaderComponent && HeaderComponent}
+                    ListFooterComponent={
+                        isFetched ?
+                            posts.length === 0 ? (
+                                <Alert
+                                    image={<Ghost />}
+                                    title={"Çekirge sesleri"}
+                                    description={"Ne yazık ki şimdilik burada gösterebileceğimiz herhangi bir paylaşım yok"}
+                                />
+                            ) : null :
+                            <PostSkeleton count={2} />
+                    }
+                    viewabilityConfig={viewableConfig.current}
+                    onViewableItemsChanged={onViewableItemsChanged.current}
+                />
+            )}
         </View>
     )
 }
+
+export default memo(PostList)

@@ -15,7 +15,7 @@ export default function EditProfile({ navigation }: any) {
 
     const [name, setName] = useState<string>("Metehan Alp Saral")
     const [username, setUsername] = useState<string>("alpsar4l")
-    const [about, setAbout] = useState<string>("Founder & CEO at @Glynet, senior member of Eva")
+    const [about, setAbout] = useState<string>("Founder & CEO at @Looplens, senior member of Eva")
 
     const [location, setLocation] = useState<string>("Istanbul")
     const [website, setWebsite] = useState<string>("glynet.com")
@@ -48,7 +48,7 @@ export default function EditProfile({ navigation }: any) {
 
                         <View style={styles.profile_details}>
                             <Text style={styles.profile_details.name}>{name}</Text>
-                            <Text style={styles.profile_details.username}>@{username}</Text>
+                            <Text style={styles.profile_details.username}>{username}</Text>
                         </View>
 
                         <View style={styles.profile_metrics_container}>

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         borderColor: theme.BORDER_COLOR,
     },
     profile_input_title: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 14,
         color: theme.PRIMARY_COLOR,
     },
@@ -72,26 +72,26 @@ const styles = StyleSheet.create({
     },
     profile_details_website: {
         marginTop: 7,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: Dimensions.get("window").width / 29,
         color: theme.THEME_COLOR,
     },
     profile_details: {
         marginTop: 10,
         name: {
-            fontWeight: "bold",
+            fontFamily: "Bold",
             fontSize: Dimensions.get("window").width / 21,
             color: theme.PRIMARY_COLOR,
         },
         username: {
             marginTop: 3,
-            fontWeight: "normal",
+            fontFamily: "Medium",
             fontSize: Dimensions.get("window").width / 27,
             color: theme.PRIMARY_COLOR,
         },
         about: {
             marginTop: 10,
-            fontWeight: "normal",
+            fontFamily: "Medium",
             fontSize: Dimensions.get("window").width / 29,
             color: theme.PRIMARY_COLOR,
         },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
         opacity: 0.7,
     },
     profile_metric_value: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
     },
     profile_buttons: {
         flexDirection: "row",
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
         text: {
             marginLeft: 4,
             color: theme.BUTTON_COLOR,
-            fontWeight: "bold",
+            fontFamily: "Bold",
             fontSize: 14,
         },
     },
@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
             fill: theme.SECONDARY_COLOR,
         },
         text: {
-            fontWeight: "normal",
+            fontFamily: "Medium",
             fontSize: Dimensions.get("window").width / 29,
             color: theme.SECONDARY_COLOR,
             marginLeft: 2,

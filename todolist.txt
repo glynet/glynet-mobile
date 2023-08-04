@@ -1,23 +1,18 @@
 post/loop kaldırma
 post/loop bildirme
-android için loopta sekme değiştirince geri dönünce en üste çıkma sorunu
 bu profil hakkında
-badge bilgisi
+
 *post butonları tasarımı daha hoş olabilir*
-tanıyor olabileceklerin hakkında özcan ile karar alınacak
-*ayarlardaki inputların falan tasarımı daha uyumlu hale getirilecek*
 postların olduğu yerlerde çık gir yapınca reload atıyor onu hallet (ör. profilden ayarlara gir sonra tekrar profile dön reload yiyor)
-glynet'ten çıkmadan tarayıcı önizlemesi yapılacak instagram ve twitterdaki gibi (kütüphane var)
+looplens'ten çıkmadan tarayıcı önizlemesi yapılacak instagram ve twitterdaki gibi (kütüphane var)
 hikayeler? yapılacak
 gönderi/loop paylaşma yapılacak
 profili düzenleme yapılacak
 
 yorumlar (gönderme, yanıtlama, gif atma,< sabitleme, likelama, mentionlanama, ?hashtags)
-seçenekler kaliteli hale gelecek,
 
 loop sesi açma/kapatma
 kullanıcı bildirim tercihleri (profil)
 engelleme
 sessize alma
 *beyaz alanlardaki tasarım uyuşmazlığı*
-search başlı başına tekrardan yapılacak

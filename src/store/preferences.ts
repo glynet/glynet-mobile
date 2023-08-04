@@ -14,7 +14,12 @@ export const appPreferences = createSlice({
             username: "",
             isFetched: false,
             data: {}
-        }
+        },
+
+        status_bar: "dark",
+
+        bar_color: "#fff"
+
     },
     reducers: {
         setLoopId: (state, action) => {
@@ -40,9 +45,17 @@ export const appPreferences = createSlice({
         setProfile: (state, action) => {
             state.profile = action.payload
         },
+
+        setStatusBar: (state, action) => {
+            state.status_bar = action.payload
+        },
+
+        setBarColor: (state, action) => {
+            state.bar_color = action.payload
+        }
     },
 })
 
-export const { setLoopId, setMute, setBlackBackground, setRefresh, setCompactNotifications, setPostIndex, setProfile } = appPreferences.actions
+export const { setBarColor, setStatusBar, setLoopId, setMute, setBlackBackground, setRefresh, setCompactNotifications, setPostIndex, setProfile } = appPreferences.actions
 
 export default appPreferences.reducer

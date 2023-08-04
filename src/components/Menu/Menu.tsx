@@ -1,9 +1,13 @@
-import React from "react"
+import React, { memo, useEffect } from "react"
 import { View, Text, Image, TouchableOpacity, ScrollView } from "react-native"
 import { BookmarkOutlineIcon, CompassOutlineIcon, CrossIcon, HeartOutlineIcon, PencilIcon, UserOutlineIcon } from "../../utils/icons"
 import styles from "./Menu.style"
 
-export default function Menu({ navigation, modalRef }: any) {
+function Menu({ navigation, modalRef }: any) {
+    useEffect(() => {
+        console.log("menü render oldu")
+    }, [])
+
     return (
         <ScrollView>
             <View style={styles.menu_top}>
@@ -17,6 +21,7 @@ export default function Menu({ navigation, modalRef }: any) {
 
             <TouchableOpacity activeOpacity={0.8} style={styles.user_container}>
                 <Image
+                    fadeDuration={0}
                     style={styles.user_avatar}
                     source={{
                         uri: "https://source.unsplash.com/random",
@@ -122,3 +127,5 @@ export default function Menu({ navigation, modalRef }: any) {
         </ScrollView>
     )
 }
+
+export default memo(Menu)

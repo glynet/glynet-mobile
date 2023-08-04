@@ -20,6 +20,7 @@ export default function Item({ item, navigation }: { item: AudioType, navigation
         >
             {item.attachments[0].thumbnail_url && (
                 <Image
+                    fadeDuration={0}
                     source={{
                         uri: cdnUrl(item.attachments[0].thumbnail_url),
                     }}

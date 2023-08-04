@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.glynet.glynetapp" xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cengel.looplensapp" xmlns:tools="http://schemas.android.com/tools">
   <uses-permission android:name="android.permission.CAMERA"/>
   <uses-permission android:name="android.permission.CAMERA_ROLL"/>
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
@@ -37,8 +37,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.glynet.glynetapp"/>
-        <data android:scheme="exp+glynet"/>
+        <data android:scheme="com.cengel.looplensapp"/>
+        <data android:scheme="exp+looplens"/>
       </intent-filter>
     </activity>
     <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" android:exported="false"/>

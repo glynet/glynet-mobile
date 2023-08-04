@@ -5,11 +5,9 @@ import cdnUrl from "../../../helpers/cdnUrl"
 import { useSelector } from "react-redux"
 
 const VideoPreview = ({ media, styles, isVisible, pressCallback }: any) => {
-    const state = useSelector((state: any) => state.preferences) as any
-    
     return (
         <Pressable
-            onPress={pressCallback} 
+            onPress={pressCallback}
             style={styles}
         >
             {isVisible && (
@@ -33,7 +31,7 @@ const VideoPreview = ({ media, styles, isVisible, pressCallback }: any) => {
                     isLooping={true}
                     isMuted={true}
                     shouldPlay={true}
-                /> 
+                />
             )}
         </Pressable>
     )

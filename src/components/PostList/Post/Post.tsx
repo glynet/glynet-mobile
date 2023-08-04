@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import React, { useCallback, useMemo, useRef, useState } from "react"
 import { View, Image, Text, Pressable } from "react-native"
 import styles from "./Post.style"
 import { Post as PostType } from "../../../../../glynet-api/source/models/post.model"
@@ -23,7 +23,6 @@ import { View as MotiView } from "moti"
 import Attachments from "./Attachments"
 import { like, save } from "../PostListAPI"
 import getTheme from "../../../constants/colors"
-import { InView } from "react-native-intersection-observer"
 import Avatar from "../../Avatar/Avatar"
 
 const theme = getTheme()
@@ -45,7 +44,7 @@ function Post({ entry, index, isVisible, navigation }: { entry: PostType, index:
         bottomSheetModalRef.current?.present()
     }, [])
 
-    const _like = () => {
+    const _like = useCallback(() => {
         if (isLiked) {
             setLikeCount(Math.abs(likeCount - 1))
             setLiked(false)
@@ -55,12 +54,12 @@ function Post({ entry, index, isVisible, navigation }: { entry: PostType, index:
         }
 
         like(entry.id)
-    }
+    }, [])
 
-    const _save = () => {
+    const _save = useCallback(() => {
         setSaved(!isSaved)
         save(entry.id)
-    }
+    }, [])
 
     return (
         <View>
@@ -95,10 +94,10 @@ function Post({ entry, index, isVisible, navigation }: { entry: PostType, index:
                         </View>
                     </View>
                     <Pressable style={styles.entry_options_container} onPress={handlePresentModalPress}>
-                        <MaterialCommunityIcons name="dots-vertical" size={21} color={theme.TERTIARY_COLOR} />
+                        <MaterialCommunityIcons name="dots-vertical" size={24} color={theme.TERTIARY_COLOR} />
                     </Pressable>
                 </View>
-                
+
                 {entry.text_range[1] !== 0 && (
                     <View style={{...styles.padding_container, ...styles.entry_text_container}}>
                         <TextView style={styles.entry_text}>{entry.full_text}</TextView>
@@ -155,7 +154,7 @@ function Post({ entry, index, isVisible, navigation }: { entry: PostType, index:
                                 style={styles.click_to_continue_loop_container}
                             >
                                 <LinearGradient
-                                    colors={["rgba(0,0,0,0.20)", "rgba(0,0,0,0.60)"]} 
+                                    colors={["rgba(0,0,0,0.20)", "rgba(0,0,0,0.60)"]}
                                     style={styles.click_to_continue_loop_container}
                                 >
                                     <View style={styles.continue_button}>
@@ -173,22 +172,33 @@ function Post({ entry, index, isVisible, navigation }: { entry: PostType, index:
 
                 {(likeCount !== 0 || entry.metrics.reply_count !== 0) && (
                     <View style={{...styles.padding_container, ...styles.entry_metrics}}>
-                        {likeCount >= 2 && <View style={styles.entry_metrics_mini_users}>
-                            {Array(3).fill(1).map((_, i) => {
-                                return (
-                                    <Image
-                                        key={i}
-                                        style={styles.entry_metrics_mini_user_avatar}
-                                        source={{
-                                            uri: cdnUrl(entry.publisher.data.avatar)
-                                        }}
-                                    />
-                                )
-                            })}
-                        </View>}
+                        {likeCount >= 2 && (
+                            <Pressable
+                                style={styles.entry_metrics_mini_users}
+                                onPress={() => {
+                                    navigation.push("UserList", {
+                                        type: "likes",
+                                        value: entry.id,
+                                    })
+                                }}
+                            >
+                                {Array(3).fill(1).map((_, i) => {
+                                    return (
+                                        <Image
+                                            fadeDuration={0}
+                                            key={i}
+                                            style={styles.entry_metrics_mini_user_avatar}
+                                            source={{
+                                                uri: cdnUrl(entry.publisher.data.avatar)
+                                            }}
+                                        />
+                                    )
+                                })}
+                            </Pressable>
+                        )}
 
                         <View style={styles.entry_metrics_details}>
-                            {likeCount !== 0 && (
+                            {likeCount !== 10 && (
                                 <Text style={styles.entry_metrics_text} onPress={() => {
                                     navigation.push("UserList", {
                                         type: "likes",

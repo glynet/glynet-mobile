@@ -1,65 +1,44 @@
 import React, { memo } from "react"
-import { View, Image, Text, TouchableOpacity } from "react-native"
+import { View, Image, Text, TouchableOpacity, Pressable } from "react-native"
 import styles from "./Loop.style"
 import { VerifiedIcon } from "../../../utils/icons"
 import TextView from "../../../components/TextView/TextView"
 import { calculateUserFlags } from "../../../utils/flags"
+import Avatar from "../../../components/Avatar/Avatar"
+import cdnUrl from "../../../helpers/cdnUrl"
+import moment from "moment"
 
-const Profile = ({ author, text, navigation }: any) => {
+const Profile = ({ author, text, navigation, location, published_at }: any) => {
+    function profile_link() {
+        navigation.push("Profile", { name: author.username })
+    }
+
+    function location_link() {
+        navigation.navigate("Location", { location })
+    }
+
     return (
         <View style={styles.details_content}>
             <View style={styles.author_details}>
-                <TouchableOpacity
-                    activeOpacity={0.8}
-                    style={styles.author_avatar}
-                    onPress={() => {
-                        navigation.push("Profile", { name: author.username })
-                    }}
-                >
-                    <Image
-                        source={{
-                            uri: global.CDN_URL + "/" + author.avatar,
-                        }}
-                        style={styles.author_avatar}
-                    />
-                </TouchableOpacity>
                 <View style={styles.author_username_container}>
                     <View style={styles.author_name_container}>
-                        <Text
-                            style={styles.author_name}
-                            onPress={() => {
-                                navigation.push("Profile", {
-                                    name: author.username,
-                                })
-                            }}
-                        >
-                            {author.username}
-                        </Text>
+                        <Text style={styles.author_name} onPress={profile_link}>{author.username}</Text>
                         {calculateUserFlags(author.flags).includes("VERIFIED_USER") && <VerifiedIcon style={styles.author_badge} />}
                     </View>
                 </View>
+
             </View>
 
             {text.length !== 0 && (
                 <View style={styles.text_content}>
-                    <TextView style={styles.text} mentionHashtagColor={"#FFFFFF"}>
+                    <TextView style={styles.text} mentionHashtagColor={"#F5F5F5"}>
                         {text.length >= 128 ? text.slice(0, 128) + "..." : text}
                     </TextView>
                 </View>
             )}
 
-            {/*
-            <View style={styles.loop_bottom}>                            
-                <View style={styles.loop_mute_button_container}>
-                    <View style={styles.loop_mute_button}>
-                        <PlayIconFilled style={styles.loop_bottom_icon} />
-                    </View>
-                    <MarqueeView style={styles.loop_bottom_text_container} speed={0.08}>
-                        <Text style={styles.loop_bottom_text_title}><Text style={{ fontWeight: "bold" }}>orijinal 31 ses</Text> - {author.username}</Text>
-                    </MarqueeView>
-                </View>
-            </View>
-            */}
+            {location !== null && <Text onPress={location_link} style={styles.location_text}>{location}</Text>}
+            {(location === null) && <Text style={styles.location_text}>{moment.unix(published_at).fromNow()}</Text>}
         </View>
     )
 }

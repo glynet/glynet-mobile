@@ -6,8 +6,10 @@ const theme = getTheme()
 const styles = StyleSheet.create({
     notification_container: {
         padding: 15,
-        borderTopWidth: theme.BORDER_WIDTH,
-        borderColor: theme.BOX_BORDER_COLOR,
+        paddingLeft: 15 - 5,
+        // borderTopWidth: theme.BORDER_WIDTH,
+        borderLeftColor: "transparent",
+        borderLeftWidth: 5,
         flexDirection: "row",
         position: "relative",
         width: "100%",
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
     },
     notification_details: {
         marginLeft: 10,
-        marginTop: Platform.OS === "ios" ? 5 : 1,
+        marginTop: Platform.OS === "ios" ? 5 : -3.5,
         flex: 1,
     },
     notification_name_container: {
@@ -32,7 +34,7 @@ const styles = StyleSheet.create({
     },
     notification_text: {
         fontSize: 16,
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: theme.PRIMARY_COLOR,
     },
     user_badge: {
@@ -45,13 +47,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         marginTop: Platform.OS === "ios" ? 3 : 0,
         color: theme.SECONDARY_COLOR,
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     notification_date: {
         fontSize: 14,
-        marginTop: 3,
+        marginTop: 2,
         color: theme.SECONDARY_COLOR,
-        fontWeight: "normal",
+        fontFamily: "Medium",
     },
     notification_avatar: {
         height: 50,
@@ -81,25 +83,27 @@ const styles = StyleSheet.create({
     },
 
     embed_post: {
-        borderRadius: 15,
+        borderRadius: 10,
         borderWidth: 1,
         borderColor: theme.BORDER_COLOR,
         width: "100%",
+        marginTop: 8,
         marginVertical: 6.5,
+        backgroundColor: "rgba(255,255,255,0.8)"
     },
     embed_post_image_container: {},
     embed_post_image: {
         height: Dimensions.get("window").width,
         width: "100%",
-        borderRadius: 15,
+        borderRadius: 10,
         backgroundColor: theme.THEME_COLOR,
     },
     embed_text_container: {
         padding: 10,
     },
     embed_text: {
-        fontWeight: "normal",
-        fontSize: 14,
+        fontFamily: "Medium",
+        fontSize: 15,
         lineHeight: 18,
         color: theme.PRIMARY_COLOR,
     },

@@ -49,8 +49,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     author_name: {
-        // fontWeight: "bold",
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: "#363636",
         fontSize: 16,
     },
@@ -58,11 +57,11 @@ const styles = StyleSheet.create({
         height: 15,
         width: 15,
         fill: theme.PRIMARY_COLOR,
-        marginLeft: 3,
+        marginLeft: 2,
     },
     entry_date: {
-        // fontWeight: "normal",
-        fontSize: 14,
+        fontFamily: "Medium",
+        fontSize: 13,
         color: "#585858",
         marginTop: Platform.OS === "ios" ? 3 : -1
     },
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
         marginTop: -5,
     },
     entry_text: {
-        // fontFamily: "sans-serif",
+        fontFamily: "Medium",
         fontSize: 16,
     },
     entry_metrics: {
@@ -87,7 +86,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         marginLeft: 13,
-        marginRight: 3,
+        marginRight: 5,
     },
     entry_metrics_details: {
         flexDirection: "row",
@@ -97,12 +96,11 @@ const styles = StyleSheet.create({
         marginRight: 7,
         fontSize: 15,
         marginTop: 2,
-        // fontWeight: "normal",
+        fontFamily: "Medium",
         color: theme.SECONDARY_COLOR,
     },
     entry_metrics_text_bold: {
-        // fontWeight: "bold",
-        fontWeight: "bold",
+        fontFamily: "Bold",
     },
     entry_metrics_mini_user_avatar: {
         height: 24,
@@ -145,8 +143,7 @@ const styles = StyleSheet.create({
         fill: "#FF783E"
     },
     button_value: {
-        // fontWeight: "bold",
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 16,
         marginLeft: 3,
         color: "#8C9299",
@@ -190,17 +187,17 @@ const styles = StyleSheet.create({
     double_attachment_more: {
         width: (Dimensions.get("window").width - 30) / 2 - 3,
         height: (Dimensions.get("window").width - 30) / 2,
-        backgroundColor: "#242424",
+        backgroundColor: "rgba(36,36,36,0.15)",
         position: "absolute",
         top: 0,
         borderRadius: 15,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        zIndex: 99,
     },
     double_attachment_more_text: {
         fontSize: 42,
-        // fontWeight: "bold",
-        fontWeight: "bold",
+        fontFamily: "Bold",
         color: "hsla(0,0%,100%,0.79)"
     },
 
@@ -242,8 +239,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     continue_button_text: {
-        // fontWeight: "bold",
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 15,
     }
 })

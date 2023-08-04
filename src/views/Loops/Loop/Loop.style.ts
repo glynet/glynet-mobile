@@ -9,10 +9,11 @@ const styles = StyleSheet.create({
         height: "100%",
         width: "100%",
         position: "absolute",
-        zIndex: 999
+        zIndex: 999,
     },
     pressable: {
         backgroundColor: "#340267",
+        borderRadius: 15
     },
     loader: {
         position: "absolute",
@@ -45,18 +46,20 @@ const styles = StyleSheet.create({
         width: "100%",
         zIndex: 1,
         backgroundColor: "#000",
+        borderRadius: 15,
     },
     details_container: {
         height: "100%",
         width: "100%",
         zIndex: 99999,
+        bottom: -2.5,
         position: "absolute",
     },
     details: {
         height: "60%",
         width: "100%",
         zIndex: 99999,
-        bottom: 0,
+        bottom: 2.5,
         position: "absolute",
     },
     buttons_container: {
@@ -65,17 +68,8 @@ const styles = StyleSheet.create({
         width: 75,
         position: "absolute",
         right: 0,
-        bottom: 0,
+        bottom: 20,
         zIndex: 9,
-    },
-    audio_container: {
-        // backgroundColor: "orange",
-        paddingTop: 10,
-        paddingBottom: 20,
-        width: 80,
-        alignItems: "center",
-        justifyContent: "center",
-        opacity: 0.9,
     },
     audio_image: {
         height: 40,
@@ -83,8 +77,6 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     button_text_container: {
-        position: "absolute",
-        bottom: -2.5,
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
@@ -94,30 +86,30 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        height: 70,
-        width: 70,
+        height: 40,
+        width: 40,
         opacity: 0.8,
         borderRadius: 100,
 
         icon: {
-            fill: "#fff",
+            fill: "rgba(255,255,255,0.9)",
             height: 38,
             width: 38,
         },
         text: {
             marginTop: 2,
-            fontWeight: "bold",
-            color: "#fff",
+            fontFamily: "Bold",
+            color: "rgba(255,255,255,0.9)",
         },
 
         icon_red: {
-            fill: "#fc0a57",
+            fill: "rgba(252,10,87,0.98)",
         },
         icon_orange: {
-            fill: "orange",
+            fill: "#fff",
         },
         text_red: {
-            color: "#fc0a57",
+            color: "rgba(252,10,87,0.98)",
         },
         text_orange: {
             color: "orange",
@@ -141,7 +133,7 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
     author_username_container: {
-        marginLeft: Platform.OS === "ios" ? 8.5 : 8.5,
+        // marginLeft: Platform.OS === "ios" ? 9.5 : 10,
         opacity: 1,
     },
     author_name_container: {
@@ -149,24 +141,31 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     author_name: {
-        fontWeight: "bold",
-        color: "#f8f5f6",
-        fontSize: 17,
+        fontFamily: "Bold",
+        color: "#EBE7E8",
+        fontSize: 16,
     },
     author_username: {
-        fontWeight: "normal",
-        color: "#f8f5f6",
-        fontSize: 14,
+        fontFamily: "Medium",
+        color: "#EBE7E8",
+        fontSize: 13,
     },
     text_content: {
-        marginTop: 15,
+        marginTop: 8,
         width: Dimensions.get("window").width - 90,
     },
     text: {
-        color: "#f8f5f6",
-        fontWeight: "normal",
-        fontSize: 15,
+        color: "#EBE7E8",
+        fontFamily: "Medium",
+        fontSize: 15.5,
         opacity: 0.9,
+    },
+    location_text: {
+        marginTop: 8,
+        color: "#EBE7E8",
+        fontFamily: "Medium",
+        fontSize: 14,
+        opacity: 0.7,
     },
     loop_container: {
         flexDirection: "row",
@@ -178,8 +177,9 @@ const styles = StyleSheet.create({
     author_badge: {
         height: 16,
         width: 16,
-        fill: "#fff",
+        fill: "#EBE7E8",
         marginLeft: 3,
+        marginTop: 4,
     },
     loop_icon: {
         height: 24,
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
     },
     loop_text: {
         color: "#fff",
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 13,
     },
     play_button_container: {
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     },
     loop_attachment: {
         width: Dimensions.get("window").width,
-        // borderRadius: 15,
+        borderRadius: 30,
         zIndex: 5,
         position: "absolute",
     },
@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     loop_bottom_text_title: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         color: "#FFFFFFB2",
         fontSize: 14,
     },

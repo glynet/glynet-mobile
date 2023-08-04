@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     audio_title: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 21,
     },
     audio_author: {
@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
         marginLeft: 4,
     },
     audio_author_name: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 16,
     },
     audio_count: {
-        fontWeight: "normal",
+        fontFamily: "Medium",
         fontSize: 14,
         color: "#2E2E2E",
         marginTop: 10,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
     },
     use_audio_text: {
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 17,
         color: "#fff",
     },

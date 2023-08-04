@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
     button_text: {
         marginTop: 8,
-        fontWeight: "bold",
+        fontFamily: "Bold",
         fontSize: 14,
         color: theme.SECONDARY_COLOR,
     },

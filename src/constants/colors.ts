@@ -23,8 +23,10 @@ export default function getTheme() {
             BUTTON_BACKGROUND: "#0b0d0f",
             BUTTON_COLOR: "#adadb4",
 
-            THEME_COLOR: "#2D00C6",
+            THEME_COLOR: "#0BFF24",
             ILLUSTRATION_COLOR: "#66B6F7",
+
+            STATUS_BAR_COLOR: "red"
         }
     } else {
         const borderColor = "#dfe0e6"
@@ -50,6 +52,8 @@ export default function getTheme() {
 
             THEME_COLOR: "#2D00C6",
             ILLUSTRATION_COLOR: "#66B6F7",
+
+            STATUS_BAR_COLOR: "#fff"
         }
     }
 }

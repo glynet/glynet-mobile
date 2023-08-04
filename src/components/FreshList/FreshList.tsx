@@ -1,8 +1,7 @@
-import React, { useState } from "react"
-import { View, Text } from "react-native"
+import React, { useState, forwardRef } from "react"
 import { IOScrollView, InView } from 'react-native-intersection-observer'
 
-const Component = ({ item, index, renderComponent, skeletonComponent }: any) => {
+const Component = ({ item, index, renderComponent }: any) => {
     const [componentHeight, setCompHeight] = useState(0)
     const [isVisible, setIsVisible] = useState(false)
 
@@ -12,32 +11,46 @@ const Component = ({ item, index, renderComponent, skeletonComponent }: any) => 
 
     return (
         <InView
-            key={index} 
-            onLayout={onLayout} 
-            style={{
-                backgroundColor: isVisible ? "green" : "yellow"
-            }}
+            key={index}
+            onLayout={onLayout}
             onChange={(inView: boolean) => setIsVisible(inView)}
         >
-            <Text>{componentHeight}</Text>
-            {isVisible && renderComponent({ item, index })}
-            {!isVisible && skeletonComponent({ index })}
+            {renderComponent({ item, index, isVisible })}
         </InView>
     )
 }
 
-const FreshList = ({ data, renderComponent, skeletonComponent, HeaderComponent }: any) => {
+// eslint-disable-next-line react/display-name
+const FreshList = forwardRef(({ data, renderComponent, HeaderComponent, FooterComponent }: any, ref: any) => {
+    return (
+        <IOScrollView ref={ref}>
+            {HeaderComponent && HeaderComponent}
+
+            {data.map((item: any, index: number) => {
+                return <Component
+                    item={item}
+                    key={index}
+                    index={index}
+                    renderComponent={renderComponent}
+                />
+            })}
+
+            {FooterComponent && FooterComponent}
+        </IOScrollView>
+    )
+})
+
+const FreshList3 = ({ data, renderComponent, HeaderComponent }: any) => {
     return (
         <IOScrollView>
             {HeaderComponent && HeaderComponent}
-            
+
             {data.map((item: any, index: number) => {
                 return <Component
-                    item={item} 
-                    key={index} 
-                    index={index} 
+                    item={item}
+                    key={index}
+                    index={index}
                     renderComponent={renderComponent}
-                    skeletonComponent={skeletonComponent}
                 />
             })}
         </IOScrollView>

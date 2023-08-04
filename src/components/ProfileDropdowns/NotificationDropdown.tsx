@@ -3,16 +3,11 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native"
 import { BellFilledIcon, BellOffIcon, BellOutlineIcon, CrossIcon } from "../../utils/icons"
 import styles from "../Menu/Menu.style"
 
-export default function NotificationDropdown({ navigation, modalRef }: any) {
+export default function NotificationDropdown({ navigation, modalRef, callback }: any) {
     return (
         <ScrollView>
             <View style={styles.menu_top}>
-                <Text style={styles.menu_title}>Bildirim Tercihleri</Text>
-                <View style={styles.menu_buttons}>
-                    <TouchableOpacity activeOpacity={0.8} style={styles.menu_button} onPress={() => modalRef.current?.close()}>
-                        <CrossIcon style={styles.menu_icon} />
-                    </TouchableOpacity>
-                </View>
+                <Text style={styles.menu_title}>Bildirim Seçenekleri</Text>
             </View>
 
             <View style={{ ...styles.menu_container, marginTop: 0 }}>
@@ -21,6 +16,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                     style={styles.category_container}
                     onPress={() => {
                         modalRef.current?.close()
+                        callback(1)
                     }}
                 >
                     <View style={styles.category_container_left}>
@@ -38,6 +34,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                     style={styles.category_container}
                     onPress={() => {
                         modalRef.current?.close()
+                        callback(2)
                     }}
                 >
                     <View style={styles.category_container_left}>
@@ -45,7 +42,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                             <BellOutlineIcon style={styles.category_container.icon} />
                         </View>
                         <View style={styles.category_container.details}>
-                            <Text style={styles.category_container_title}>Yalnızca Shotlar</Text>
+                            <Text style={styles.category_container_title}>Yalnızca Vibes</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
@@ -55,6 +52,7 @@ export default function NotificationDropdown({ navigation, modalRef }: any) {
                     style={styles.category_container}
                     onPress={() => {
                         modalRef.current?.close()
+                        callback(0)
                     }}
                 >
                     <View style={styles.category_container_left}>

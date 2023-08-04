@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { View, Text, Image, ActivityIndicator, Platform } from "react-native"
+import { View, Text, Image } from "react-native"
 import AppContainer from "../../utils/screen"
 import styles from "./Audio.style"
 import MasonryList from "@react-native-seoul/masonry-list"
@@ -10,6 +10,7 @@ import { getLoops } from "./AudioAPI"
 import { Audio as AudioType } from "../../../../glynet-api/source/models/post.model"
 import cdnUrl from "../../helpers/cdnUrl"
 import getTheme from "../../constants/colors"
+import Loader from "../../components/Loader/Loader"
 
 const theme = getTheme()
 
@@ -47,7 +48,7 @@ export default function Audio({ navigation }: any) {
             <AppContainer headerTitle={"Ses"} navigation={navigation}>
                 {!isFetched && (
                     <View style={styles.loader}>
-                        <ActivityIndicator size={Platform.OS === "ios" ? "small" : "large"} color={theme.THEME_COLOR} />
+                        <Loader clearStyles={true} size={"small"} />
                     </View>
                 )}
                 {isFetched && (
@@ -56,6 +57,7 @@ export default function Audio({ navigation }: any) {
                             <View style={styles.top}>
                                 <View style={styles.audio_cover}>
                                     <Image
+                                        fadeDuration={0}
                                         style={styles.audio_cover}
                                         source={{
                                             uri: cdnUrl(loops[0].publisher.data.avatar),
@@ -66,6 +68,7 @@ export default function Audio({ navigation }: any) {
                                     <Text style={styles.audio_title}>orijinal ses</Text>
                                     <View style={styles.audio_author}>
                                         <Image
+                                            fadeDuration={0}
                                             style={styles.audio_author_avatar}
                                             source={{
                                                 uri: cdnUrl(loops[0].publisher.data.avatar),
@@ -82,10 +85,10 @@ export default function Audio({ navigation }: any) {
 
                         <View style={styles.audio_list_container}>
                             <MasonryList
-                                data={loops} 
-                                numColumns={3} 
-                                renderItem={renderItem} 
-                                onEndReachedThreshold={0.1} 
+                                data={loops}
+                                numColumns={3}
+                                renderItem={renderItem}
+                                onEndReachedThreshold={0.1}
                             />
                         </View>
                     </View>

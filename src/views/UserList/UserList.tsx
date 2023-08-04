@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { View, ActivityIndicator, Platform, FlatList, Dimensions } from "react-native"
+import { View, FlatList, Dimensions } from "react-native"
 import Item from "./Item/Item"
 import AppContainer from "../../utils/screen"
 import styles from "./UserList.style"
@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context"
 import { getUserList } from "./UserListAPI"
 import AmongNature from "../../utils/illustrations/AmongNature"
 import Alert from "../../components/Alert/Alert"
+import Loader from "../../components/Loader/Loader"
 
 const theme = getTheme()
 
@@ -25,84 +26,71 @@ export default function UserList({ navigation }: any) {
     const pageHeight = Dimensions.get("window").height - insets.bottom - insets.top - 60
 
     useEffect(() => {
-        console.log(fetchedData.length, pageCount)
+        setTimeout(() => {
+            console.log(fetchedData.length, pageCount)
 
-        let url = ""
-        setLoading(true)
+            let url = ""
+            setLoading(true)
 
-        switch (route.params?.type) {
-            case "likes":
-                url = "/api/@me/v1/posts/likes?page=" + pageCount + "&q=" + route.params?.value
-                break
-            case "followers":
-                url = "/api/@me/v1/profile/followers?username=" + route.params?.value + "&page=" + pageCount
-                break
-            case "followings":
-                url = "/api/@me/v1/profile/followings?username=" + route.params?.value + "&page=" + pageCount
-                break
-        }
-
-        if (moreData) {
-            if (url !== "") {
-                (async () => {
-                    await getUserList(url, (response: any) => {
-                        const data = response.data
-
-                        if (data.available) {
-                            setFetching(true)
-                            setLoading(false)
-
-                            if (data.data.length <= 15) {
-                                setMoreData(false)
-                            }
-
-                            if (data.data.length !== 0) {
-                                setFetchedData([...fetchedData, ...data.data])
-                            } else {
-                                setMoreData(false)
-                            }
-                        } else {
-                            if (fetchedData.length === 0) {
-                                setFetching(false)
-                                navigation.goBack()
-                            }
-                        }
-                    })
-                })()
-            } else {
-                navigation.goBack()
+            switch (route.params?.type) {
+                case "likes":
+                    url = "/api/@me/v1/posts/likes?page=" + pageCount + "&q=" + route.params?.value
+                    break
+                case "comment_likes":
+                    url = "/api/@me/v1/comments/likes?page=" + pageCount + "&q=" + route.params?.value
+                    break
+                case "followers":
+                    url = "/api/@me/v1/profile/followers?username=" + route.params?.value + "&page=" + pageCount
+                    break
+                case "followings":
+                    url = "/api/@me/v1/profile/followings?username=" + route.params?.value + "&page=" + pageCount
+                    break
+                case "follow_requests":
+                    url = "/api/@me/v1/client/follow_requests"
+                    break
             }
-        }
+
+            if (moreData) {
+                if (url !== "") {
+                    (async () => {
+                        await getUserList(url, (response: any) => {
+                            const data = response.data
+
+                            if (data.available) {
+                                setFetching(true)
+                                setLoading(false)
+
+                                if (data.data.length <= 15) {
+                                    setMoreData(false)
+                                }
+
+                                if (data.data.length !== 0) {
+                                    setFetchedData([...fetchedData, ...data.data])
+                                } else {
+                                    setMoreData(false)
+                                }
+                            } else {
+                                if (fetchedData.length === 0) {
+                                    setFetching(false)
+                                    navigation.goBack()
+                                }
+                            }
+                        })
+                    })()
+                } else {
+                    navigation.goBack()
+                }
+            }
+        }, 250)
     }, [pageCount])
 
     return (
         <AppContainer
-            disableScrollView={true}
-            headerTitle={route.params?.type === "likes" ? "Beğeniler" : route.params?.type === "followers" ? "Takipçiler" : "Takip Edilenler"}
-            hideTabs={true}
+            headerTitle={route.params?.type === "comment_likes" ? "Yorumu Beğenenler" : route.params?.type === "likes" ? "Beğeniler" : route.params?.type === "followers" ? "Takipçiler" : route.params?.type === "follow_requests" ? "Takip İstekleri" : "Takip Edilenler"}
+            hideTabs={false}
             navigation={navigation}
         >
             <View style={styles.notifications_container}>
-                {/* (isFetching && fetchedData.length !== 0) && (
-                    <View style={styles.search_container}>
-                        <TextInput
-                            value={searchValue}
-                            style={styles.search}
-                            onChangeText={newValue => setSearchValue(newValue)}
-                            placeholder={"Birine mi bakıyordun?"}
-                            placeholderTextColor={"#556574"}
-                            maxLength={32}
-                        />
-                        <View style={styles.search_icon}>
-                            <SearchOutlineIcon style={{
-                                height: 20,
-                                width: 20,
-                                fill: "#556574"
-                            }} />
-                        </View>
-                    </View>
-                ) */}
-
                 {isFetching && fetchedData.length === 0 && (
                     <View
                         style={{
@@ -123,7 +111,7 @@ export default function UserList({ navigation }: any) {
                         style={{ height: pageHeight }}
                         removeClippedSubviews={false}
                         data={fetchedData}
-                        renderItem={({ item, index }) => <Item item={item} key={index} index={index} navigation={navigation} />}
+                        renderItem={({ item, index }) => <Item type={route.params?.type} item={item} key={index} index={index} navigation={navigation} />}
                         onEndReached={({ distanceFromEnd }: any) => {
                             if (distanceFromEnd < 0) return
 
@@ -133,13 +121,7 @@ export default function UserList({ navigation }: any) {
                         ListFooterComponent={() => {
                             if (isLoading) {
                                 return (
-                                    <View
-                                        style={{
-                                            padding: 40,
-                                        }}
-                                    >
-                                        <ActivityIndicator size={Platform.OS === "ios" ? "small" : "large"} color={theme.THEME_COLOR} />
-                                    </View>
+                                    <Loader style={{ padding: 40 }} clearStyles={true} />
                                 )
                             }
 
@@ -150,16 +132,7 @@ export default function UserList({ navigation }: any) {
                 )}
 
                 {!isFetching && fetchedData.length === 0 && (
-                    <View
-                        style={{
-                            padding: 30,
-                            alignItems: "center",
-                            justifyContent: "center",
-                            height: pageHeight,
-                        }}
-                    >
-                        <ActivityIndicator size={Platform.OS === "ios" ? "small" : "large"} color={theme.THEME_COLOR} />
-                    </View>
+                    <Loader style={{ height: pageHeight }} />
                 )}
             </View>
         </AppContainer>
